@@ -50,6 +50,10 @@ export default function SignIn() {
     });
   };
 
+  const handleClick = (e) => {
+    e.preventDefault();
+  };
+
   return (
     <ThemeProvider theme={defaultTheme}>
       <BackgroundDiv>
@@ -100,7 +104,11 @@ export default function SignIn() {
                 justifyContent='center'
                 alignItems='center'
               >
-                <Button variant='contained'>Enter</Button>
+                <Link href='/'>
+                  <Button size='large' variant='contained'>
+                    Enter
+                  </Button>
+                </Link>
               </Grid>{' '}
             </Grid>
           </CssBaseline>
