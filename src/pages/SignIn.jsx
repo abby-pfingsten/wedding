@@ -22,6 +22,9 @@ const defaultTheme = createTheme({
       main: '#16a085',
     },
   },
+  typography: {
+    fontFamily: 'Playfair Display',
+  },
 });
 
 const BackgroundDiv = styled('div')({
@@ -65,9 +68,17 @@ export default function SignIn() {
                 justifyContent='center'
                 alignItems='center'
               >
-                <Typography>Abby and Andrew</Typography>
+                <Typography color={'white'}>The Wedding Of</Typography>
               </Grid>
-              {/* <Stack> */}{' '}
+              <Grid
+                item
+                xs={12}
+                display='flex'
+                justifyContent='center'
+                alignItems='center'
+              >
+                <Typography color={'white'}>Abby and Andrew</Typography>
+              </Grid>
               <Grid
                 item
                 xs={12}
@@ -76,13 +87,21 @@ export default function SignIn() {
                 alignItems='center'
               >
                 <TextField
-                  id='outlined-basic'
+                  fullWidth
+                  id='standard-basic'
                   label='Please enter the phrase here'
-                  variant='outlined'
+                  variant='standard'
                 />{' '}
               </Grid>
-              <Button variant='contained'>Contained</Button>
-              {/* </Stack> */}
+              <Grid
+                item
+                xs={12}
+                display='flex'
+                justifyContent='center'
+                alignItems='center'
+              >
+                <Button variant='contained'>Enter</Button>
+              </Grid>{' '}
             </Grid>
           </CssBaseline>
         </Container>
