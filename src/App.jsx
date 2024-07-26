@@ -4,6 +4,7 @@ import { ThemeProvider, createTheme } from '@mui/material/styles';
 
 import SignIn from './pages/SignIn';
 import Home from './pages/Home';
+import Wedding from './pages/Wedding';
 
 // import { useState } from 'react'
 
@@ -41,6 +42,11 @@ function App() {
               element={<SignIn theme={abAnjTheme} />}
             />
             <Route exact path='/' element={<Home theme={abAnjTheme} />} />
+            {/* <Route
+              exact
+              path='/wedding'
+              element={<Wedding theme={abAnjTheme} />}
+            /> */}
           </Routes>
         </BrowserRouter>
       </ThemeProvider>

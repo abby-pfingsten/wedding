@@ -9,27 +9,27 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 
 const pages = ['Wedding', 'Our Story', 'FAQ', 'Registry'];
 
 function ResponsiveHeader({ theme }) {
   const navigate = useNavigate();
 
-  const [anchorElNav, setAnchorElNav] = React.useState(null);
+  const [anchorNav, setAnchorNav] = React.useState(null);
 
-  const handleOpenNavMenu = (page) => {
-    // setAnchorElNav(e.currentTarget);
-    console.log(page);
+  const handleOpenMobileMenu = (e) => {
+    setAnchorNav(e.currentTarget);
+    // console.log(page);
   };
 
   const handleCloseNavMenu = (page) => {
     // page is on of 'Wedding', 'Our Story', 'FAQ', 'Registry' now
-    setAnchorElNav(null);
+    setAnchorNav(null);
     //   console.log(e)
     console.log(page);
 
-    // navigate('/signin');
+    // navigate('/wedding');
   };
 
   return (
@@ -53,20 +53,21 @@ function ResponsiveHeader({ theme }) {
             Abby & Andrew
           </Typography>
 
+          {/* Mobile View */}
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
             <IconButton
               size='large'
               aria-label='account of current user'
               aria-controls='menu-appbar'
               aria-haspopup='true'
-              onClick={() => console.log('here')}
+              onClick={handleOpenMobileMenu}
               color='inherit'
             >
               <MenuIcon />
             </IconButton>
             <Menu
               id='menu-appbar'
-              anchorEl={anchorElNav}
+              anchorEl={anchorNav}
               anchorOrigin={{
                 vertical: 'bottom',
                 horizontal: 'left',
@@ -76,7 +77,7 @@ function ResponsiveHeader({ theme }) {
                 vertical: 'top',
                 horizontal: 'left',
               }}
-              open={Boolean(anchorElNav)}
+              open={Boolean(anchorNav)}
               onClose={() => handleCloseNavMenu('here')}
               sx={{
                 display: { xs: 'block', md: 'none' },
@@ -106,19 +107,22 @@ function ResponsiveHeader({ theme }) {
           >
             Ab & Anj
           </Typography>
+          {/* Desktop View */}
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
-            {pages.map((page) => (
-              <Button
-                key={page}
-                onClick={() => handleCloseNavMenu(page)}
-                sx={{
-                  my: 2,
-                  color: theme.palette.whites.lightWhite,
-                  display: 'block',
-                }}
-              >
-                {page}
-              </Button>
+            {pages.map((page, index) => (
+              <Link to={`/wedding`} key={`${index}`}>
+                <Button
+                  //   key={page}
+                  onClick={() => handleCloseNavMenu(page)}
+                  sx={{
+                    my: 2,
+                    color: theme.palette.whites.lightWhite,
+                    display: 'block',
+                  }}
+                >
+                  {page}
+                </Button>
+              </Link>
             ))}
           </Box>
         </Toolbar>
