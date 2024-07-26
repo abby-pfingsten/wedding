@@ -16,6 +16,12 @@ function App() {
       },
       secondary: {
         main: '#16a085',
+        blue: '#87ceeb',
+      },
+      whites: {
+        lightWhite: '#F8F5FC',
+        white: 'white',
+        darkWhite: '#F8F8FF',
       },
     },
     typography: {
