@@ -42,11 +42,11 @@ function App() {
               element={<SignIn theme={abAnjTheme} />}
             />
             <Route exact path='/' element={<Home theme={abAnjTheme} />} />
-            {/* <Route
+            <Route
               exact
               path='/wedding'
               element={<Wedding theme={abAnjTheme} />}
-            /> */}
+            />
           </Routes>
         </BrowserRouter>
       </ThemeProvider>

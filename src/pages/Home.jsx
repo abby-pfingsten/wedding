@@ -10,8 +10,7 @@ export default function Home({ theme }) {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-          <Header theme={theme} />
-          <Wedding/>
+      <Wedding theme={theme} />
       hi
     </ThemeProvider>
   );

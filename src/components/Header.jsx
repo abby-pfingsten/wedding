@@ -116,13 +116,26 @@ function ResponsiveHeader({ theme }) {
                   onClick={() => handleCloseNavMenu(page)}
                   sx={{
                     my: 2,
+                    // color: 'blue',
+
                     color: theme.palette.whites.lightWhite,
-                    display: 'block',
+                    // display: 'block',
                   }}
                 >
                   {page}
                 </Button>
               </Link>
+              //   <Button
+              //     key={page}
+              //     onClick={() => handleCloseNavMenu(page)}
+              //     sx={{
+              //       my: 2,
+              //       color: theme.palette.whites.lightWhite,
+              //       display: 'block',
+              //     }}
+              //   >
+              //     {page}
+              //   </Button>
             ))}
           </Box>
         </Toolbar>
