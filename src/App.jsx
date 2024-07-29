@@ -39,13 +39,21 @@ function App() {
             <Route
               exact
               path='/signin'
-              element={<SignIn theme={abAnjTheme} />}
+              element={<SignIn></SignIn>}
+              />
+              {/* // element={<SignIn theme={abAnjTheme} />} */}
+            {/* /> */}
+            <Route
+              exact
+              path='/'
+              // element={<Home />}
+              element={<Home theme={abAnjTheme} />}
             />
-            <Route exact path='/' element={<Home theme={abAnjTheme} />} />
             <Route
               exact
               path='/wedding'
-              element={<Wedding theme={abAnjTheme} />}
+              element={<Wedding />}
+              // element={<Wedding theme={abAnjTheme} />}
             />
           </Routes>
         </BrowserRouter>

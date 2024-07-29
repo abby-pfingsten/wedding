@@ -31,6 +31,20 @@ function ResponsiveHeader({ theme }) {
 
     // navigate('/wedding');
   };
+  const scrollToSection = (sectionId) => {
+    const sectionElement = document.getElementById(sectionId);
+    console.log(sectionElement);
+    const offset = 128;
+    if (sectionElement) {
+      const targetScroll = sectionElement.offsetTop - offset;
+      sectionElement.scrollIntoView({ behavior: 'smooth' });
+      window.scrollTo({
+        top: targetScroll,
+        behavior: 'smooth',
+      });
+      //   setOpen(false);
+    }
+  };
 
   return (
     <AppBar position='static'>
@@ -46,7 +60,8 @@ function ResponsiveHeader({ theme }) {
               display: { xs: 'none', md: 'flex' },
               fontWeight: 800,
               letterSpacing: '.2rem',
-              color: theme.palette.whites.lightWhite,
+              color: 'white',
+              //   color: theme.palette.whites.lightWhite,
               textDecoration: 'none',
             }}
           >
@@ -101,7 +116,8 @@ function ResponsiveHeader({ theme }) {
               flexGrow: 1,
               fontWeight: 700,
               letterSpacing: '.1rem',
-              color: theme.palette.whites.lightWhite,
+              color: 'white',
+              //   color: theme.palette.whites.lightWhite,
               textDecoration: 'none',
             }}
           >
@@ -110,32 +126,33 @@ function ResponsiveHeader({ theme }) {
           {/* Desktop View */}
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
             {pages.map((page, index) => (
-              <Link to={`/wedding`} key={`${index}`}>
-                <Button
-                  //   key={page}
-                  onClick={() => handleCloseNavMenu(page)}
-                  sx={{
-                    my: 2,
-                    // color: 'blue',
+              //   <Link to={`/wedding`} key={`${index}`}>
+              //     <Button
+              //       //   key={page}
+              //       onClick={() => handleCloseNavMenu(page)}
+              //       sx={{
+              //         my: 2,
+              //         // color: 'blue',
 
-                    color: theme.palette.whites.lightWhite,
-                    // display: 'block',
-                  }}
-                >
-                  {page}
-                </Button>
-              </Link>
-              //   <Button
-              //     key={page}
-              //     onClick={() => handleCloseNavMenu(page)}
-              //     sx={{
-              //       my: 2,
-              //       color: theme.palette.whites.lightWhite,
-              //       display: 'block',
-              //     }}
-              //   >
-              //     {page}
-              //   </Button>
+              //         color: theme.palette.whites.lightWhite,
+              //         // display: 'block',
+              //       }}
+              //     >
+              //       {page}
+              //     </Button>
+              //   </Link>
+              <Button
+                key={page}
+                onClick={() => scrollToSection(page)}
+                sx={{
+                  my: 2,
+                  color: 'white',
+                  //   color: theme.palette.whites.lightWhite,
+                  display: 'block',
+                }}
+              >
+                {page}
+              </Button>
             ))}
           </Box>
         </Toolbar>

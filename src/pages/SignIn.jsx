@@ -38,7 +38,7 @@ const BackgroundDiv = styled('div')({
   filter: 'saturate(30%)',
 });
 
-export default function SignIn({theme}) {
+export default function SignIn() {
   // const handleSubmit = (event) => {
   //   event.preventDefault();
   //   const data = new FormData(event.currentTarget);
@@ -49,65 +49,65 @@ export default function SignIn({theme}) {
   // };
 
   return (
-    <ThemeProvider theme={theme}>
-      <BackgroundDiv>
-        <Container component='main' maxWidth='xs'>
-          <CssBaseline>
+    // <ThemeProvider theme={theme}>
+    <BackgroundDiv>
+      <Container component='main' maxWidth='xs'>
+        <CssBaseline>
+          <Grid
+            container
+            justifyContent='center'
+            alignItems='center'
+            spacing={2}
+          >
             <Grid
-              container
+              item
+              xs={12}
+              display='flex'
               justifyContent='center'
               alignItems='center'
-              spacing={2}
             >
-              <Grid
-                item
-                xs={12}
-                display='flex'
-                justifyContent='center'
-                alignItems='center'
-              >
-                <Typography color={'white'}>The Wedding Of</Typography>
-              </Grid>
-              <Grid
-                item
-                xs={12}
-                display='flex'
-                justifyContent='center'
-                alignItems='center'
-              >
-                <Typography color={'white'}>Abby and Andrew</Typography>
-              </Grid>
-              <Grid
-                item
-                xs={12}
-                display='flex'
-                justifyContent='center'
-                alignItems='center'
-              >
-                <TextField
-                  fullWidth
-                  id='standard-basic'
-                  label='Please enter the phrase here'
-                  variant='standard'
-                />{' '}
-              </Grid>
-              <Grid
-                item
-                xs={12}
-                display='flex'
-                justifyContent='center'
-                alignItems='center'
-              >
-                <Link href='/'>
-                  <Button size='large' variant='contained'>
-                    Enter
-                  </Button>
-                </Link>
-              </Grid>{' '}
+              <Typography color={'white'}>The Wedding Of</Typography>
             </Grid>
-          </CssBaseline>
-        </Container>
-      </BackgroundDiv>
-    </ThemeProvider>
+            <Grid
+              item
+              xs={12}
+              display='flex'
+              justifyContent='center'
+              alignItems='center'
+            >
+              <Typography color={'white'}>Abby and Andrew</Typography>
+            </Grid>
+            <Grid
+              item
+              xs={12}
+              display='flex'
+              justifyContent='center'
+              alignItems='center'
+            >
+              <TextField
+                fullWidth
+                id='standard-basic'
+                label='Please enter the phrase here'
+                variant='standard'
+              />{' '}
+            </Grid>
+            <Grid
+              item
+              xs={12}
+              display='flex'
+              justifyContent='center'
+              alignItems='center'
+            >
+              <Link href='/'>
+                <Button size='large' variant='contained'>
+                  Enter
+                </Button>
+              </Link>
+            </Grid>{' '}
+          </Grid>
+        </CssBaseline>
+      </Container>
+    </BackgroundDiv>
+    // {/* </ThemeProvider> */}
   );
 }
