@@ -49,12 +49,12 @@ function App() {
               // element={<Home />}
               element={<Home theme={abAnjTheme} />}
             />
-            <Route
+            {/* <Route
               exact
               path='/wedding'
               element={<Wedding />}
               // element={<Wedding theme={abAnjTheme} />}
-            />
+            /> */}
           </Routes>
         </BrowserRouter>
       </ThemeProvider>

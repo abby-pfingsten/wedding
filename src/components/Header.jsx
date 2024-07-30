@@ -9,28 +9,23 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
-import { useNavigate, Link } from 'react-router-dom';
 
 const pages = ['Wedding', 'Our Story', 'FAQ', 'Registry'];
 
 function ResponsiveHeader({ theme }) {
-  const navigate = useNavigate();
-
   const [anchorNav, setAnchorNav] = React.useState(null);
 
   const handleOpenMobileMenu = (e) => {
     setAnchorNav(e.currentTarget);
-    // console.log(page);
   };
 
   const handleCloseNavMenu = (page) => {
     // page is on of 'Wedding', 'Our Story', 'FAQ', 'Registry' now
     setAnchorNav(null);
-    //   console.log(e)
     console.log(page);
-
-    // navigate('/wedding');
   };
+
+  // code from https://github.com/mui/material-ui/blob/v5.16.4/docs/data/material/getting-started/templates/landing-page/components/AppAppBar.js
   const scrollToSection = (sectionId) => {
     const sectionElement = document.getElementById(sectionId);
     console.log(sectionElement);
@@ -42,7 +37,6 @@ function ResponsiveHeader({ theme }) {
         top: targetScroll,
         behavior: 'smooth',
       });
-      //   setOpen(false);
     }
   };
 
@@ -60,8 +54,7 @@ function ResponsiveHeader({ theme }) {
               display: { xs: 'none', md: 'flex' },
               fontWeight: 800,
               letterSpacing: '.2rem',
-              color: 'white',
-              //   color: theme.palette.whites.lightWhite,
+              color: theme.palette.whites.lightWhite,
               textDecoration: 'none',
             }}
           >
@@ -76,7 +69,8 @@ function ResponsiveHeader({ theme }) {
               aria-controls='menu-appbar'
               aria-haspopup='true'
               onClick={handleOpenMobileMenu}
-              color='inherit'
+              color={theme.palette.whites.lightWhite}
+              //   color='inherit'
             >
               <MenuIcon />
             </IconButton>
@@ -99,7 +93,7 @@ function ResponsiveHeader({ theme }) {
               }}
             >
               {pages.map((page, index) => (
-                <MenuItem key={index} onClick={() => handleCloseNavMenu(page)}>
+                <MenuItem key={index} onClick={() => scrollToSection(page)}>
                   <Typography textAlign='center'>{page}</Typography>
                 </MenuItem>
               ))}
@@ -116,8 +110,7 @@ function ResponsiveHeader({ theme }) {
               flexGrow: 1,
               fontWeight: 700,
               letterSpacing: '.1rem',
-              color: 'white',
-              //   color: theme.palette.whites.lightWhite,
+              color: theme.palette.whites.lightWhite,
               textDecoration: 'none',
             }}
           >
@@ -126,28 +119,12 @@ function ResponsiveHeader({ theme }) {
           {/* Desktop View */}
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
             {pages.map((page, index) => (
-              //   <Link to={`/wedding`} key={`${index}`}>
-              //     <Button
-              //       //   key={page}
-              //       onClick={() => handleCloseNavMenu(page)}
-              //       sx={{
-              //         my: 2,
-              //         // color: 'blue',
-
-              //         color: theme.palette.whites.lightWhite,
-              //         // display: 'block',
-              //       }}
-              //     >
-              //       {page}
-              //     </Button>
-              //   </Link>
               <Button
                 key={page}
                 onClick={() => scrollToSection(page)}
                 sx={{
                   my: 2,
-                  color: 'white',
-                  //   color: theme.palette.whites.lightWhite,
+                  color: theme.palette.whites.lightWhite,
                   display: 'block',
                 }}
               >
