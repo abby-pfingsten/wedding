@@ -1,10 +1,10 @@
+import * as React from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import CssBaseline from '@mui/material/CssBaseline';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 
 import SignIn from './pages/SignIn';
 import Home from './pages/Home';
-import Wedding from './pages/Wedding';
 
 // import { useState } from 'react'
 
@@ -36,12 +36,8 @@ function App() {
       <ThemeProvider theme={abAnjTheme}>
         <BrowserRouter>
           <Routes>
-            <Route
-              exact
-              path='/signin'
-              element={<SignIn></SignIn>}
-              />
-              {/* // element={<SignIn theme={abAnjTheme} />} */}
+            <Route exact path='/signin' element={<SignIn></SignIn>} />
+            {/* // element={<SignIn theme={abAnjTheme} />} */}
             {/* /> */}
             <Route
               exact

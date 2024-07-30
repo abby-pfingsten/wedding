@@ -1,25 +1,27 @@
+import * as React from 'react';
 import Container from '@mui/material/Container';
 import Accordian from '@mui/material/Accordion';
-import AccordionActions from '@mui/material/AccordionActions';
 import AccordionSummary from '@mui/material/AccordionSummary';
 import AccordionDetails from '@mui/material/AccordionDetails';
+import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
+import Typography from '@mui/material/Typography';
 
 export default function FAQ() {
   const faqObject = [
     {
       key: 1,
-      faqTitle: 'Question 1',
-      faqAnswer: 'Answer 1',
+      faqTitle: 'Kids?',
+      faqAnswer: 'hell naw',
     },
     {
       key: 2,
-      faqTitle: 'Question 2',
-      faqAnswer: 'Answer 1',
+      faqTitle: 'Open Bar?',
+      faqAnswer: 'hell ya',
     },
     {
       key: 3,
-      faqTitle: 'Question 3',
-      faqAnswer: 'Answer 1',
+      faqTitle: 'will mister meelo be at the wedding',
+      faqAnswer: 'yes and he will be looking extra dapper',
     },
     {
       key: 4,
@@ -34,11 +36,15 @@ export default function FAQ() {
   ];
   return (
     <Container id='FAQ'>
+      <Typography variant='h2' align='center'>
+        Your Burning Questions Answered
+      </Typography>
       {faqObject.map((faq) => (
         <Accordian key={faq.key}>
-          <AccordionSummary>
-            <AccordionDetails>{faq.faqTitle}</AccordionDetails>
+          <AccordionSummary expandIcon={<ArrowDropDownIcon />}>
+            {faq.faqTitle}
           </AccordionSummary>
+          <AccordionDetails> {faq.faqAnswer}</AccordionDetails>
         </Accordian>
       ))}
     </Container>
