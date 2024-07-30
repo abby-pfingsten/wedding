@@ -34,10 +34,10 @@ export default function FAQ() {
   ];
   return (
     <Container id='FAQ'>
-      {faqObject.map((x) => (
-        <Accordian>
+      {faqObject.map((faq) => (
+        <Accordian key={faq.key}>
           <AccordionSummary>
-            <AccordionDetails key={x.key}>{x.faqTitle}</AccordionDetails>
+            <AccordionDetails>{faq.faqTitle}</AccordionDetails>
           </AccordionSummary>
         </Accordian>
       ))}
