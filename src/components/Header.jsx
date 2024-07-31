@@ -1,0 +1,140 @@
+import * as React from 'react';
+import AppBar from '@mui/material/AppBar';
+import Box from '@mui/material/Box';
+import Toolbar from '@mui/material/Toolbar';
+import IconButton from '@mui/material/IconButton';
+import Typography from '@mui/material/Typography';
+import Menu from '@mui/material/Menu';
+import MenuIcon from '@mui/icons-material/Menu';
+import Container from '@mui/material/Container';
+import Button from '@mui/material/Button';
+import MenuItem from '@mui/material/MenuItem';
+
+const pages = ['Wedding', 'Our Story', 'FAQ', 'Registry'];
+
+function ResponsiveHeader({ theme }) {
+  const [anchorNav, setAnchorNav] = React.useState(null);
+
+  const handleOpenMobileMenu = (e) => {
+    setAnchorNav(e.currentTarget);
+  };
+
+  const handleCloseNavMenu = (page) => {
+    // page is on of 'Wedding', 'Our Story', 'FAQ', 'Registry' now
+    setAnchorNav(null);
+    console.log(page);
+  };
+
+  // code from https://github.com/mui/material-ui/blob/v5.16.4/docs/data/material/getting-started/templates/landing-page/components/AppAppBar.js
+  const scrollToSection = (sectionId) => {
+    const sectionElement = document.getElementById(sectionId);
+    console.log(sectionElement);
+    const offset = 128;
+    if (sectionElement) {
+      const targetScroll = sectionElement.offsetTop - offset;
+      sectionElement.scrollIntoView({ behavior: 'smooth' });
+      window.scrollTo({
+        top: targetScroll,
+        behavior: 'smooth',
+      });
+    }
+  };
+
+  return (
+    <AppBar position='static'>
+      <Container maxWidth='xl'>
+        <Toolbar disableGutters>
+          <Typography
+            variant='h6'
+            noWrap
+            component='a'
+            href='/'
+            sx={{
+              mr: 2,
+              display: { xs: 'none', md: 'flex' },
+              fontWeight: 800,
+              letterSpacing: '.2rem',
+              color: theme.palette.whites.lightWhite,
+              textDecoration: 'none',
+            }}
+          >
+            Abby & Andrew
+          </Typography>
+
+          {/* Mobile View */}
+          <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
+            <IconButton
+              size='large'
+              aria-label='account of current user'
+              aria-controls='menu-appbar'
+              aria-haspopup='true'
+              onClick={handleOpenMobileMenu}
+              color={theme.palette.whites.lightWhite}
+              //   color='inherit'
+            >
+              <MenuIcon />
+            </IconButton>
+            <Menu
+              id='menu-appbar'
+              anchorEl={anchorNav}
+              anchorOrigin={{
+                vertical: 'bottom',
+                horizontal: 'left',
+              }}
+              keepMounted
+              transformOrigin={{
+                vertical: 'top',
+                horizontal: 'left',
+              }}
+              open={Boolean(anchorNav)}
+              onClose={() => handleCloseNavMenu('here')}
+              sx={{
+                display: { xs: 'block', md: 'none' },
+              }}
+            >
+              {pages.map((page, index) => (
+                <MenuItem key={index} onClick={() => scrollToSection(page)}>
+                  <Typography textAlign='center'>{page}</Typography>
+                </MenuItem>
+              ))}
+            </Menu>
+          </Box>
+          <Typography
+            variant='h5'
+            noWrap
+            component='a'
+            href='/'
+            sx={{
+              mr: 2,
+              display: { xs: 'flex', md: 'none' },
+              flexGrow: 1,
+              fontWeight: 700,
+              letterSpacing: '.1rem',
+              color: theme.palette.whites.lightWhite,
+              textDecoration: 'none',
+            }}
+          >
+            Ab & Anj
+          </Typography>
+          {/* Desktop View */}
+          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
+            {pages.map((page, index) => (
+              <Button
+                key={page}
+                onClick={() => scrollToSection(page)}
+                sx={{
+                  my: 2,
+                  color: theme.palette.whites.lightWhite,
+                  display: 'block',
+                }}
+              >
+                {page}
+              </Button>
+            ))}
+          </Box>
+        </Toolbar>
+      </Container>
+    </AppBar>
+  );
+}
+export default ResponsiveHeader;
