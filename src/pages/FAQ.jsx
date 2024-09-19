@@ -10,7 +10,7 @@ export default function FAQ() {
   const faqObject = [
     {
       key: 1,
-      faqTitle: 'Kids?',
+      faqTitle: 'Can We Bring Kids?',
       faqAnswer: 'hell naw',
     },
     {
