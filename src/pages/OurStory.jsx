@@ -6,12 +6,19 @@ import TimelineSeparator from '@mui/lab/TimelineSeparator';
 import TimelineConnector from '@mui/lab/TimelineConnector';
 import TimelineContent from '@mui/lab/TimelineContent';
 import TimelineDot from '@mui/lab/TimelineDot';
+import { Typography } from '@mui/material';
+import { Image } from 'mui-image';
+
 export default function OurStory() {
   return (
     <Container id='Our Story'>
-      <Timeline>
+      <Typography variant='h2' align='center'>
+        Our Story
+      </Typography>
+      <Timeline position='alternate'>
         <TimelineItem>
           <TimelineSeparator>
+            {/* <Image src='../images/winery-stock.jpg'></Image> */}
             <TimelineDot />
             <TimelineConnector />
           </TimelineSeparator>
