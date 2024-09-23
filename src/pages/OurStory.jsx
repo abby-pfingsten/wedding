@@ -44,28 +44,30 @@ export default function OurStory() {
         Our Story
       </Typography>
       <Timeline position='alternate'>
-        <TimelineItem>
-          <TimelineSeparator>
-            <TimelineConnector />
-            {/* <TimelineDot> */}
-            <Box
-              component='img'
-              sx={{
-                height: 105,
-                width: 105,
-                maxHeight: { xs: 233, md: 167 },
-                maxWidth: { xs: 350, md: 250 },
-                borderRadius: 15,
-                objectFit: 'cover',
-              }}
-              alt='The house from the offer.'
-              src={picOne}
-            />
-            {/* </TimelineDot> */}
-            <TimelineConnector />
-          </TimelineSeparator>
-          <TimelineContent>Eat</TimelineContent>
-        </TimelineItem>
+        {ourStoryArray.map((timelineItem) => (
+          <TimelineItem key={timelineItem.key}>
+            <TimelineSeparator>
+              <TimelineConnector sx={{ height: 100 }} />
+              <TimelineDot>
+                <Box
+                  component='img'
+                  sx={{
+                    height: 105,
+                    width: 105,
+                    maxHeight: { xs: 233, md: 167 },
+                    maxWidth: { xs: 350, md: 250 },
+                    borderRadius: 15,
+                    objectFit: 'cover',
+                  }}
+                  // alt='The house from the offer.'
+                  src={timelineItem.image}
+                />
+              </TimelineDot>
+              <TimelineConnector />
+            </TimelineSeparator>
+            <TimelineContent>{timelineItem.header}</TimelineContent>
+          </TimelineItem>
+        ))}
       </Timeline>{' '}
     </Container>
   );
