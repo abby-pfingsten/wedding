@@ -1,4 +1,3 @@
-import { GridView } from '@mui/icons-material';
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
 import * as React from 'react';
