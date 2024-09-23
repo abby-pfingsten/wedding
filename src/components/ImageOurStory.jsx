@@ -1,4 +1,7 @@
 import * as React from 'react';
+import picOne from '../images/our-story/pic_1.jpg';
+import picTwo from '../images/our-story/pic_2.jpg';
+import picThree from '../images/our-story/pic_3.jpg';
 
 export default function ImageOurStory() {
   ourStoryArray = [
@@ -6,21 +9,25 @@ export default function ImageOurStory() {
       header: 'First Header',
       subHeader: 'First Sub Header',
       text: 'First Text',
-      image: 'First Image',
+      image: { picOne },
     },
     {
       header: 'Second Header',
       subHeader: 'Second Sub Header',
       text: 'Second Text',
-      image: 'Second Image',
+      image: { picTwo },
     },
     {
       header: 'Third Header',
       subHeader: 'Third Sub Header',
       text: 'Third Text',
-      image: 'Third Image',
+      image: { picThree },
     },
   ];
 
-  return <></>;
+  return (
+    <>
+      <h1> hello</h1>
+    </>
+  );
 }
