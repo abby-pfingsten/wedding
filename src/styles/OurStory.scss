@@ -1,0 +1,15 @@
+.timeLine {
+  //   margin-top: 40px;
+  &__header {
+    margin-top: 40px;
+    font-size: 25px;
+    font-weight: bold;
+  }
+  &__subHeader {
+    font-size: 20px;
+    font-style: italic;
+  }
+  &__text {
+    font-size: 15px;
+  }
+}
