@@ -36,7 +36,7 @@ export default function FAQ() {
   ];
   return (
     <Container id='FAQ'>
-      <Typography variant='h2' align='center'>
+      <Typography variant='h2' align='center' sx={{ marginTop: 20 }}>
         Your Burning Questions Answered
       </Typography>
       {faqObject.map((faq) => (
