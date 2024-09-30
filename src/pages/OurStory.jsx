@@ -29,14 +29,14 @@ export default function OurStory() {
       key: 1,
       header: 'August 2016',
       subHeader: 'Semi-Formal',
-      text: 'We first became friends at the beginning of their freshman year, after Abby successfully inserted herself into the Stever 1 crew. Andrew had his first semi-formal in September and Abby was his third choice!',
+      text: 'We first became friends at the beginning of our freshman year, after Abby successfully inserted herself into the Stever 1 crew. Andrew had his first semi-formal in September and Abby was his third choice!',
       image: freshmanFormal,
     },
     {
       key: 2,
       header: 'October/November 2016',
       subHeader: 'Addams Family Performance',
-      text: 'This was the first time Andrew saw Abby performing, as Wednesday in The Addams Family. We both had feelings for each other at this point, but we were trying to hide it. Andrew asked Abby out shortly after in November.',
+      text: 'This was the first time Andrew saw Abby performing, as Wednesday in The Addams Family. We both had feelings for each other at this point, but we were trying to hide it. Andrew asked Abby to be his girlfriend shortly after this in November.',
       image: freshmanAddams,
     },
     {
