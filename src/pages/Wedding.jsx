@@ -6,8 +6,21 @@ import { useState, useEffect } from 'react';
 import { timelineClasses } from '@mui/lab';
 import ImageList from '@mui/material/ImageList';
 import ImageListItem from '@mui/material/ImageListItem';
-import first from '../images/ab-abj-bridge.jpg';
+import first from '../images/ab-anj-bridge.jpg';
+import second from '../images/ab-anj-meelo.jpg';
+import third from '../images/ab-anj-kiss.jpg';
+import fourth from '../images/ab-anj-hug.jpg';
+
 import { FirstPageOutlined } from '@mui/icons-material';
+
+function srcset(image, size, rows = 1, cols = 1) {
+  return {
+    src: `${image}?w=${size * cols}&h=${size * rows}&fit=crop&auto=format`,
+    srcSet: `${image}?w=${size * cols}&h=${
+      size * rows
+    }&fit=crop&auto=format&dpr=2 2x`,
+  };
+}
 
 export default function Wedding() {
   const [timer, setTimer] = useState('00:00:00');
@@ -56,10 +69,21 @@ export default function Wedding() {
     },
     {
       key: 2,
-      img: first,
+      img: second,
       title: 'Breakfast',
       rows: 2,
+      cols: 4,
+    },
+    {
+      key: 3,
+      img: third,
+      title: 'Breakfast',
       cols: 2,
+    },
+    {
+      key: 4,
+      img: fourth,
+      title: 'Breakfast',
     },
   ];
   return (
@@ -73,12 +97,9 @@ export default function Wedding() {
         >
           {/* subtractDates(currentDate, weddingWeekend) */}
           <Typography>{subtractDates(currentDate, weddingWeekend)}</Typography>
-          TEXT TEXT TEXT TEXT TEXT TEXTTEXT TEXT TEXTTEXT TEXT TEXTTEXT TEXT
-          TEXTTEXT TEXT TEXTTEXT TEXT TEXTTEXT TEXT TEXTTEXT TEXT TEXTTEXT TEXT
-          TEXTTEXT TEXT TEXTTEXT TEXT TEXTTEXT TEXT TEXTTEXT TEXT TEXTTEXT TEXT
-          TEXTTEXT TEXT TEXTTEXT TEXT TEXTTEXT TEXT TEXTTEXT TEXT TEXT
+
           <ImageList
-            sx={{ width: 500, height: 450 }}
+            sx={{ width: 500, height: 650 }}
             variant='quilted'
             cols={4}
             rowHeight={121}
@@ -86,13 +107,13 @@ export default function Wedding() {
             {itemData.map((item) => (
               <ImageListItem
                 key={item.key}
-                // cols={item.cols || 1}
-                // rows={item.rows || 1}
+                cols={item.cols || 1}
+                rows={item.rows || 1}
               >
                 <img
                   src={item.img}
-                  // {...srcset(item.img, 121, item.rows, item.cols)}
-                  // alt={item.title}
+                  {...srcset(item.img, 121, item.rows, item.cols)}
+                  alt={item.title}
                   // loading='lazy'
                 />
               </ImageListItem>
