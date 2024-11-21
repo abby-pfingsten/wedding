@@ -4,6 +4,10 @@ import { Typography } from '@mui/material';
 import * as React from 'react';
 import { useState, useEffect } from 'react';
 import { timelineClasses } from '@mui/lab';
+import ImageList from '@mui/material/ImageList';
+import ImageListItem from '@mui/material/ImageListItem';
+import first from '../images/ab-abj-bridge.jpg';
+import { FirstPageOutlined } from '@mui/icons-material';
 
 export default function Wedding() {
   const [timer, setTimer] = useState('00:00:00');
@@ -25,7 +29,7 @@ export default function Wedding() {
 
   useEffect(() => {
     setInterval(() => {
-      console.log(1);
+      // console.log(1);
       //   setX((x) => x + 1);
     }, 1000);
     // setX((x) => x + 1);
@@ -41,6 +45,23 @@ export default function Wedding() {
   //   };
   //   console.log(timeLeft);
   // });
+
+  const itemData = [
+    {
+      key: 1,
+      img: first,
+      title: 'Breakfast',
+      rows: 2,
+      cols: 2,
+    },
+    {
+      key: 2,
+      img: first,
+      title: 'Breakfast',
+      rows: 2,
+      cols: 2,
+    },
+  ];
   return (
     <>
       <Container id='Wedding'>
@@ -56,6 +77,27 @@ export default function Wedding() {
           TEXTTEXT TEXT TEXTTEXT TEXT TEXTTEXT TEXT TEXTTEXT TEXT TEXTTEXT TEXT
           TEXTTEXT TEXT TEXTTEXT TEXT TEXTTEXT TEXT TEXTTEXT TEXT TEXTTEXT TEXT
           TEXTTEXT TEXT TEXTTEXT TEXT TEXTTEXT TEXT TEXTTEXT TEXT TEXT
+          <ImageList
+            sx={{ width: 500, height: 450 }}
+            variant='quilted'
+            cols={4}
+            rowHeight={121}
+          >
+            {itemData.map((item) => (
+              <ImageListItem
+                key={item.key}
+                // cols={item.cols || 1}
+                // rows={item.rows || 1}
+              >
+                <img
+                  src={item.img}
+                  // {...srcset(item.img, 121, item.rows, item.cols)}
+                  // alt={item.title}
+                  // loading='lazy'
+                />
+              </ImageListItem>
+            ))}
+          </ImageList>
         </Grid>
       </Container>
     </>

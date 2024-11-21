@@ -7,7 +7,7 @@ import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { styled } from '@mui/material/styles';
-import winery from '../images/winery-stock.jpg';
+import winery from '../images/wedding-background.jpg';
 
 // const defaultTheme = createTheme();
 
