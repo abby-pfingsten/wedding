@@ -57,10 +57,10 @@ export default function Wedding() {
             }}
           >
             <Typography variant='h2'>Abigale & Andrew</Typography>
-            <Typography variant='h5'>
-              September 6th, 2026 - September 6th, 2026
+            <Typography variant='h6'>
+              September 4th, 2026 - September 6th, 2026
             </Typography>
-            <Typography variant='h5'>Etna, Sicily, Italy</Typography>
+            <Typography variant='h6'>Etna, Sicily, Italy</Typography>
             <Typography variant='h5'>
               {subtractDates(currentDate, weddingWeekend)} Days To Go!
             </Typography>
