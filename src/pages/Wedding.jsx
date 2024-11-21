@@ -6,7 +6,7 @@ import { useState, useEffect } from 'react';
 import { timelineClasses } from '@mui/lab';
 import ImageList from '@mui/material/ImageList';
 import ImageListItem from '@mui/material/ImageListItem';
-import weddingPageData from '../data/wedding-page-data.jsx';
+import weddingPagePics from '../data/wedding-page-data.jsx';
 
 import { FirstPageOutlined } from '@mui/icons-material';
 
@@ -69,19 +69,19 @@ export default function Wedding() {
           <Typography>{subtractDates(currentDate, weddingWeekend)}</Typography>
 
           <ImageList
-            sx={{ width: 500, height: 650 }}
+            sx={{ width: 600, height: 650 }}
             variant='quilted'
-            cols={4}
+            cols={6}
             rowHeight={121}
           >
-            {weddingPageData.map((item) => (
+            {weddingPagePics.map((item) => (
               <ImageListItem
                 key={item.key}
                 cols={item.cols || 1}
                 rows={item.rows || 1}
               >
                 <img
-                  src={item.img}
+                  // src={item.img}
                   {...srcset(item.img, 121, item.rows, item.cols)}
                   alt={item.title}
                 />
