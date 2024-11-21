@@ -2,27 +2,12 @@ import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
 import { Typography } from '@mui/material';
 import * as React from 'react';
-import { useState, useEffect } from 'react';
-import { timelineClasses } from '@mui/lab';
 import ImageList from '@mui/material/ImageList';
 import ImageListItem from '@mui/material/ImageListItem';
 import weddingPagePics from '../data/wedding-page-data.jsx';
-
-import { FirstPageOutlined } from '@mui/icons-material';
-
-function srcset(image, size, rows = 1, cols = 1) {
-  return {
-    src: `${image}?w=${size * cols}&h=${size * rows}&fit=crop&auto=format`,
-    srcSet: `${image}?w=${size * cols}&h=${
-      size * rows
-    }&fit=crop&auto=format&dpr=2 2x`,
-  };
-}
+import Popover from '../components/Popover.jsx';
 
 export default function Wedding() {
-  const [timer, setTimer] = useState('00:00:00');
-  // const [currentDate, setCurrentDate] = useState(null);
-
   const currentDate = new Date();
   const weddingWeekend = new Date('2026-09-01T16:15:00Z');
 
@@ -32,42 +17,16 @@ export default function Wedding() {
     return daysDiff;
   }
 
-  const [x, setX] = useState(0);
-
-  // console.log(currentDate.getSeconds());
-  // console.log(weddingWeekend.getSeconds());
-
-  useEffect(() => {
-    setInterval(() => {
-      // console.log(1);
-      //   setX((x) => x + 1);
-    }, 1000);
-    // setX((x) => x + 1);
-    // console.log(x);
-  });
-  // useEffect(() => {
-  //   let daysRemaining = subtractDates(currentDate, weddingWeekend);
-
-  //   const timeLeft = {
-  //     seconds: Math.floor(daysRemaining / 24 / 60 / 60),
-  //     hours: Math.floor(daysRemaining / 24),
-  //     days: daysRemaining,
-  //   };
-  //   console.log(timeLeft);
-  // });
-
   return (
     <>
       <Container id='Wedding'>
         <Grid
           sx={{
             display: 'flex',
-            flexDirection: 'column',
+            flexDirection: { xs: 'column', sm: 'row', mid: 'row' },
           }}
         >
-          {/* subtractDates(currentDate, weddingWeekend) */}
-          <Typography>{subtractDates(currentDate, weddingWeekend)}</Typography>
-
+          {/* <Item> */}
           <ImageList
             sx={{ width: 600, height: 650 }}
             variant='quilted'
@@ -80,14 +39,21 @@ export default function Wedding() {
                 cols={item.cols || 1}
                 rows={item.rows || 1}
               >
-                <img
-                  // src={item.img}
-                  {...srcset(item.img, 121, item.rows, item.cols)}
-                  alt={item.title}
-                />
+                <img src={item.img} alt={item.title} />
               </ImageListItem>
             ))}
           </ImageList>
+          {/* </Item> */}
+          <Grid offset={7}>
+            <Typography variant='h2'>Abigale & Andrew</Typography>
+            <Typography variant='h5'>
+              September 6th, 2026 - September 6th, 2026
+            </Typography>
+            <Typography variant='h5'>Etna, Sicily, Italy</Typography>
+            <Typography variant='h5'>
+              {subtractDates(currentDate, weddingWeekend)} Days To Go!
+            </Typography>
+          </Grid>
         </Grid>
       </Container>
     </>

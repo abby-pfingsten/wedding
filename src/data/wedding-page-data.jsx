@@ -10,14 +10,14 @@ const itemData = [
     img: first,
     title: 'Breakfast',
     rows: 2,
-    cols: 2,
+    cols: 3,
   },
   {
     key: 2,
     img: second,
     title: 'Breakfast',
     rows: 2,
-    cols: 4,
+    cols: 3,
   },
   {
     key: 3,
