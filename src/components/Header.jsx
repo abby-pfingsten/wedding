@@ -10,7 +10,7 @@ import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
 
-const pages = ['Wedding', 'Our Story', 'FAQ', 'Registry'];
+const pages = ['Home', 'Schedule', 'Our Story', 'Q&A', 'RSVP'];
 
 function ResponsiveHeader({ theme }) {
   const [anchorNav, setAnchorNav] = React.useState(null);
