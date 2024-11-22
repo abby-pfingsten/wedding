@@ -21,17 +21,28 @@ export default function Wedding() {
 
   return (
     <>
-      <Container id='Wedding'>
+      <Container id='Wedding' maxWidth={false}>
         <Grid
           sx={{
             display: 'flex',
-            flexDirection: { xs: 'column', sm: 'row', mid: 'row' },
+            flexDirection: { xs: 'column', sm: 'column', md: 'row' },
             justifyContent: 'space-between',
           }}
         >
           <Grid>
             <ImageList
-              sx={{ width: 600, height: 650 }}
+              sx={{
+                width: '100%',
+                height: 650,
+                '@media (max-width: 600px)': {
+                  width: 350, // reduce columns for mobile
+                  height: 350,
+                },
+                '@media (max-width: 900px)': {
+                  width: '100%', // reduce columns for tablet
+                  height: 450,
+                },
+              }}
               variant='quilted'
               cols={6}
               rowHeight={110}
@@ -48,18 +59,26 @@ export default function Wedding() {
             </ImageList>
           </Grid>
           <Grid
-            offset={7}
+            offset={6}
             sx={{
               display: 'flex',
               flexDirection: 'column',
               justifyContent: 'space-evenly',
               alignItems: 'center',
+              width: '100%',
             }}
           >
-            <Typography variant='h2'>Abigale & Andrew</Typography>
-            <Typography variant='h6'>
-              September 4th, 2026 - September 6th, 2026
+            <Typography
+              variant='h2'
+              sx={{
+                '@media (max-width: 600px)': {
+                  fontSize: 40,
+                },
+              }}
+            >
+              Abigale & Andrew
             </Typography>
+            <Typography variant='h6'>September 4th, 2026</Typography>
             <Typography variant='h6'>Etna, Sicily, Italy</Typography>
             <Typography variant='h5'>
               {subtractDates(currentDate, weddingWeekend)} Days To Go!
