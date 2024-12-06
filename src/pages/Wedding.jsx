@@ -25,7 +25,12 @@ export default function Wedding() {
         <Grid
           sx={{
             display: 'flex',
-            flexDirection: { xs: 'column', sm: 'column', md: 'row' },
+            flexDirection: {
+              xs: 'column',
+              sm: 'column',
+              md: 'column',
+              lg: 'row',
+            },
             justifyContent: 'space-between',
           }}
         >
@@ -78,7 +83,9 @@ export default function Wedding() {
             >
               Abigale & Andrew
             </Typography>
-            <Typography variant='h6'>September 4th, 2026</Typography>
+            <Typography variant='h6'>
+              September 3rd, 2026 - September 9th
+            </Typography>
             <Typography variant='h6'>Etna, Sicily, Italy</Typography>
             <Typography variant='h5'>
               {subtractDates(currentDate, weddingWeekend)} Days To Go!
