@@ -7,7 +7,7 @@ import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { styled } from '@mui/material/styles';
-import winery from '../images/winery-stock.jpg';
+import background from '../images/wedding-background.jpg';
 
 // const defaultTheme = createTheme();
 
@@ -28,7 +28,7 @@ import winery from '../images/winery-stock.jpg';
 const BackgroundDiv = styled('div')({
   height: '100vh',
   width: '100%',
-  backgroundImage: `url(${winery})`,
+  backgroundImage: `url(${background})`,
   backgroundSize: 'cover',
   backgroundPosition: 'center',
   backgroundAttachment: 'fixed',

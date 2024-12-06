@@ -13,7 +13,7 @@ export default function Home({ theme }) {
       <Header theme={theme} />
       <Wedding />
       <OurStory></OurStory>
-      <FAQ />
+      <FAQ  />
     </ThemeProvider>
   );
 }

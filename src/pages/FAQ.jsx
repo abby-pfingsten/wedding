@@ -10,32 +10,32 @@ export default function FAQ() {
   const faqObject = [
     {
       key: 1,
-      faqTitle: 'Can We Bring Kids?',
+      faqTitle: 'Accomodations?',
       faqAnswer: 'hell naw',
     },
     {
       key: 2,
-      faqTitle: 'Open Bar?',
+      faqTitle: 'Food? ',
       faqAnswer: 'hell ya',
     },
     {
       key: 3,
-      faqTitle: 'will mister meelo be at the wedding',
+      faqTitle: 'When to RSVP By?',
       faqAnswer: 'yes and he will be looking extra dapper',
     },
     {
       key: 4,
-      faqTitle: 'Question 4',
+      faqTitle: 'Can I Bring a Plus One?',
       faqAnswer: 'Answer 1',
     },
     {
       key: 5,
-      faqTitle: 'Question 5',
+      faqTitle: 'Will Mr Meelo Be Attending?',
       faqAnswer: 'Answer 1',
     },
   ];
   return (
-    <Container id='FAQ'>
+    <Container id='Q&A'>
       <Typography variant='h2' align='center' sx={{ marginTop: 20 }}>
         Your Burning Questions Answered
       </Typography>
