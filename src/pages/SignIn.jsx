@@ -8,6 +8,7 @@ import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { styled } from '@mui/material/styles';
 import background from '../images/wedding-background.jpg';
+import { useNavigate } from 'react-router-dom';
 
 // const defaultTheme = createTheme();
 
@@ -39,13 +40,18 @@ const BackgroundDiv = styled('div')({
 });
 
 export default function SignIn() {
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    const data = new FormData(event.currentTarget);
-    console.log({
-      email: data.get('email'),
-      password: data.get('password'),
-    });
+  const navigate = useNavigate();
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    // wasn't there a different way to do this?
+    const passwordElement = document.getElementById('password');
+    const passwordValue = passwordElement.value;
+
+    if (passwordValue.toUpperCase() === 'MEELOISKING') {
+      navigate('/');
+    }
   };
 
   return (
@@ -86,7 +92,7 @@ export default function SignIn() {
             >
               <TextField
                 fullWidth
-                id='standard-basic'
+                id='password'
                 label='Please enter the phrase here'
                 variant='standard'
               />{' '}
@@ -99,7 +105,7 @@ export default function SignIn() {
               alignItems='center'
             >
               <Link href='/'>
-                <Button size='large' variant='contained'>
+                <Button onClick={handleSubmit} size='large' variant='contained'>
                   Enter
                 </Button>
               </Link>
