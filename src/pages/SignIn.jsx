@@ -23,7 +23,7 @@ const BackgroundDiv = styled('div')({
   filter: 'saturate(30%)',
 });
 
-export default function SignIn() {
+export default function SignIn({ theme }) {
   // navigate to home page
   const navigate = useNavigate();
 
@@ -45,6 +45,8 @@ export default function SignIn() {
     }
   };
 
+  const themeDarkWhite = theme.palette.whites.darkWhite;
+
   return (
     <BackgroundDiv>
       <Container component='main' maxWidth='xl'>
@@ -53,8 +55,7 @@ export default function SignIn() {
             container
             justifyContent='center'
             alignItems='center'
-            gap={10}
-            spacing={2}
+            spacing={3}
           >
             <Grid
               item
@@ -64,25 +65,16 @@ export default function SignIn() {
             >
               <Typography
                 sx={{ fontSize: { xs: 35, md: 75 }, textAlign: 'center' }}
-                color={'white'}
+                color={themeDarkWhite}
               >
                 The Wedding of Abby and Andrew{' '}
               </Typography>
-              {/* <Typography color={'white'}>Abby and Andrew</Typography> */}
             </Grid>
-            {/* <Grid
-              item
-              xs={12}
-              display='flex'
-              justifyContent='center'
-              alignItems='center'
-            >
-              <Typography color={'white'}>Abby and Andrew</Typography>
-            </Grid> */}
             <Grid
               item
               xs={12}
               display='flex'
+              flexDirection='column'
               justifyContent='center'
               alignItems='center'
             >
@@ -90,9 +82,24 @@ export default function SignIn() {
                 sx={{ width: { md: '40%' } }}
                 fullWidth
                 id='password'
-                label='Please enter the phrase here'
+                label='Please enter the super secret password'
                 variant='standard'
               />{' '}
+              {error ? (
+                <Typography
+                  sx={{
+                    fontWeight: 'bold',
+                    fontSize: 20,
+                    WebkitTextStroke: 'white',
+                  }}
+                  // color={themeDarkWhite}
+                  color='#E60023'
+                >
+                  Wrong password!!
+                </Typography>
+              ) : (
+                <></>
+              )}
             </Grid>
             <Grid
               item
@@ -101,13 +108,12 @@ export default function SignIn() {
               justifyContent='center'
               alignItems='center'
             >
+              {/* <div> */}
+
               <Button onClick={handleSubmit} size='large' variant='contained'>
                 Enter
               </Button>
-              {/* <Grid>
-                {' '}
-                {error ? <Typography>oops! wrong password!</Typography> : <></>}
-              </Grid> */}
+              {/* </div> */}
             </Grid>{' '}
           </Grid>
         </CssBaseline>

@@ -20,9 +20,9 @@ function App() {
         blue: '#87ceeb',
       },
       whites: {
-        lightWhite: '#F8F5FC',
+        lightWhite: '#F5F3FA',
         white: 'white',
-        darkWhite: '#F8F8FF',
+        darkWhite: '#EDE9F1 ',
       },
     },
     typography: {
@@ -36,7 +36,11 @@ function App() {
       <ThemeProvider theme={abAnjTheme}>
         <BrowserRouter>
           <Routes>
-            <Route exact path='/signin' element={<SignIn></SignIn>} />
+            <Route
+              exact
+              path='/signin'
+              element={<SignIn theme={abAnjTheme}></SignIn>}
+            />
             {/* // element={<SignIn theme={abAnjTheme} />} */}
             {/* /> */}
             <Route
