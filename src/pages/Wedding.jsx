@@ -10,7 +10,7 @@ import Popover from '../components/Popover.jsx';
 export default function Wedding() {
   // create the two dates
   const currentDate = new Date();
-  const weddingWeekend = new Date('2026-09-04T16:15:00Z');
+  const weddingWeekend = new Date('2026-07-31T16:15:00Z');
 
   // subtract the current date from the date of when the wedding is
   function subtractDates(currentDate, weddingDate) {
@@ -84,7 +84,7 @@ export default function Wedding() {
               Abigale & Andrew
             </Typography>
             <Typography variant='h6'>
-              September 3rd, 2026 - September 9th
+              July 31st, 2026 - August 3rd, 2026
             </Typography>
             <Typography variant='h6'>Etna, Sicily, Italy</Typography>
             <Typography variant='h5'>

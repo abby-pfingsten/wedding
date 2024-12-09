@@ -2,13 +2,13 @@ import * as React from 'react';
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
 import TextField from '@mui/material/TextField';
-import Link from '@mui/material/Link';
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { styled } from '@mui/material/styles';
 import background from '../images/wedding-background.jpg';
 import { useNavigate } from 'react-router-dom';
+import { useState } from 'react';
 
 const BackgroundDiv = styled('div')({
   height: '100vh',
@@ -24,8 +24,12 @@ const BackgroundDiv = styled('div')({
 });
 
 export default function SignIn() {
+  // navigate to home page
   const navigate = useNavigate();
 
+  const [error, setError] = useState(false);
+
+  // handle a user submitting the password
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -35,30 +39,38 @@ export default function SignIn() {
 
     if (passwordValue.toUpperCase() === 'MEELOISKING') {
       navigate('/');
+      setError(false);
+    } else {
+      setError(true);
     }
   };
 
   return (
-    // <ThemeProvider theme={theme}>
     <BackgroundDiv>
-      <Container component='main' maxWidth='xs'>
+      <Container component='main' maxWidth='xl'>
         <CssBaseline>
           <Grid
             container
             justifyContent='center'
             alignItems='center'
+            gap={10}
             spacing={2}
           >
             <Grid
               item
-              xs={12}
               display='flex'
               justifyContent='center'
               alignItems='center'
             >
-              <Typography color={'white'}>The Wedding Of</Typography>
+              <Typography
+                sx={{ fontSize: { xs: 35, md: 75 }, textAlign: 'center' }}
+                color={'white'}
+              >
+                The Wedding of Abby and Andrew{' '}
+              </Typography>
+              {/* <Typography color={'white'}>Abby and Andrew</Typography> */}
             </Grid>
-            <Grid
+            {/* <Grid
               item
               xs={12}
               display='flex'
@@ -66,7 +78,7 @@ export default function SignIn() {
               alignItems='center'
             >
               <Typography color={'white'}>Abby and Andrew</Typography>
-            </Grid>
+            </Grid> */}
             <Grid
               item
               xs={12}
@@ -75,6 +87,7 @@ export default function SignIn() {
               alignItems='center'
             >
               <TextField
+                sx={{ width: { md: '40%' } }}
                 fullWidth
                 id='password'
                 label='Please enter the phrase here'
@@ -88,16 +101,17 @@ export default function SignIn() {
               justifyContent='center'
               alignItems='center'
             >
-              <Link href='/'>
-                <Button onClick={handleSubmit} size='large' variant='contained'>
-                  Enter
-                </Button>
-              </Link>
+              <Button onClick={handleSubmit} size='large' variant='contained'>
+                Enter
+              </Button>
+              {/* <Grid>
+                {' '}
+                {error ? <Typography>oops! wrong password!</Typography> : <></>}
+              </Grid> */}
             </Grid>{' '}
           </Grid>
         </CssBaseline>
       </Container>
     </BackgroundDiv>
-    // {/* </ThemeProvider> */}
   );
 }
