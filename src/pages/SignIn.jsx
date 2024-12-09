@@ -10,22 +10,6 @@ import { styled } from '@mui/material/styles';
 import background from '../images/wedding-background.jpg';
 import { useNavigate } from 'react-router-dom';
 
-// const defaultTheme = createTheme();
-
-// const defaultTheme = createTheme({
-//   palette: {
-//     primary: {
-//       main: '#bca0d3',
-//     },
-//     secondary: {
-//       main: '#16a085',
-//     },
-//   },
-//   typography: {
-//     fontFamily: 'Playfair Display',
-//   },
-// });
-
 const BackgroundDiv = styled('div')({
   height: '100vh',
   width: '100%',
