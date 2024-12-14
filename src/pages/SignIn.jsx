@@ -40,8 +40,10 @@ export default function SignIn({ theme }) {
     if (passwordValue.toUpperCase() === 'MEELOISKING') {
       navigate('/');
       setError(false);
+      localStorage.setItem('loggedInUser', JSON.stringify(true));
     } else {
       setError(true);
+      localStorage.setItem('loggedInUser', JSON.stringify(false));
     }
   };
 
