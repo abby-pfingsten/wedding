@@ -14,8 +14,6 @@ import Home from './pages/Home';
 
 const PrivateRoutes = () => {
   const loggedInUser = localStorage.getItem('loggedInUser');
-  console.log(loggedInUser);
-
   return loggedInUser ? <Outlet /> : <Navigate to='/signin' />;
 };
 
@@ -53,20 +51,7 @@ function App() {
               element={<SignIn theme={abAnjTheme}></SignIn>}
             />
             <Route element={<PrivateRoutes />}>
-              {/* // element={<SignIn theme={abAnjTheme} />} */}
-              {/* /> */}
-              <Route
-                exact
-                path='/'
-                // element={<Home />}
-                element={<Home theme={abAnjTheme} />}
-              />
-              {/* <Route
-              exact
-              path='/wedding'
-              element={<Wedding />}
-              // element={<Wedding theme={abAnjTheme} />}
-            /> */}
+              <Route exact path='/' element={<Home theme={abAnjTheme} />} />
             </Route>
           </Routes>
         </BrowserRouter>
