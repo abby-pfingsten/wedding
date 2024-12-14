@@ -12,7 +12,7 @@ import TimelineConnector from '@mui/lab/TimelineConnector';
 import TimelineContent from '@mui/lab/TimelineContent';
 // import TimelineDot from '@mui/lab/TimelineDot';
 // import pictures
-import freshmanFormal from '../images/our-story/freshman_year_formal.JPG';
+import freshmanFormal from '../images/our-story/freshman_year_formal.jpg';
 import freshmanAddams from '../images/our-story/freshman_year_addams.JPEG';
 import sophomoreYear from '../images/our-story/sophomore_year.JPG';
 import juniorYear from '../images/our-story/junior_year.JPG';
