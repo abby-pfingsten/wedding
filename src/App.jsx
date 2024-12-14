@@ -1,12 +1,21 @@
 import * as React from 'react';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import {
+  BrowserRouter,
+  Outlet,
+  Route,
+  Routes,
+  Navigate,
+} from 'react-router-dom';
 import CssBaseline from '@mui/material/CssBaseline';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 
 import SignIn from './pages/SignIn';
 import Home from './pages/Home';
 
-// import { useState } from 'react'
+const PrivateRoutes = () => {
+  const loggedInUser = localStorage.getItem('loggedInUser');
+  return loggedInUser ? <Outlet /> : <Navigate to='/signin' />;
+};
 
 function App() {
   const abAnjTheme = createTheme({
@@ -20,9 +29,9 @@ function App() {
         blue: '#87ceeb',
       },
       whites: {
-        lightWhite: '#F8F5FC',
+        lightWhite: '#F5F3FA',
         white: 'white',
-        darkWhite: '#F8F8FF',
+        darkWhite: '#EDE9F1 ',
       },
     },
     typography: {
@@ -36,21 +45,14 @@ function App() {
       <ThemeProvider theme={abAnjTheme}>
         <BrowserRouter>
           <Routes>
-            <Route exact path='/signin' element={<SignIn></SignIn>} />
-            {/* // element={<SignIn theme={abAnjTheme} />} */}
-            {/* /> */}
             <Route
               exact
-              path='/'
-              // element={<Home />}
-              element={<Home theme={abAnjTheme} />}
+              path='/signin'
+              element={<SignIn theme={abAnjTheme}></SignIn>}
             />
-            {/* <Route
-              exact
-              path='/wedding'
-              element={<Wedding />}
-              // element={<Wedding theme={abAnjTheme} />}
-            /> */}
+            <Route element={<PrivateRoutes />}>
+              <Route exact path='/' element={<Home theme={abAnjTheme} />} />
+            </Route>
           </Routes>
         </BrowserRouter>
       </ThemeProvider>
