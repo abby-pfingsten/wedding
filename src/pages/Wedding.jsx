@@ -5,7 +5,7 @@ import * as React from 'react';
 import ImageList from '@mui/material/ImageList';
 import ImageListItem from '@mui/material/ImageListItem';
 import weddingPagePics from '../data/wedding-page-data.jsx';
-import Popover from '../components/Popover.jsx';
+// import Popover from '../components/Popover.jsx';
 
 export default function Wedding() {
   // create the two dates

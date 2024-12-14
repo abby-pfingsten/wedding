@@ -28,7 +28,6 @@ function ResponsiveHeader({ theme }) {
   // code from https://github.com/mui/material-ui/blob/v5.16.4/docs/data/material/getting-started/templates/landing-page/components/AppAppBar.js
   const scrollToSection = (sectionId) => {
     const sectionElement = document.getElementById(sectionId);
-    console.log(sectionElement);
     const offset = 128;
     if (sectionElement) {
       const targetScroll = sectionElement.offsetTop - offset;
