@@ -38,35 +38,6 @@ export default function Wedding() {
           <Suspense>
             <EngagementPics />
           </Suspense>
-          {/* <Grid>
-            <ImageList
-              sx={{
-                width: '100%',
-                height: 650,
-                '@media (max-width: 600px)': {
-                  width: 350, // reduce columns for mobile
-                  height: 350,
-                },
-                '@media (max-width: 900px)': {
-                  width: '100%', // reduce columns for tablet
-                  height: 450,
-                },
-              }}
-              variant='quilted'
-              cols={6}
-              rowHeight={110}
-            >
-              {weddingPagePics.map((item) => (
-                <ImageListItem
-                  key={item.key}
-                  cols={item.cols || 1}
-                  rows={item.rows || 1}
-                >
-                  <img src={item.img} alt={item.title} />
-                </ImageListItem>
-              ))}
-            </ImageList>
-          </Grid> */}
           {/* Title and Wedding Details */}
           <Grid
             offset={6}
