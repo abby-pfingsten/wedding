@@ -2,10 +2,10 @@ import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
 import { Typography } from '@mui/material';
 import * as React from 'react';
-import ImageList from '@mui/material/ImageList';
-import ImageListItem from '@mui/material/ImageListItem';
-import weddingPagePics from '../data/wedding-page-data.jsx';
+import { Suspense, lazy } from 'react';
 // import Popover from '../components/Popover.jsx';
+
+const EngagementPics = lazy(() => import('../components/EngagementPics.jsx'));
 
 export default function Wedding() {
   // create the two dates
@@ -34,7 +34,11 @@ export default function Wedding() {
             justifyContent: 'space-between',
           }}
         >
-          <Grid>
+          {/* Engagement Picture Images */}
+          <Suspense>
+            <EngagementPics />
+          </Suspense>
+          {/* <Grid>
             <ImageList
               sx={{
                 width: '100%',
@@ -62,7 +66,8 @@ export default function Wedding() {
                 </ImageListItem>
               ))}
             </ImageList>
-          </Grid>
+          </Grid> */}
+          {/* Title and Wedding Details */}
           <Grid
             offset={6}
             sx={{

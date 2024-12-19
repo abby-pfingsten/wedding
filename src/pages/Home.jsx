@@ -1,6 +1,5 @@
 import * as React from 'react';
 import CssBaseline from '@mui/material/CssBaseline';
-import Container from '@mui/material/Container';
 import { ThemeProvider } from '@mui/material/styles';
 import Header from '../components/Header';
 import Wedding from '../pages/Wedding';
