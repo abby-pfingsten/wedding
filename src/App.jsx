@@ -12,6 +12,8 @@ import { ThemeProvider, createTheme } from '@mui/material/styles';
 import SignIn from './pages/SignIn';
 import Home from './pages/Home';
 
+// make it so that only people with the password can
+// see the site
 const PrivateRoutes = () => {
   const loggedInUser = localStorage.getItem('loggedInUser');
   return loggedInUser ? <Outlet /> : <Navigate to='/signin' />;
