@@ -39,7 +39,10 @@ function Schedule() {
         >
           {scheduleData.map((item, index) => (
             <Item elevation={8} key={index} className='schedule'>
-              <h3 className='schedule__title'>{item.day}</h3>
+              <div className='schedule__title'>
+                <h3 className='schedule__title--day'>{item.day}</h3>
+                <p className='schedule__title--summary'>{item.daySummary}</p>
+              </div>
               {item.activities.map((activity, index) => (
                 <div className='schedule__activities' key={index}>
                   <p className='schedule__activities--time'>{activity.time}</p>

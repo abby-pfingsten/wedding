@@ -1,8 +1,17 @@
 .schedule {
   &__title {
-    font-weight: bold;
-    text-align: center;
-    font-size: 22px;
+    display: flex;
+    flex-direction: column;
+    &--day {
+      margin: 0;
+      font-weight: bold;
+      text-align: center;
+      font-size: 22px;
+    }
+    &--summary {
+      margin: 0;
+      text-align: center;
+    }
   }
   &__activities {
     display: flex;
