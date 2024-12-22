@@ -24,11 +24,6 @@ function App() {
     palette: {
       primary: {
         main: '#bca0d3',
-        // #12a903
-      },
-      secondary: {
-        main: '#16a085',
-        blue: '#87ceeb',
       },
       whites: {
         lightWhite: '#F5F3FA',

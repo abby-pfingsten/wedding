@@ -9,8 +9,7 @@ import Schedule from '../pages/Schedule';
 
 export default function Home({ theme }) {
   return (
-    // <Container id='Home'>
-    <ThemeProvider theme={theme}>
+    <ThemeProvider  theme={theme}>
       <CssBaseline />
       <Header theme={theme} />
       <Wedding />
@@ -18,6 +17,5 @@ export default function Home({ theme }) {
       <OurStory />
       <FAQ />
     </ThemeProvider>
-    // </Container>
   );
 }

@@ -9,21 +9,26 @@ import scheduleData from '../data/schedule-data.jsx';
 
 function Schedule() {
   const Item = styled(Paper)(({ theme }) => ({
-    backgroundColor: '#fff',
+    // height: 350,
+    width: 450,
+    backgroundColor: '#F5F3FA',
     ...theme.typography.body2,
     padding: theme.spacing(2),
-    textAlign: 'center',
-    color: theme.palette.text.secondary,
-    ...theme.applyStyles('dark', {
-      backgroundColor: '#1A2027',
-    }),
+    textAlign: 'left',
+    color: '#a78ebd',
+    // color: theme.palette.text.secondary,
+
+    // ...theme.applyStyles('dark', {
+    // //   backgroundColor: 'blue',1
+    // }),
   }));
   return (
-    <>
-      <Container id='Schedule'>
+    <Container id='Schedule' maxWidth={false}>
+      <Grid>
         <Typography variant='h2' align='left'>
           Schedule
         </Typography>
+        <br></br>
         <Grid
           sx={{
             display: 'flex',
@@ -31,24 +36,38 @@ function Schedule() {
               xs: 'column',
               sm: 'row',
             },
-            justifyContent: 'space-evenly',
-            // alignItems: 'left',
+            gap: 5,
             width: '100%',
           }}
         >
           {scheduleData.map((item, index) => (
-            <Item key={index}>
-              <Box sx={{ fontWeight: 'bold', textTransform: 'uppercase' }}>
-                {item.day}
-                <ul>
-                  <li></li>
-                </ul>
-              </Box>
+            <Item elevation={8} key={index}>
+              {/* <Box> */}
+              <h4>{item.day}</h4>
+              {/* </Box>
+              <Box sx={{ fontWeight: 'bold', textAlign: 'left' }}> */}
+              <div
+                style={{
+                  display: 'flex',
+                  flexDirection: 'column',
+                  justifyContent: 'space-between',
+                  height: '100%',
+                }}
+              >
+                {item.activities.map((item, index) => (
+                  <div key={index}>
+                    {' '}
+                    <div>{item.time}</div>
+                    <div>{item.description}</div>
+                  </div>
+                ))}
+              </div>
+              {/* </Box> */}
             </Item>
           ))}
         </Grid>
-      </Container>
-    </>
+      </Grid>
+    </Container>
   );
 }
 
