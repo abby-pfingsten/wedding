@@ -1,0 +1,14 @@
+.schedule {
+  &__title {
+    font-weight: bold;
+    text-align: center;
+  }
+  &__activities {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    &--time {
+      font-weight: bold;
+    }
+  }
+}
