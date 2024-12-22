@@ -9,7 +9,7 @@ import scheduleData from '../data/schedule-data.jsx';
 
 function Schedule() {
   const Item = styled(Paper)(({ theme }) => ({
-    // height: 350,
+    // height: 460,
     width: 450,
     backgroundColor: '#F5F3FA',
     ...theme.typography.body2,
@@ -41,28 +41,32 @@ function Schedule() {
           }}
         >
           {scheduleData.map((item, index) => (
-            <Item elevation={8} key={index}>
-              {/* <Box> */}
-              <h4>{item.day}</h4>
-              {/* </Box>
-              <Box sx={{ fontWeight: 'bold', textAlign: 'left' }}> */}
-              <div
+            <Item elevation={8} key={index} className='schedule'>
+              <h4 className='schedule__title'>{item.day}</h4>
+              {/* <div
                 style={{
                   display: 'flex',
                   flexDirection: 'column',
-                  justifyContent: 'space-between',
+                  justifyContent: 'space-evenly',
                   height: '100%',
                 }}
-              >
-                {item.activities.map((item, index) => (
-                  <div key={index}>
-                    {' '}
-                    <div>{item.time}</div>
-                    <div>{item.description}</div>
-                  </div>
-                ))}
-              </div>
-              {/* </Box> */}
+              > */}
+              {item.activities.map((activity, index) => (
+                <div
+                  key={index}
+                  style={{
+                    display: 'flex',
+                    flexDirection: 'column',
+                    justifyContent: 'space-evenly',
+                    // height: '100%',
+                  }}
+                >
+                  {' '}
+                  <p>{activity.time}</p>
+                  <p>{activity.description}</p>
+                </div>
+              ))}
+              {/* </div> */}
             </Item>
           ))}
         </Grid>
