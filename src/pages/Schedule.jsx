@@ -18,11 +18,6 @@ function Schedule() {
     padding: theme.spacing(2),
     textAlign: 'left',
     color: '#a78ebd',
-    // color: theme.palette.text.secondary,
-
-    // ...theme.applyStyles('dark', {
-    // //   backgroundColor: 'blue',1
-    // }),
   }));
   return (
     <Container id='Schedule' maxWidth={false}>
@@ -44,18 +39,9 @@ function Schedule() {
         >
           {scheduleData.map((item, index) => (
             <Item elevation={8} key={index} className='schedule'>
-              <h4 className='schedule__title'>{item.day}</h4>
+              <h3 className='schedule__title'>{item.day}</h3>
               {item.activities.map((activity, index) => (
-                <div
-                  className='schedule__activities'
-                  key={index}
-                  //   style={{
-                  //     display: 'flex',
-                  //     flexDirection: 'column',
-                  //     justifyContent: 'space-evenly',
-                  //     // height: '100%',
-                  //   }}
-                >
+                <div className='schedule__activities' key={index}>
                   <p className='schedule__activities--time'>{activity.time}</p>
                   <p className='schedule__activities--description'>
                     {activity.description}

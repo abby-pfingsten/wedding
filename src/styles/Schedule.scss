@@ -2,13 +2,20 @@
   &__title {
     font-weight: bold;
     text-align: center;
+    font-size: 22px;
   }
   &__activities {
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    // justify-content: space-evenly;
+
     &--time {
+      margin-bottom: 0;
+      font-size: 16px;
       font-weight: bold;
+    }
+    &--description {
+      margin: 0;
     }
   }
 }
