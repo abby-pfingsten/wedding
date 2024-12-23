@@ -3,7 +3,10 @@ import Grid from '@mui/material/Grid';
 import { Typography } from '@mui/material';
 import * as React from 'react';
 import { Suspense, lazy } from 'react';
+import { FaPagelines } from 'react-icons/fa';
 // import Popover from '../components/Popover.jsx';
+
+import '../styles/Wedding.scss';
 
 const EngagementPics = lazy(() => import('../components/EngagementPics.jsx'));
 
@@ -59,10 +62,16 @@ export default function Wedding() {
             >
               Abigale & Andrew
             </Typography>
+            <FaPagelines className='icon' />
+
             <Typography variant='h6'>
               July 30th, 2026 - August 2nd, 2026
             </Typography>
+            <FaPagelines className='icon' />
+
             <Typography variant='h6'>Etna, Sicily, Italy</Typography>
+            <FaPagelines className='icon' />
+
             <Typography variant='h5'>
               {subtractDates(currentDate, weddingWeekend)} Days To Go!
             </Typography>
