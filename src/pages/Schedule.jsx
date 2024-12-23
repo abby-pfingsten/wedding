@@ -22,7 +22,7 @@ function Schedule() {
   return (
     <Container id='Schedule' maxWidth={false}>
       <Grid>
-        <Typography variant='h2' align='left'>
+        <Typography variant='h2' align='center'>
           Schedule
         </Typography>
         <br></br>
@@ -46,6 +46,9 @@ function Schedule() {
               {item.activities.map((activity, index) => (
                 <div className='schedule__activities' key={index}>
                   <p className='schedule__activities--time'>{activity.time}</p>
+                  <p className='schedule__activities--location'>
+                    {activity.location}
+                  </p>
                   <p className='schedule__activities--description'>
                     {activity.description}
                   </p>

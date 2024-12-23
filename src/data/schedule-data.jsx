@@ -13,7 +13,7 @@ const schedule = [
         time: '9pm:',
         location: 'Location is TBD',
         description:
-          'After dinner, transportation will be provided to get to the hotel',
+          'After dinner, transportation will be provided to get to the hotel in Etna.',
       },
     ],
   },
@@ -24,7 +24,7 @@ const schedule = [
       {
         time: '9am-11:30am:',
         location: 'Antico Borgo',
-        description: 'Breakfast, provided at the hotel',
+        description: 'Breakfast, provided at the hotel.',
       },
       {
         time: '12pm:',
@@ -33,14 +33,14 @@ const schedule = [
       },
       {
         time: '2pm-5pm:',
-        location: 'Barone di Vilagrande or Antico Borgo',
-        description: 'Free time to get ready before the ceremony',
+        location: 'Barone di Villagrande Winery or Antico Borgo',
+        description: 'Free time to get ready before the ceremony!',
       },
       {
         time: '5pm-1am:',
-        location: 'Barone di Vilagrande',
+        location: 'Barone di Villagrande Winery',
         description:
-          'Ceremony and wedding festivities. Transportation will be arranged for guests to get back to their hotel',
+          'Ceremony and wedding festivities. Exact wedding schedule will be provided at the winery. Transportation will be arranged for guests to get back to their hotel',
       },
     ],
   },
@@ -51,24 +51,24 @@ const schedule = [
       {
         time: '9am-11:30am:',
         location: 'Antico Borgo',
-        description: 'Breakfast, provided at the hotel',
+        description: 'Breakfast, provided at the hotel.',
       },
       {
         time: '12pm-5pm:',
         location: 'Location is TBD',
         description:
-          'Beach day!! We will rent out a beach club, and spend a few hours celebrating the wedding. Lunch will be provided. ',
+          'Beach day!! We will rent out a beach club, and spend a few hours celebrating our wedding. Lunch and drinks will be provided. ',
       },
       {
         time: '5pm-7pm:',
-        location: 'Barone di Vilagrande or Antico Borgo',
+        location: 'Barone di Villagrande or Antico Borgo',
         description:
-          'Transportation will be provided back to the hotels, where guests will have a chance to decompress and get ready for dinner',
+          'Transportation will be provided back to the hotels, where guests will have a chance to decompress and get ready for dinner.',
       },
       {
         time: '7:30pm:',
         location: 'Location is TBD',
-        description: 'Dinner at a local Trattoria',
+        description: 'Dinner at a local Trattoria.',
       },
     ],
   },
@@ -78,8 +78,8 @@ const schedule = [
     activities: [
       {
         time: '9am-11am:',
-        location: 'Barone di Vilagrande or Antico Borgo',
-        description: 'Checkout from the hotel will be at 11am',
+        location: 'Barone di Villagrande or Antico Borgo',
+        description: 'Checkout from the hotel will be at 11am.',
       },
       {
         time: '11:30am-1:30pm:',
