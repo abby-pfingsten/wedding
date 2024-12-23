@@ -11,6 +11,9 @@ import TimelineSeparator from '@mui/lab/TimelineSeparator';
 import TimelineConnector from '@mui/lab/TimelineConnector';
 import TimelineContent from '@mui/lab/TimelineContent';
 
+import Divider from '@mui/material/Divider';
+import { FaPagelines } from 'react-icons/fa';
+
 // import styling
 import '../styles/OurStory.scss';
 
@@ -19,7 +22,12 @@ import ourStoryPics from '../data/our-story-data.jsx';
 
 export default function OurStory() {
   return (
-    <Container id='Our Story'>
+    <Container id='Our Story' maxWidth={false}>
+      <br></br>
+      <Divider>
+        <FaPagelines style={{ color: '#bca0d3' }}></FaPagelines>
+      </Divider>
+      <br></br>
       <Typography variant='h2' align='center'>
         Our Story
       </Typography>

@@ -4,7 +4,9 @@ import Grid from '@mui/material/Grid';
 import { Typography } from '@mui/material';
 import Paper from '@mui/material/Paper';
 import { experimentalStyled as styled } from '@mui/material/styles';
-// import Box from '@mui/material/Box';
+import Divider from '@mui/material/Divider';
+import { FaPagelines } from 'react-icons/fa';
+
 import scheduleData from '../data/schedule-data.jsx';
 // import styling
 import '../styles/Schedule.scss';
@@ -21,6 +23,10 @@ function Schedule() {
   }));
   return (
     <Container id='Schedule' maxWidth={false}>
+      <Divider>
+        <FaPagelines style={{ color: '#bca0d3' }}></FaPagelines>
+      </Divider>
+
       <Grid>
         <Typography variant='h2' align='center'>
           Schedule
