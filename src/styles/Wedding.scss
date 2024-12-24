@@ -2,9 +2,10 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-between;
 }
 .icon {
   color: #bca0d3;
-  margin: 0;
+  margin: 10px;
   font-size: 30px;
 }

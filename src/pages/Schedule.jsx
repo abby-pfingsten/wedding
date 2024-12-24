@@ -25,7 +25,6 @@ function Schedule() {
   return (
     <Container id='Schedule' maxWidth={false}>
       <br></br>
-      <br></br>
       <Divider>
         <FaPagelines style={{ color: '#bca0d3' }}></FaPagelines>
       </Divider>
