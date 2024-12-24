@@ -52,29 +52,34 @@ export default function Wedding() {
               width: '100%',
             }}
           >
-            <Typography
-              variant='h2'
-              sx={{
-                '@media (max-width: 600px)': {
-                  fontSize: 40,
-                },
-              }}
+            <div
+              className='test'
+              
             >
-              Abigale & Andrew
-            </Typography>
-            <FaPagelines className='icon' />
+              <Typography
+                variant='h2'
+                sx={{
+                  '@media (max-width: 600px)': {
+                    fontSize: 40,
+                  },
+                }}
+              >
+                Abigale & Andrew
+              </Typography>
+              <FaPagelines className='icon' />
 
-            <Typography variant='h6'>
-              July 30th, 2026 - August 2nd, 2026
-            </Typography>
-            <FaPagelines className='icon' />
+              <Typography variant='h6'>
+                July 30th, 2026 - August 2nd, 2026
+              </Typography>
+              <FaPagelines className='icon' />
 
-            <Typography variant='h6'>Etna, Sicily, Italy</Typography>
-            <FaPagelines className='icon' />
+              <Typography variant='h6'>Etna, Sicily, Italy</Typography>
+              <FaPagelines className='icon' />
 
-            <Typography variant='h5'>
-              {subtractDates(currentDate, weddingWeekend)} Days To Go!
-            </Typography>
+              <Typography variant='h5'>
+                {subtractDates(currentDate, weddingWeekend)} Days To Go!
+              </Typography>
+            </div>
           </Grid>
         </Grid>
       </Container>

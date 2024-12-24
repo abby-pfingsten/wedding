@@ -19,14 +19,17 @@ function Schedule() {
     ...theme.typography.body2,
     padding: theme.spacing(2),
     textAlign: 'left',
-    color: '#a78ebd',
+    // color: '#a78ebd',
+    color: 'rgb(167, 142, 189)',
   }));
   return (
     <Container id='Schedule' maxWidth={false}>
+      <br></br>
+      <br></br>
       <Divider>
         <FaPagelines style={{ color: '#bca0d3' }}></FaPagelines>
       </Divider>
-
+      <br></br>
       <Grid>
         <Typography variant='h2' align='center'>
           Schedule
@@ -47,7 +50,7 @@ function Schedule() {
             <Item elevation={8} key={index} className='schedule'>
               <div className='schedule__title'>
                 <h3 className='schedule__title--day'>{item.day}</h3>
-                <p className='schedule__title--summary'>{item.daySummary}</p>
+                <h4 className='schedule__title--summary'>{item.daySummary}</h4>
               </div>
               {item.activities.map((activity, index) => (
                 <div className='schedule__activities' key={index}>

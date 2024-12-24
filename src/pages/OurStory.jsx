@@ -24,6 +24,7 @@ export default function OurStory() {
   return (
     <Container id='Our Story' maxWidth={false}>
       <br></br>
+      <br></br>
       <Divider>
         <FaPagelines style={{ color: '#bca0d3' }}></FaPagelines>
       </Divider>
