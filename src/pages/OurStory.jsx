@@ -10,72 +10,30 @@ import TimelineItem from '@mui/lab/TimelineItem';
 import TimelineSeparator from '@mui/lab/TimelineSeparator';
 import TimelineConnector from '@mui/lab/TimelineConnector';
 import TimelineContent from '@mui/lab/TimelineContent';
-// import TimelineDot from '@mui/lab/TimelineDot';
-// import pictures
-import freshmanFormal from '../images/our-story/freshman_year_formal.JPG';
-import freshmanAddams from '../images/our-story/freshman_year_addams.JPEG';
-import sophomoreYear from '../images/our-story/sophomore_year.JPG';
-import juniorYear from '../images/our-story/junior_year.JPG';
-import seniorYear from '../images/our-story/senior_year.JPG';
-import meelo from '../images/our-story/meelo_thanksgiving.jpg';
+
+import Divider from '@mui/material/Divider';
+import { FaPagelines } from 'react-icons/fa';
+
 // import styling
 import '../styles/OurStory.scss';
 
+// import array with data
+import ourStoryPics from '../data/our-story-data.jsx';
+
 export default function OurStory() {
-  let ourStoryArray = [];
-
-  ourStoryArray = [
-    {
-      key: 1,
-      header: 'August 2016',
-      subHeader: 'Semi-Formal',
-      text: 'We first became friends at the beginning of our freshman year, after Abby successfully inserted herself into the Stever 1 crew. Andrew had his first semi-formal in September and Abby was his third choice!',
-      image: freshmanFormal,
-    },
-    {
-      key: 2,
-      header: 'October/November 2016',
-      subHeader: 'Addams Family Performance',
-      text: 'This was the first time Andrew saw Abby performing, as Wednesday in The Addams Family. We both had feelings for each other at this point, but we were trying to hide it. Andrew asked Abby to be his girlfriend shortly after this in November.',
-      image: freshmanAddams,
-    },
-    {
-      key: 3,
-      header: 'November 2017',
-      subHeader: 'First Thanksgiving Together',
-      text: 'We proceeded to spend the rest of our sophomore...',
-      image: sophomoreYear,
-    },
-    {
-      key: 4,
-      header: 'May 2018',
-      subHeader: 'Speakeasy in Detroit',
-      text: 'Junior...',
-      image: juniorYear,
-    },
-    {
-      key: 5,
-      header: 'November 2019',
-      subHeader: 'Abby 21st B-day Dinner',
-      text: 'And senior years of college together',
-      image: seniorYear,
-    },
-    {
-      key: 6,
-      header: 'November 2020',
-      subHeader: 'Meelo!',
-      text: 'After finishing college in May of 2020, we finally got our own apartment together and adopted the best most special boy in the entire world.',
-      image: meelo,
-    },
-  ];
-
   return (
-    <Container id='Our Story'>
+    <Container id='Our Story' maxWidth={false}>
+      <br></br>
+      <br></br>
+      <Divider>
+        <FaPagelines style={{ color: '#bca0d3' }}></FaPagelines>
+      </Divider>
+      <br></br>
       <Typography variant='h2' align='center'>
         Our Story
       </Typography>
       <Timeline position='alternate'>
-        {ourStoryArray.map((timelineItem) => (
+        {ourStoryPics.map((timelineItem) => (
           <TimelineItem key={timelineItem.key}>
             <TimelineSeparator>
               <TimelineConnector sx={{ height: 70 }} />

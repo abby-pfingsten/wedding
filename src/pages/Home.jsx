@@ -5,15 +5,17 @@ import Header from '../components/Header';
 import Wedding from '../pages/Wedding';
 import OurStory from './OurStory';
 import FAQ from '../pages/FAQ';
+import Schedule from '../pages/Schedule';
 
 export default function Home({ theme }) {
   return (
-    <ThemeProvider theme={theme}>
+    <ThemeProvider  theme={theme}>
       <CssBaseline />
       <Header theme={theme} />
       <Wedding />
-      <OurStory></OurStory>
-      <FAQ  />
+      <Schedule />
+      <OurStory />
+      <FAQ />
     </ThemeProvider>
   );
 }

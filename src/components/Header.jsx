@@ -10,7 +10,7 @@ import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
 
-const pages = ['Home', 'Schedule', 'Our Story', 'Q&A', 'RSVP'];
+const pages = ['Wedding', 'Schedule', 'Our Story', 'Q&A', 'RSVP'];
 
 function ResponsiveHeader({ theme }) {
   const [anchorNav, setAnchorNav] = React.useState(null);
@@ -28,7 +28,6 @@ function ResponsiveHeader({ theme }) {
   // code from https://github.com/mui/material-ui/blob/v5.16.4/docs/data/material/getting-started/templates/landing-page/components/AppAppBar.js
   const scrollToSection = (sectionId) => {
     const sectionElement = document.getElementById(sectionId);
-    console.log(sectionElement);
     const offset = 128;
     if (sectionElement) {
       const targetScroll = sectionElement.offsetTop - offset;

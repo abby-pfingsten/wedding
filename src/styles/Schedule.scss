@@ -1,0 +1,39 @@
+.schedule {
+  &__title {
+    display: flex;
+    flex-direction: column;
+    &--day {
+      margin: 0;
+      font-weight: bold;
+      text-align: center;
+      font-size: 22px;
+    }
+    &--summary {
+      margin: 0;
+      text-align: center;
+    }
+  }
+  &__activities {
+    display: flex;
+    flex-direction: column;
+    // justify-content: space-evenly;
+
+    &--time {
+      margin-bottom: 0;
+      font-size: 16px;
+      font-weight: bold;
+    }
+    &--location {
+      margin: 0;
+      font-style: italic;
+      font-size: 12px;
+    }
+    &--description {
+      margin: 0;
+    }
+  }
+  &:hover {
+    transform: scale(1.05);
+    transition: transform 0.5s ease-in-out;
+  }
+}
