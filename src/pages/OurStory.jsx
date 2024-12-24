@@ -52,8 +52,33 @@ export default function OurStory() {
               />
               <TimelineConnector />
             </TimelineSeparator>
-            <TimelineContent>
-              <Grid container direction='column' className='timeLine'>
+            <TimelineContent
+              className='test'
+              sx={{
+                display: 'flex',
+                flexDirection: 'column',
+                width: '100%',
+                alignSelf: timelineItem.key % 2 === 0 ? 'left' : 'right',
+                justifyContent:
+                  timelineItem.key % 2 === 0 ? 'flex-end' : 'flex-start',
+                textAlign: timelineItem.key % 2 === 0 ? 'right' : 'left',
+                marginLeft: timelineItem.key % 2 === 0 ? 'auto' : 0,
+                marginRight: timelineItem.key % 2 === 0 ? 0 : 'auto',
+              }}
+            >
+              <Grid
+                container
+                direction='column'
+                className='timeLine'
+                sx={{
+                  width: '60%',
+                  display: 'flex',
+                  flexFlow: 'column',
+                  justifyContent:
+                    timelineItem.key % 2 === 0 ? 'flex-end' : 'flex-start',
+                  textAlign: timelineItem.key % 2 === 0 ? 'right' : 'left',
+                }}
+              >
                 <Grid item xs={2} sm={4} md={4} className='timeLine__header'>
                   {' '}
                   {timelineItem.header}
