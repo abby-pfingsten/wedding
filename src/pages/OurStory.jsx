@@ -69,22 +69,11 @@ export default function OurStory() {
                 className='timeLine'
                 sx={{ display: 'flex', flexFlow: 'column', width: '60%' }}
               >
-                {/* <Grid item xs={2}  sm={4} md={4} className='timeLine__header'> */}
                 <h4 className='timeLine__header'>{timelineItem.header}</h4>
                 <h5 className='timeLine__subHeader'>
                   {timelineItem.subHeader}
                 </h5>
                 <p className='timeLine__text'> {timelineItem.text}</p>
-
-                {/* </Grid> */}
-                {/* <Grid item xs={2} sm={4} md={4} className='timeLine__subHeader'>
-                  {' '}
-                  {timelineItem.subHeader}
-                </Grid>
-                <Grid className='timeLine__text' item xs={2} sm={4} md={4}>
-                  {' '}
-                  {timelineItem.text}
-                </Grid> */}
               </Grid>
             </TimelineContent>
           </TimelineItem>
