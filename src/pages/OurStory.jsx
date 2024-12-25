@@ -36,7 +36,7 @@ export default function OurStory() {
         {ourStoryPics.map((timelineItem) => (
           <TimelineItem key={timelineItem.key}>
             <TimelineSeparator>
-              <TimelineConnector sx={{ height: 70 }} />
+              <TimelineConnector />
               <Box
                 component='img'
                 sx={{
@@ -67,11 +67,7 @@ export default function OurStory() {
                 container
                 direction='column'
                 className='timeLine'
-                sx={{
-                  width: '60%',
-                  display: 'flex',
-                  flexFlow: 'column',
-                }}
+                sx={{ display: 'flex', flexFlow: 'column', width: '60%' }}
               >
                 {/* <Grid item xs={2}  sm={4} md={4} className='timeLine__header'> */}
                 <h4 className='timeLine__header'>{timelineItem.header}</h4>
