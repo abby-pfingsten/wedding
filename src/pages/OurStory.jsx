@@ -56,14 +56,11 @@ export default function OurStory() {
               className='test'
               sx={{
                 display: 'flex',
-                flexDirection: 'column',
+                flexDirection: timelineItem.key % 2 === 0 ? 'row' : 'column',
                 width: '100%',
                 alignSelf: timelineItem.key % 2 === 0 ? 'left' : 'right',
                 justifyContent:
                   timelineItem.key % 2 === 0 ? 'flex-end' : 'flex-start',
-                textAlign: timelineItem.key % 2 === 0 ? 'right' : 'left',
-                marginLeft: timelineItem.key % 2 === 0 ? 'auto' : 0,
-                marginRight: timelineItem.key % 2 === 0 ? 0 : 'auto',
               }}
             >
               <Grid
@@ -74,23 +71,24 @@ export default function OurStory() {
                   width: '60%',
                   display: 'flex',
                   flexFlow: 'column',
-                  justifyContent:
-                    timelineItem.key % 2 === 0 ? 'flex-end' : 'flex-start',
-                  textAlign: timelineItem.key % 2 === 0 ? 'right' : 'left',
                 }}
               >
-                <Grid item xs={2} sm={4} md={4} className='timeLine__header'>
-                  {' '}
-                  {timelineItem.header}
-                </Grid>
-                <Grid item xs={2} sm={4} md={4} className='timeLine__subHeader'>
+                {/* <Grid item xs={2}  sm={4} md={4} className='timeLine__header'> */}
+                <h4 className='timeLine__header'>{timelineItem.header}</h4>
+                <h5 className='timeLine__subHeader'>
+                  {timelineItem.subHeader}
+                </h5>
+                <p className='timeLine__text'> {timelineItem.text}</p>
+
+                {/* </Grid> */}
+                {/* <Grid item xs={2} sm={4} md={4} className='timeLine__subHeader'>
                   {' '}
                   {timelineItem.subHeader}
                 </Grid>
                 <Grid className='timeLine__text' item xs={2} sm={4} md={4}>
                   {' '}
                   {timelineItem.text}
-                </Grid>
+                </Grid> */}
               </Grid>
             </TimelineContent>
           </TimelineItem>
