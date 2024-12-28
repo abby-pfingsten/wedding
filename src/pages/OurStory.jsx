@@ -20,7 +20,12 @@ import '../styles/OurStory.scss';
 // import array with data
 import ourStoryPics from '../data/our-story-data.jsx';
 
+import { useMediaQuery, useTheme } from '@mui/material';
+
 export default function OurStory() {
+  const theme = useTheme();
+  const isSmallScreen = useMediaQuery(theme.breakpoints.down('lg'));
+
   return (
     <Container id='Our Story' maxWidth={false}>
       <br></br>
@@ -32,7 +37,7 @@ export default function OurStory() {
       <Typography variant='h2' align='center'>
         Our Story
       </Typography>
-      <Timeline position= 'left'>
+      <Timeline position={isSmallScreen ? 'alternate' : 'alternate'}>
         {ourStoryPics.map((timelineItem) => (
           <TimelineItem key={timelineItem.key}>
             <TimelineSeparator>
@@ -61,7 +66,11 @@ export default function OurStory() {
                 alignSelf: timelineItem.key % 2 === 0 ? 'left' : 'right',
                 justifyContent:
                   timelineItem.key % 2 === 0 ? 'flex-end' : 'flex-start',
-                flex: 'auto !important',
+                flex: {
+                  xs: 'auto !important',
+                  // sm: 'auto !important',
+                  md: '1 1 0% !important',
+                },
               }}
             >
               <Grid
