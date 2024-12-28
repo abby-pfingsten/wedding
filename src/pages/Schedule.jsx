@@ -13,13 +13,11 @@ import '../styles/Schedule.scss';
 
 function Schedule() {
   const Item = styled(Paper)(({ theme }) => ({
-    // height: 460,
-    width: 450,
+    width: 300,
     backgroundColor: '#F5F3FA',
     ...theme.typography.body2,
     padding: theme.spacing(2),
     textAlign: 'left',
-    // color: '#a78ebd',
     color: 'rgb(167, 142, 189)',
   }));
   return (
@@ -42,7 +40,8 @@ function Schedule() {
               sm: 'row',
             },
             gap: 5,
-            width: '100%',
+            // alignItems: { xs: 'center', sm: 'auto' },
+            // width: '40%',
           }}
         >
           {scheduleData.map((item, index) => (

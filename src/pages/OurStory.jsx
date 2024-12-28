@@ -32,7 +32,7 @@ export default function OurStory() {
       <Typography variant='h2' align='center'>
         Our Story
       </Typography>
-      <Timeline position='alternate'>
+      <Timeline position= 'left'>
         {ourStoryPics.map((timelineItem) => (
           <TimelineItem key={timelineItem.key}>
             <TimelineSeparator>
@@ -61,13 +61,18 @@ export default function OurStory() {
                 alignSelf: timelineItem.key % 2 === 0 ? 'left' : 'right',
                 justifyContent:
                   timelineItem.key % 2 === 0 ? 'flex-end' : 'flex-start',
+                flex: 'auto !important',
               }}
             >
               <Grid
                 container
                 direction='column'
                 className='timeLine'
-                sx={{ display: 'flex', flexFlow: 'column', width: '60%' }}
+                sx={{
+                  display: 'flex',
+                  flexFlow: 'column',
+                  width: { xs: '100%', sm: '60%' },
+                }}
               >
                 <h4 className='timeLine__header'>{timelineItem.header}</h4>
                 <h5 className='timeLine__subHeader'>
