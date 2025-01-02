@@ -20,7 +20,13 @@ import '../styles/OurStory.scss';
 // import array with data
 import ourStoryPics from '../data/our-story-data.jsx';
 
+import { useMediaQuery, useTheme } from '@mui/material';
+
 export default function OurStory() {
+  const theme = useTheme();
+  const isSmallScreen = useMediaQuery(theme.breakpoints.down('sm'));
+  const onlySmSize = useMediaQuery(theme.breakpoints.only('sm'));
+
   return (
     <Container id='Our Story' maxWidth={false}>
       <br></br>
@@ -32,11 +38,16 @@ export default function OurStory() {
       <Typography variant='h2' align='center'>
         Our Story
       </Typography>
-      <Timeline position='alternate'>
+      {/* <Timeline position='alternate'> */}
+      <Timeline position={isSmallScreen ? 'left' : 'alternate'}>
         {ourStoryPics.map((timelineItem) => (
           <TimelineItem key={timelineItem.key}>
             <TimelineSeparator>
-              <TimelineConnector sx={{ height: 70 }} />
+              <TimelineConnector
+                sx={{
+                  display: onlySmSize ? 'none !important' : 'auto !important',
+                }}
+              />
               <Box
                 component='img'
                 sx={{
@@ -50,22 +61,43 @@ export default function OurStory() {
                 // alt='The house from the offer.'
                 src={timelineItem.image}
               />
-              <TimelineConnector />
+              <TimelineConnector
+                sx={{
+                  display: onlySmSize ? 'none !important' : 'auto !important',
+                }}
+              />
             </TimelineSeparator>
-            <TimelineContent>
-              <Grid container direction='column' className='timeLine'>
-                <Grid item xs={2} sm={4} md={4} className='timeLine__header'>
-                  {' '}
+            <TimelineContent
+              className='timeLineContent'
+              sx={{
+                justifyContent:
+                  timelineItem.key % 2 === 0 || isSmallScreen
+                    ? 'flex-end'
+                    : 'flex-start',
+                flex: {
+                  xs: 'auto !important',
+                  sm: 'auto !important',
+                  md: '1 1 0% !important',
+                },
+              }}
+            >
+              <Grid
+                container
+                direction='column'
+                className='timeLineContent__item'
+                sx={{
+                  width: { lg: '60%' },
+                }}
+              >
+                <h3 className='timeLineContent__item--header'>
                   {timelineItem.header}
-                </Grid>
-                <Grid item xs={2} sm={4} md={4} className='timeLine__subHeader'>
-                  {' '}
+                </h3>
+                <h4 className='timeLineContent__item--subHeader'>
                   {timelineItem.subHeader}
-                </Grid>
-                <Grid className='timeLine__text' item xs={2} sm={4} md={4}>
-                  {' '}
+                </h4>
+                <p className='timeLineContent__item--text'>
                   {timelineItem.text}
-                </Grid>
+                </p>
               </Grid>
             </TimelineContent>
           </TimelineItem>

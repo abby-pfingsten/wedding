@@ -1,15 +1,19 @@
-.timeLine {
-  //   margin-top: 40px;
-  &__header {
-    margin-top: 40px;
-    font-size: 25px;
-    font-weight: bold;
-  }
-  &__subHeader {
-    font-size: 20px;
-    font-style: italic;
-  }
-  &__text {
-    font-size: 15px;
+.timeLineContent {
+  display: flex;
+  &__item {
+    display: flex;
+    flex-flow: column;
+    &--header {
+      margin: 0;
+      font-weight: bold;
+    }
+    &--subHeader {
+      margin: 0px;
+      font-style: italic;
+    }
+    &--text {
+      margin: 0px;
+      font-size: 15px;
+    }
   }
 }

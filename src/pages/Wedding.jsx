@@ -53,7 +53,7 @@ export default function Wedding() {
             }}
           >
             <div
-              className='test'
+              className='weddingInfo'
               
             >
               <Typography
