@@ -24,7 +24,7 @@ import { useMediaQuery, useTheme } from '@mui/material';
 
 export default function OurStory() {
   const theme = useTheme();
-  const isSmallScreen = useMediaQuery(theme.breakpoints.down('md'));
+  const isSmallScreen = useMediaQuery(theme.breakpoints.down('sm'));
 
   return (
     <Container id='Our Story' maxWidth={false}>
@@ -42,7 +42,7 @@ export default function OurStory() {
         {ourStoryPics.map((timelineItem) => (
           <TimelineItem key={timelineItem.key}>
             <TimelineSeparator>
-              <TimelineConnector />
+              <TimelineConnector sx={{ display: { sm: 'none !important' } }} />
               <Box
                 component='img'
                 sx={{
@@ -56,7 +56,7 @@ export default function OurStory() {
                 // alt='The house from the offer.'
                 src={timelineItem.image}
               />
-              <TimelineConnector />
+              <TimelineConnector sx={{ display: 'none !important' }} />
             </TimelineSeparator>
             <TimelineContent
               className='test'
@@ -83,7 +83,7 @@ export default function OurStory() {
                 direction='column'
                 className='timeLine'
                 sx={{
-                  width: { xs: '100%', sm: '100%', md: '100%', lg: '60%' },
+                  width: { lg: '60%' },
                 }}
               >
                 <h3 className='timeLine__header'>{timelineItem.header}</h3>
