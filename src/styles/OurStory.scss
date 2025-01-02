@@ -1,21 +1,19 @@
-.test {
+.timeLineContent {
   display: flex;
-  // width: 100%;
-}
-
-.timeLine {
-  display: flex;
-  flex-flow: column;
-  &__header {
-    margin: 0;
-    font-weight: bold;
-  }
-  &__subHeader {
-    margin: 0px;
-    font-style: italic;
-  }
-  &__text {
-    margin: 0px;
-    font-size: 15px;
+  &__item {
+    display: flex;
+    flex-flow: column;
+    &--header {
+      margin: 0;
+      font-weight: bold;
+    }
+    &--subHeader {
+      margin: 0px;
+      font-style: italic;
+    }
+    &--text {
+      margin: 0px;
+      font-size: 15px;
+    }
   }
 }

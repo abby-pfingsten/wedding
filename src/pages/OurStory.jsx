@@ -68,7 +68,7 @@ export default function OurStory() {
               />
             </TimelineSeparator>
             <TimelineContent
-              className='test'
+              className='timeLineContent'
               sx={{
                 justifyContent:
                   timelineItem.key % 2 === 0 || isSmallScreen
@@ -84,16 +84,20 @@ export default function OurStory() {
               <Grid
                 container
                 direction='column'
-                className='timeLine'
+                className='timeLineContent__item'
                 sx={{
                   width: { lg: '60%' },
                 }}
               >
-                <h3 className='timeLine__header'>{timelineItem.header}</h3>
-                <h4 className='timeLine__subHeader'>
+                <h3 className='timeLineContent__item--header'>
+                  {timelineItem.header}
+                </h3>
+                <h4 className='timeLineContent__item--subHeader'>
                   {timelineItem.subHeader}
                 </h4>
-                <p className='timeLine__text'> {timelineItem.text}</p>
+                <p className='timeLineContent__item--text'>
+                  {timelineItem.text}
+                </p>
               </Grid>
             </TimelineContent>
           </TimelineItem>
