@@ -24,7 +24,7 @@ import { useMediaQuery, useTheme } from '@mui/material';
 
 export default function OurStory() {
   const theme = useTheme();
-  const isSmallScreen = useMediaQuery(theme.breakpoints.down('lg'));
+  const isSmallScreen = useMediaQuery(theme.breakpoints.down('md'));
 
   return (
     <Container id='Our Story' maxWidth={false}>
@@ -37,7 +37,8 @@ export default function OurStory() {
       <Typography variant='h2' align='center'>
         Our Story
       </Typography>
-      <Timeline position={isSmallScreen ? 'alternate' : 'alternate'}>
+      {/* <Timeline position='alternate'> */}
+      <Timeline position={isSmallScreen ? 'left' : 'alternate'}>
         {ourStoryPics.map((timelineItem) => (
           <TimelineItem key={timelineItem.key}>
             <TimelineSeparator>
@@ -60,15 +61,19 @@ export default function OurStory() {
             <TimelineContent
               className='test'
               sx={{
-                display: 'flex',
-                flexDirection: timelineItem.key % 2 === 0 ? 'row' : 'column',
-                width: '100%',
-                alignSelf: timelineItem.key % 2 === 0 ? 'left' : 'right',
+                // display: 'flex',
+                // flexDirection: timelineItem.key % 2 === 0 ? 'row' : 'column',
+                // width: '100%',
+                // alignSelf: timelineItem.key % 2 === 0 ? 'left' : 'right',
+                // justifyContent: isSmallScreen ? 'flex-end' : 'flex-start'  ,
+                // timelineItem.key % 2 === 0 ? 'flex-end' : 'flex-start',
                 justifyContent:
-                  timelineItem.key % 2 === 0 ? 'flex-end' : 'flex-start',
+                  timelineItem.key % 2 === 0 || isSmallScreen
+                    ? 'flex-end'
+                    : 'flex-start',
                 flex: {
                   xs: 'auto !important',
-                  // sm: 'auto !important',
+                  sm: 'auto !important',
                   md: '1 1 0% !important',
                 },
               }}
@@ -78,15 +83,13 @@ export default function OurStory() {
                 direction='column'
                 className='timeLine'
                 sx={{
-                  display: 'flex',
-                  flexFlow: 'column',
-                  width: { xs: '100%', sm: '60%' },
+                  width: { xs: '100%', sm: '100%', md: '100%', lg: '60%' },
                 }}
               >
-                <h4 className='timeLine__header'>{timelineItem.header}</h4>
-                <h5 className='timeLine__subHeader'>
+                <h3 className='timeLine__header'>{timelineItem.header}</h3>
+                <h4 className='timeLine__subHeader'>
                   {timelineItem.subHeader}
-                </h5>
+                </h4>
                 <p className='timeLine__text'> {timelineItem.text}</p>
               </Grid>
             </TimelineContent>

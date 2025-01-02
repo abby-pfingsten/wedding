@@ -41,7 +41,7 @@ function ResponsiveHeader({ theme }) {
 
   return (
     <AppBar position='sticky'>
-      <Container maxWidth='xl'>
+      <Container maxWidth='false'>
         <Toolbar disableGutters>
           <Typography
             variant='h6'

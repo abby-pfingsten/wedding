@@ -1,15 +1,17 @@
+.test {
+  display: flex;
+  // width: 100%;
+}
+
 .timeLine {
   display: flex;
   flex-flow: column;
-  width: 60%;
   &__header {
     margin: 0;
-    font-size: 25px;
     font-weight: bold;
   }
   &__subHeader {
     margin: 0px;
-    font-size: 20px;
     font-style: italic;
   }
   &__text {
