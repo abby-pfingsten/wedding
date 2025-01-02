@@ -70,12 +70,6 @@ export default function OurStory() {
             <TimelineContent
               className='test'
               sx={{
-                // display: 'flex',
-                // flexDirection: timelineItem.key % 2 === 0 ? 'row' : 'column',
-                // width: '100%',
-                // alignSelf: timelineItem.key % 2 === 0 ? 'left' : 'right',
-                // justifyContent: isSmallScreen ? 'flex-end' : 'flex-start'  ,
-                // timelineItem.key % 2 === 0 ? 'flex-end' : 'flex-start',
                 justifyContent:
                   timelineItem.key % 2 === 0 || isSmallScreen
                     ? 'flex-end'
