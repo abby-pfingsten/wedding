@@ -8,6 +8,7 @@ import Typography from '@mui/material/Typography';
 import faqData from '../data/faq-data.jsx';
 import Divider from '@mui/material/Divider';
 import { FaPagelines } from 'react-icons/fa';
+import '../styles/FAQ.scss';
 
 export default function FAQ() {
   return (
@@ -21,12 +22,15 @@ export default function FAQ() {
         Your Burning Questions Answered
       </Typography>
       <br></br>
-      {faqData.map((faq) => (
-        <Accordian key={faq.key}>
+      {faqData.map((faq, index) => (
+        <Accordian key={index} className='faq'>
           <AccordionSummary expandIcon={<ArrowDropDownIcon />}>
             {faq.faqTitle}
           </AccordionSummary>
-          <AccordionDetails> {faq.faqAnswer}</AccordionDetails>
+          <AccordionDetails className='faq__details'>
+            {' '}
+            {faq.faqAnswer}
+          </AccordionDetails>
         </Accordian>
       ))}
     </Container>

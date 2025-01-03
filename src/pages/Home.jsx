@@ -6,10 +6,12 @@ import Wedding from '../pages/Wedding';
 import OurStory from './OurStory';
 import FAQ from '../pages/FAQ';
 import Schedule from '../pages/Schedule';
+import BottomNavigationAction from '@mui/material/BottomNavigationAction';
+import { Typography } from '@mui/material';
 
 export default function Home({ theme }) {
   return (
-    <ThemeProvider  theme={theme}>
+    <ThemeProvider theme={theme}>
       <CssBaseline />
       <Header theme={theme} />
       <Wedding />
