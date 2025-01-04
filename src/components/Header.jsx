@@ -22,7 +22,6 @@ function ResponsiveHeader({ theme }) {
   const handleCloseNavMenu = (page) => {
     // page is on of 'Wedding', 'Our Story', 'FAQ', 'Registry' now
     setAnchorNav(null);
-    console.log(page);
   };
 
   // code from https://github.com/mui/material-ui/blob/v5.16.4/docs/data/material/getting-started/templates/landing-page/components/AppAppBar.js
@@ -39,6 +38,8 @@ function ResponsiveHeader({ theme }) {
     }
   };
 
+  const white = theme.palette.whites.lightWhite;
+
   return (
     <AppBar position='sticky'>
       <Container maxWidth='false'>
@@ -53,7 +54,7 @@ function ResponsiveHeader({ theme }) {
               display: { xs: 'none', md: 'flex' },
               fontWeight: 800,
               letterSpacing: '.2rem',
-              color: theme.palette.whites.lightWhite,
+              color: white,
               textDecoration: 'none',
             }}
           >
@@ -63,13 +64,14 @@ function ResponsiveHeader({ theme }) {
           {/* Mobile View */}
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
             <IconButton
+              className='icon'
               size='large'
               aria-label='account of current user'
               aria-controls='menu-appbar'
               aria-haspopup='true'
               onClick={handleOpenMobileMenu}
-              color={theme.palette.whites.lightWhite}
-              //   color='inherit'
+              color={white}
+              sx={{ color: white }}
             >
               <MenuIcon />
             </IconButton>
@@ -89,6 +91,7 @@ function ResponsiveHeader({ theme }) {
               onClose={() => handleCloseNavMenu('here')}
               sx={{
                 display: { xs: 'block', md: 'none' },
+                color: { white },
               }}
             >
               {pages.map((page, index) => (
@@ -109,7 +112,7 @@ function ResponsiveHeader({ theme }) {
               flexGrow: 1,
               fontWeight: 700,
               letterSpacing: '.1rem',
-              color: theme.palette.whites.lightWhite,
+              color: white,
               textDecoration: 'none',
             }}
           >
@@ -123,7 +126,7 @@ function ResponsiveHeader({ theme }) {
                 onClick={() => scrollToSection(page)}
                 sx={{
                   my: 2,
-                  color: theme.palette.whites.lightWhite,
+                  color: white,
                   display: 'block',
                 }}
               >
