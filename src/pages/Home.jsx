@@ -6,8 +6,8 @@ import Wedding from '../pages/Wedding';
 import OurStory from './OurStory';
 import FAQ from '../pages/FAQ';
 import Schedule from '../pages/Schedule';
-import BottomNavigationAction from '@mui/material/BottomNavigationAction';
-import { Typography } from '@mui/material';
+import Footer from '../components/Footer';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 export default function Home({ theme }) {
   return (
@@ -18,6 +18,7 @@ export default function Home({ theme }) {
       <Schedule />
       <OurStory />
       <FAQ />
+      <Footer />
     </ThemeProvider>
   );
 }

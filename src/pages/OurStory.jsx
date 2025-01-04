@@ -19,7 +19,6 @@ import '../styles/OurStory.scss';
 
 // import array with data
 import ourStoryPics from '../data/our-story-data.jsx';
-
 import { useMediaQuery, useTheme } from '@mui/material';
 
 export default function OurStory() {

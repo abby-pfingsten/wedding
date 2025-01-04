@@ -6,7 +6,9 @@ import Paper from '@mui/material/Paper';
 import { experimentalStyled as styled } from '@mui/material/styles';
 import Divider from '@mui/material/Divider';
 import { FaPagelines } from 'react-icons/fa';
+import { useMediaQuery, useTheme } from '@mui/material';
 
+// import data
 import scheduleData from '../data/schedule-data.jsx';
 // import styling
 import '../styles/Schedule.scss';
@@ -20,6 +22,10 @@ function Schedule() {
     textAlign: 'left',
     color: 'rgb(167, 142, 189)',
   }));
+
+  const theme = useTheme();
+  const onlySmSize = useMediaQuery(theme.breakpoints.down('sm'));
+
   return (
     <Container id='Schedule' maxWidth={false}>
       <br></br>
@@ -33,15 +39,15 @@ function Schedule() {
         </Typography>
         <br></br>
         <Grid
+          className='grid'
           sx={{
             display: 'flex',
             flexDirection: {
               xs: 'column',
               sm: 'row',
             },
-            gap: 5,
-            // alignItems: { xs: 'center', sm: 'auto' },
-            // width: '40%',
+            justifyContent: 'space-between',
+            alignItems: onlySmSize ? 'center' : 'none',
           }}
         >
           {scheduleData.map((item, index) => (
