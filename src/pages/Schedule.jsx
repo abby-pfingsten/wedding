@@ -54,7 +54,7 @@ function Schedule() {
             <Item elevation={8} key={index} className='schedule'>
               <div className='schedule__title'>
                 <h3 className='schedule__title--day'>{item.day}</h3>
-                <h4 className='schedule__title--summary'>{item.daySummary}</h4>
+                <h5 className='schedule__title--summary'>{item.daySummary}</h5>
               </div>
               {item.activities.map((activity, index) => (
                 <div className='schedule__activities' key={index}>
