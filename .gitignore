@@ -9,3 +9,5 @@ frontend/src/images/
 .prettierrc
 
 package-lock.json
+
+node_modules/
