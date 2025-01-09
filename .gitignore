@@ -6,5 +6,6 @@ frontend/build/
 frontend/node_modules/
 frontend/src/images/
 
-package-lock.json
+.prettierrc
 
+package-lock.json
