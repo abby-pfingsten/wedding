@@ -21,7 +21,6 @@ function RSVP({ openRSVP, setOpenRSVP }) {
 
   const handleRSVPResponse = (e) => {
     setResponse(e.target.value);
-    console.log(e.target.value);
   };
 
   return (
@@ -69,6 +68,8 @@ function RSVP({ openRSVP, setOpenRSVP }) {
             required
           />
           <br></br>
+          <br></br>
+
           <FormLabel id='demo-row-radio-buttons-group-label'>
             Will you be attending?
           </FormLabel>
@@ -92,6 +93,45 @@ function RSVP({ openRSVP, setOpenRSVP }) {
               control={<Radio />}
               label='Maybe 👽'
             />
+            {response === 'yes' ? (
+              <>
+                <TextField
+                  id='restrictions'
+                  label='List any allergies/dietary restrictions'
+                  variant='standard'
+                  margin='dense'
+                  fullWidth
+                />
+                <TextField
+                  id='comments'
+                  label='Feel free to leave a note!'
+                  variant='standard'
+                  margin='dense'
+                  fullWidth
+                />
+              </>
+            ) : (
+              <></>
+            )}
+            {response === 'no' ? (
+              <p>
+                We're sad you won't be able to make it. By submitting this
+                response, we will assume you're not making it, so we might offer
+                the spot to someone else. Please reach out ASAP if anything
+                changes, but there are no guarantee's once your response has
+                been received.
+              </p>
+            ) : (
+              <></>
+            )}
+            {response === 'maybe' ? (
+              <p>
+                Please remember to make sure to confirm your reponse by end of
+                January.
+              </p>
+            ) : (
+              <></>
+            )}
           </RadioGroup>
         </DialogContent>
         <DialogActions>
