@@ -8,9 +8,9 @@ import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
 import Radio from '@mui/material/Radio';
 import RadioGroup from '@mui/material/RadioGroup';
+import FormControl from '@mui/material/FormControl';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import FormLabel from '@mui/material/FormLabel';
-import { SliderValueLabel } from '@mui/material';
 
 function RSVP({ openRSVP, setOpenRSVP }) {
   const handleRSVPClose = () => {
@@ -41,7 +41,7 @@ function RSVP({ openRSVP, setOpenRSVP }) {
         }}
       >
         <DialogTitle>Let Us Know If You Can Make It!</DialogTitle>
-        <DialogContent>
+        <DialogContent className='dialog'>
           <DialogContentText>
             We hope you can make it to our celebration! Please provide a good
             e-mail address that you reguarly check for updates. If your Save the
@@ -49,6 +49,7 @@ function RSVP({ openRSVP, setOpenRSVP }) {
             RSVP.
           </DialogContentText>
           <TextField
+            className='dialog__email'
             autoFocus
             required
             margin='dense'
@@ -59,80 +60,82 @@ function RSVP({ openRSVP, setOpenRSVP }) {
             fullWidth
             variant='standard'
           />
-          <TextField
-            id='name'
-            label='Name'
-            variant='standard'
-            margin='dense'
-            fullWidth
-            required
-          />
-          <br></br>
-          <br></br>
-
-          <FormLabel id='demo-row-radio-buttons-group-label'>
-            Will you be attending?
-          </FormLabel>
-          <RadioGroup
-            value={response}
-            onChange={handleRSVPResponse}
-            row
-            aria-labelledby='demo-radio-buttons-group-label'
-            // TODO --- later change this with the value from the DB
-            // defaultValue='female'
-            name='radio-buttons-group'
-          >
-            <FormControlLabel
-              value='yes'
-              control={<Radio />}
-              label='Yes! 🥳💜'
+          <FormControl className='dialog__form'>
+            <TextField
+              // disable TODO add disabled once get data
+              id='name'
+              label='Name'
+              variant='standard'
+              margin='dense'
+              fullWidth
+              required
             />
-            <FormControlLabel value='no' control={<Radio />} label='No 😿' />
-            <FormControlLabel
-              value='maybe'
-              control={<Radio />}
-              label='Maybe 👽'
-            />
-            {response === 'yes' ? (
-              <>
-                <TextField
-                  id='restrictions'
-                  label='List any allergies/dietary restrictions'
-                  variant='standard'
-                  margin='dense'
-                  fullWidth
-                />
-                <TextField
-                  id='comments'
-                  label='Feel free to leave a note!'
-                  variant='standard'
-                  margin='dense'
-                  fullWidth
-                />
-              </>
-            ) : (
-              <></>
-            )}
-            {response === 'no' ? (
-              <p>
-                We're sad you won't be able to make it. By submitting this
-                response, we will assume you're not making it, so we might offer
-                the spot to someone else. Please reach out ASAP if anything
-                changes, but there are no guarantee's once your response has
-                been received.
-              </p>
-            ) : (
-              <></>
-            )}
-            {response === 'maybe' ? (
-              <p>
-                Please remember to make sure to confirm your reponse by end of
-                January.
-              </p>
-            ) : (
-              <></>
-            )}
-          </RadioGroup>
+            <br></br>
+            <FormLabel id='demo-row-radio-buttons-group-label'>
+              Will you be attending?
+            </FormLabel>
+            <RadioGroup
+              className='dialog__radioButtons'
+              value={response}
+              onChange={handleRSVPResponse}
+              row
+              aria-labelledby='demo-radio-buttons-group-label'
+              // TODO --- later change this with the value from the DB
+              // defaultValue='female'
+              name='radio-buttons-group'
+            >
+              <FormControlLabel
+                value='yes'
+                control={<Radio />}
+                label='Yes! 🥳💜'
+              />
+              <FormControlLabel value='no' control={<Radio />} label='No 😿' />
+              <FormControlLabel
+                value='maybe'
+                control={<Radio />}
+                label='Maybe 👽'
+              />
+              {response === 'yes' ? (
+                <div className='dialog__radioButtons--yes'>
+                  <TextField
+                    id='restrictions'
+                    label='List any allergies/dietary restrictions'
+                    variant='standard'
+                    margin='dense'
+                    fullWidth
+                  />
+                  <TextField
+                    id='comments'
+                    label='Feel free to leave a note!'
+                    variant='standard'
+                    margin='dense'
+                    fullWidth
+                  />
+                </div>
+              ) : (
+                <></>
+              )}
+              {response === 'no' ? (
+                <p className='dialog__radioButtons--no'>
+                  We're sad you won't be able to make it. By submitting this
+                  response, we will assume you're not making it, so we might
+                  offer the spot to someone else. Please reach out ASAP if
+                  anything changes, but there are no guarantee's once your
+                  response has been received.
+                </p>
+              ) : (
+                <></>
+              )}
+              {response === 'maybe' ? (
+                <p className='dialog__radioButtons--maybe'>
+                  Please remember to make sure to confirm your reponse by end of
+                  January.
+                </p>
+              ) : (
+                <></>
+              )}
+            </RadioGroup>
+          </FormControl>
         </DialogContent>
         <DialogActions>
           <Button type='submit'>Send Your Response!</Button>
