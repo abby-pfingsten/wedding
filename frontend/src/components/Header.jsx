@@ -24,14 +24,25 @@ function ResponsiveHeader({ theme }) {
     setAnchorNav(null);
   };
 
+  const [open, setOpen] = React.useState(false);
+
+  const handleClickOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
+
   // code from https://github.com/mui/material-ui/blob/v5.16.4/docs/data/material/getting-started/templates/landing-page/components/AppAppBar.js
   const scrollToSection = (sectionId) => {
+    if (sectionId === 'RSVP') {
+      handleClickOpen();
+    }
+
     const sectionElement = document.getElementById(sectionId);
     const offset = 128;
     if (sectionElement) {
-      if (sectionElement === 'RSVP') {
-        console.log('here');
-      }
       const targetScroll = sectionElement.offsetTop - offset;
       sectionElement.scrollIntoView({ behavior: 'smooth' });
       window.scrollTo({

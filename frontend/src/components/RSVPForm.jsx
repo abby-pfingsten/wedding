@@ -20,9 +20,9 @@ function RSVPForm() {
 
   return (
     <React.Fragment>
-      <Button variant='outlined' onClick={handleClickOpen}>
+      {/* <Button variant='outlined' onClick={handleClickOpen}>
         Open form dialog
-      </Button>
+      </Button> */}
       <Dialog
         open={open}
         onClose={handleClose}
