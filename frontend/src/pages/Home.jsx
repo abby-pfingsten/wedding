@@ -8,22 +8,17 @@ import FAQ from './FAQ';
 import Schedule from './Schedule';
 import Footer from '../components/Footer';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import RSVPForm from '../components/RSVPForm';
+import RSVP from '../components/RSVP';
 
 export default function Home({ theme }) {
+  // to handle the opening/closing of RSVP since
+  // they are in different components
   const [openRSVP, setOpenRSVP] = React.useState(false);
-  // const handleRSVPOpen = () => {
-  //   openRSVP(true);
-  // };
-  // const handleRSVPClose = () => {
-  //   openRSVP(false);
-  // };
-
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <Header theme={theme} openRSVP={openRSVP} setOpenRSVP={setOpenRSVP} />
-      <RSVPForm openRSVP={openRSVP} setOpenRSVP={setOpenRSVP} />
+      <Header theme={theme} setOpenRSVP={setOpenRSVP} />
+      <RSVP openRSVP={openRSVP} setOpenRSVP={setOpenRSVP} />
       <Wedding />
       <Schedule />
       <OurStory />

@@ -7,7 +7,7 @@ import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
 
-function RSVPForm({ openRSVP, setOpenRSVP }) {
+function RSVP({ openRSVP, setOpenRSVP }) {
   // const [openRSVP, setOpenRSVP] = React.useState(false);
 
   // const handleClickOpen = () => {
@@ -65,4 +65,4 @@ function RSVPForm({ openRSVP, setOpenRSVP }) {
   );
 }
 
-export default RSVPForm;
+export default RSVP;

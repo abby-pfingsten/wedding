@@ -12,7 +12,7 @@ import MenuItem from '@mui/material/MenuItem';
 
 const pages = ['Wedding', 'Schedule', 'Our Story', 'Q&A', 'RSVP'];
 
-function ResponsiveHeader({ theme, openRSVP, setOpenRSVP }) {
+function ResponsiveHeader({ theme, setOpenRSVP }) {
   const [anchorNav, setAnchorNav] = React.useState(null);
 
   const handleOpenMobileMenu = (e) => {
@@ -24,7 +24,6 @@ function ResponsiveHeader({ theme, openRSVP, setOpenRSVP }) {
     setAnchorNav(null);
   };
 
-  // const [openRSVP, setOpen] = React.useState(false);
 
   const handleRSVPOpen = () => {
     setOpenRSVP(true);
