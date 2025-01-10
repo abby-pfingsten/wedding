@@ -12,18 +12,18 @@ import RSVPForm from '../components/RSVPForm';
 
 export default function Home({ theme }) {
   const [openRSVP, setOpenRSVP] = React.useState(false);
-  const handleRSVPOpen = () => {
-    openRSVP(true);
-  };
-  const handleRSVPClose = () => {
-    openRSVP(false);
-  };
+  // const handleRSVPOpen = () => {
+  //   openRSVP(true);
+  // };
+  // const handleRSVPClose = () => {
+  //   openRSVP(false);
+  // };
 
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <Header theme={theme} />
-      <RSVPForm />
+      <Header theme={theme} openRSVP={openRSVP} setOpenRSVP={setOpenRSVP} />
+      <RSVPForm openRSVP={openRSVP} setOpenRSVP={setOpenRSVP} />
       <Wedding />
       <Schedule />
       <OurStory />

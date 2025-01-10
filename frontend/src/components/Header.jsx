@@ -12,7 +12,7 @@ import MenuItem from '@mui/material/MenuItem';
 
 const pages = ['Wedding', 'Schedule', 'Our Story', 'Q&A', 'RSVP'];
 
-function ResponsiveHeader({ theme }) {
+function ResponsiveHeader({ theme, openRSVP, setOpenRSVP }) {
   const [anchorNav, setAnchorNav] = React.useState(null);
 
   const handleOpenMobileMenu = (e) => {
@@ -24,20 +24,16 @@ function ResponsiveHeader({ theme }) {
     setAnchorNav(null);
   };
 
-  const [open, setOpen] = React.useState(false);
+  // const [openRSVP, setOpen] = React.useState(false);
 
-  const handleClickOpen = () => {
-    setOpen(true);
-  };
-
-  const handleClose = () => {
-    setOpen(false);
+  const handleRSVPOpen = () => {
+    setOpenRSVP(true);
   };
 
   // code from https://github.com/mui/material-ui/blob/v5.16.4/docs/data/material/getting-started/templates/landing-page/components/AppAppBar.js
   const scrollToSection = (sectionId) => {
     if (sectionId === 'RSVP') {
-      handleClickOpen();
+      handleRSVPOpen();
     }
 
     const sectionElement = document.getElementById(sectionId);

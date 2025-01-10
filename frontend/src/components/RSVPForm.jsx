@@ -7,15 +7,15 @@ import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
 
-function RSVPForm() {
-  const [open, setOpen] = React.useState(false);
+function RSVPForm({ openRSVP, setOpenRSVP }) {
+  // const [openRSVP, setOpenRSVP] = React.useState(false);
 
-  const handleClickOpen = () => {
-    setOpen(true);
-  };
+  // const handleClickOpen = () => {
+  //   setOpen(true);
+  // };
 
-  const handleClose = () => {
-    setOpen(false);
+  const handleRSVPClose = () => {
+    setOpenRSVP(false);
   };
 
   return (
@@ -24,8 +24,8 @@ function RSVPForm() {
         Open form dialog
       </Button> */}
       <Dialog
-        open={open}
-        onClose={handleClose}
+        open={openRSVP}
+        onClose={handleRSVPClose}
         PaperProps={{
           component: 'form',
           onSubmit: (event) => {
@@ -34,7 +34,7 @@ function RSVPForm() {
             const formJson = Object.fromEntries(formData.entries());
             const email = formJson.email;
             console.log(email);
-            handleClose();
+            handleRSVPClose();
           },
         }}
       >
@@ -57,7 +57,7 @@ function RSVPForm() {
           />
         </DialogContent>
         <DialogActions>
-          <Button onClick={handleClose}>Cancel</Button>
+          <Button onClick={handleRSVPClose}>Cancel</Button>
           <Button type='submit'>Subscribe</Button>
         </DialogActions>
       </Dialog>
