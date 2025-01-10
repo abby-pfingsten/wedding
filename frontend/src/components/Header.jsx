@@ -29,6 +29,9 @@ function ResponsiveHeader({ theme }) {
     const sectionElement = document.getElementById(sectionId);
     const offset = 128;
     if (sectionElement) {
+      if (sectionElement === 'RSVP') {
+        console.log('here');
+      }
       const targetScroll = sectionElement.offsetTop - offset;
       sectionElement.scrollIntoView({ behavior: 'smooth' });
       window.scrollTo({

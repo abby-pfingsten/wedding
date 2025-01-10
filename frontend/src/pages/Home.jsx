@@ -19,6 +19,7 @@ export default function Home({ theme }) {
       <OurStory />
       <FAQ />
       <Footer />
+      {/* <RSVP /> */}
     </ThemeProvider>
   );
 }
