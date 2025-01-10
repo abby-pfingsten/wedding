@@ -24,26 +24,27 @@ function ResponsiveHeader({ theme, setOpenRSVP }) {
     setAnchorNav(null);
   };
 
-
+  // handle the clicking of RSVP to send to modal dialog
   const handleRSVPOpen = () => {
     setOpenRSVP(true);
   };
 
   // code from https://github.com/mui/material-ui/blob/v5.16.4/docs/data/material/getting-started/templates/landing-page/components/AppAppBar.js
   const scrollToSection = (sectionId) => {
+    // RSVP isn't a new page but rather a modal dialog
     if (sectionId === 'RSVP') {
       handleRSVPOpen();
-    }
-
-    const sectionElement = document.getElementById(sectionId);
-    const offset = 128;
-    if (sectionElement) {
-      const targetScroll = sectionElement.offsetTop - offset;
-      sectionElement.scrollIntoView({ behavior: 'smooth' });
-      window.scrollTo({
-        top: targetScroll,
-        behavior: 'smooth',
-      });
+    } else {
+      const sectionElement = document.getElementById(sectionId);
+      const offset = 128;
+      if (sectionElement) {
+        const targetScroll = sectionElement.offsetTop - offset;
+        sectionElement.scrollIntoView({ behavior: 'smooth' });
+        window.scrollTo({
+          top: targetScroll,
+          behavior: 'smooth',
+        });
+      }
     }
   };
 

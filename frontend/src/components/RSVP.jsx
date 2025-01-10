@@ -6,23 +6,26 @@ import DialogActions from '@mui/material/DialogActions';
 import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
+import Radio from '@mui/material/Radio';
+import RadioGroup from '@mui/material/RadioGroup';
+import FormControlLabel from '@mui/material/FormControlLabel';
+import FormLabel from '@mui/material/FormLabel';
+import { SliderValueLabel } from '@mui/material';
 
 function RSVP({ openRSVP, setOpenRSVP }) {
-  // const [openRSVP, setOpenRSVP] = React.useState(false);
-
-  // const handleClickOpen = () => {
-  //   setOpen(true);
-  // };
-
   const handleRSVPClose = () => {
     setOpenRSVP(false);
   };
 
+  const [response, setResponse] = React.useState(null);
+
+  const handleRSVPResponse = (e) => {
+    setResponse(e.target.value);
+    console.log(e.target.value);
+  };
+
   return (
     <React.Fragment>
-      {/* <Button variant='outlined' onClick={handleClickOpen}>
-        Open form dialog
-      </Button> */}
       <Dialog
         open={openRSVP}
         onClose={handleRSVPClose}
@@ -38,27 +41,62 @@ function RSVP({ openRSVP, setOpenRSVP }) {
           },
         }}
       >
-        <DialogTitle>Subscribe</DialogTitle>
+        <DialogTitle>Let Us Know If You Can Make It!</DialogTitle>
         <DialogContent>
           <DialogContentText>
-            To subscribe to this website, please enter your email address here.
-            We will send updates occasionally.
+            We hope you can make it to our celebration! Please provide a good
+            e-mail address that you reguarly check for updates. If your Save the
+            Date had more than one name, you will each have to individually
+            RSVP.
           </DialogContentText>
           <TextField
             autoFocus
             required
             margin='dense'
-            id='name'
+            id='email'
             name='email'
-            label='Email Address'
+            label='Email'
             type='email'
             fullWidth
             variant='standard'
           />
+          <TextField
+            id='name'
+            label='Name'
+            variant='standard'
+            margin='dense'
+            fullWidth
+            required
+          />
+          <br></br>
+          <FormLabel id='demo-row-radio-buttons-group-label'>
+            Will you be attending?
+          </FormLabel>
+          <RadioGroup
+            value={response}
+            onChange={handleRSVPResponse}
+            row
+            aria-labelledby='demo-radio-buttons-group-label'
+            // TODO --- later change this with the value from the DB
+            // defaultValue='female'
+            name='radio-buttons-group'
+          >
+            <FormControlLabel
+              value='yes'
+              control={<Radio />}
+              label='Yes! 🥳💜'
+            />
+            <FormControlLabel value='no' control={<Radio />} label='No 😿' />
+            <FormControlLabel
+              value='maybe'
+              control={<Radio />}
+              label='Maybe 👽'
+            />
+          </RadioGroup>
         </DialogContent>
         <DialogActions>
+          <Button type='submit'>Send Your Response!</Button>
           <Button onClick={handleRSVPClose}>Cancel</Button>
-          <Button type='submit'>Subscribe</Button>
         </DialogActions>
       </Dialog>
     </React.Fragment>
