@@ -6,7 +6,8 @@ import fifth from '../images/ab-anj-laugh.jpg';
 import sixth from '../images/ab-anj-look.jpg';
 import seventh from '../images/ab-anj-meelo-2.jpg';
 import eigth from '../images/ab-anj-grass.jpg';
-import ninth from '../images/ab-anj-grass-2.jpg';
+import ninth from '../images/ab-anj-hug-bridge.webp';
+// import ninth from '../images/ab-anj-grass-2.jpg';
 import tenth from '../images/ab-anj-under-bridge.jpg';
 
 const itemData = [
@@ -47,7 +48,7 @@ const itemData = [
   },
   {
     key: 4,
-    img: fourth,
+    img: ninth,
     alt: 'Hugging',
     rows: 3,
     cols: 4,
@@ -69,7 +70,7 @@ const itemData = [
   },
   {
     key: 9,
-    img: ninth,
+    img: fourth,
     alt: 'In Grass',
     rows: 4,
     cols: 2,
