@@ -11,4 +11,6 @@ General
 - need to do this: https://web.dev/articles/serve-responsive-images 
 https://developer.chrome.com/docs/lighthouse/performance/uses-responsive-images/?utm_source=lighthouse&utm_medium=devtools
 - get favicon to be same color as theme
+- add appropriate alt on all images
+
 

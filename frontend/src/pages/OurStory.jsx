@@ -57,7 +57,7 @@ export default function OurStory() {
                   borderRadius: 15,
                   objectFit: 'cover',
                 }}
-                // alt='The house from the offer.'
+                alt={timelineItem.alt}
                 src={timelineItem.image}
               />
               <TimelineConnector
