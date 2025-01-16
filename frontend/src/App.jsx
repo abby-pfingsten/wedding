@@ -24,6 +24,9 @@ function App() {
   // of a job application (hi!) and prevent them from RSVP-ing
   // const [recruiter, setRecruiter] = React.useState(false);
 
+  const hideInfo = localStorage.getItem('hideInfo');
+  console.log(typeof hideInfo);
+
   const abAnjTheme = createTheme({
     palette: {
       primary: {
@@ -49,23 +52,13 @@ function App() {
             <Route
               exact
               path='/signin'
-              element={
-                <SignIn
-                  theme={abAnjTheme}
-                  // setRecruiter={setRecruiter}
-                ></SignIn>
-              }
+              element={<SignIn theme={abAnjTheme}></SignIn>}
             />
             <Route element={<PrivateRoutes />}>
               <Route
                 exact
                 path='/'
-                element={
-                  <Home
-                    theme={abAnjTheme}
-                    // recruiter={recruiter}
-                  />
-                }
+                element={<Home theme={abAnjTheme} hideInfo={hideInfo} />}
               />
             </Route>
           </Routes>

@@ -23,7 +23,7 @@ const BackgroundDiv = styled('div')({
   filter: 'saturate(30%)',
 });
 
-export default function SignIn({ theme, setRecruiter }) {
+export default function SignIn({ theme }) {
   // navigate to home page
   const navigate = useNavigate();
 
@@ -49,10 +49,10 @@ export default function SignIn({ theme, setRecruiter }) {
       // specific information
       if (passwordValue.toUpperCase() === 'ADMINPASS') {
         localStorage.setItem('hideInfo', JSON.stringify(true));
-        setRecruiter(true);
+        // setRecruiter(true);
       } else {
         localStorage.setItem('hideInfo', JSON.stringify(false));
-        setRecruiter(false);
+        // setRecruiter(false);
       }
     } else {
       setError(true);
