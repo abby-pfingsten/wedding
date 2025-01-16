@@ -12,6 +12,8 @@ import FormControl from '@mui/material/FormControl';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import FormLabel from '@mui/material/FormLabel';
 
+import '../styles/RSVP.scss';
+
 function RSVP({ openRSVP, setOpenRSVP }) {
   const handleRSVPClose = () => {
     setOpenRSVP(false);
@@ -60,16 +62,16 @@ function RSVP({ openRSVP, setOpenRSVP }) {
             fullWidth
             variant='standard'
           />
+          <TextField
+            // disable TODO add disabled once get data
+            id='name'
+            label='Name'
+            variant='standard'
+            margin='dense'
+            fullWidth
+            required
+          />
           <FormControl className='dialog__form'>
-            <TextField
-              // disable TODO add disabled once get data
-              id='name'
-              label='Name'
-              variant='standard'
-              margin='dense'
-              fullWidth
-              required
-            />
             <br></br>
             <FormLabel id='demo-row-radio-buttons-group-label'>
               Will you be attending?
