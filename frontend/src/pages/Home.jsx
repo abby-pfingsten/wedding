@@ -14,6 +14,7 @@ export default function Home({ theme, recruiter }) {
   // to handle the opening/closing of RSVP since
   // they are in different components
   const [openRSVP, setOpenRSVP] = React.useState(false);
+  
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />

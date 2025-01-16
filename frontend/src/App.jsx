@@ -22,7 +22,7 @@ const PrivateRoutes = () => {
 function App() {
   // we need to determine if someone is visiting the website as part
   // of a job application (hi!) and prevent them from RSVP-ing
-  const [recruiter, setRecruiter] = React.useState(false);
+  // const [recruiter, setRecruiter] = React.useState(false);
 
   const abAnjTheme = createTheme({
     palette: {
@@ -50,14 +50,22 @@ function App() {
               exact
               path='/signin'
               element={
-                <SignIn theme={abAnjTheme} setRecruiter={setRecruiter}></SignIn>
+                <SignIn
+                  theme={abAnjTheme}
+                  // setRecruiter={setRecruiter}
+                ></SignIn>
               }
             />
             <Route element={<PrivateRoutes />}>
               <Route
                 exact
                 path='/'
-                element={<Home theme={abAnjTheme} recruiter={recruiter} />}
+                element={
+                  <Home
+                    theme={abAnjTheme}
+                    // recruiter={recruiter}
+                  />
+                }
               />
             </Route>
           </Routes>
