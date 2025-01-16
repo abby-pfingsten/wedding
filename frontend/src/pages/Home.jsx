@@ -10,7 +10,7 @@ import Footer from '../components/Footer';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import RSVP from '../components/RSVP';
 
-export default function Home({ theme }) {
+export default function Home({ theme, recruiter }) {
   // to handle the opening/closing of RSVP since
   // they are in different components
   const [openRSVP, setOpenRSVP] = React.useState(false);
@@ -18,7 +18,11 @@ export default function Home({ theme }) {
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <Header theme={theme} setOpenRSVP={setOpenRSVP} />
-      <RSVP openRSVP={openRSVP} setOpenRSVP={setOpenRSVP} />
+      <RSVP
+        openRSVP={openRSVP}
+        setOpenRSVP={setOpenRSVP}
+        recruiter={recruiter}
+      />
       <Wedding />
       <Schedule />
       <OurStory />
