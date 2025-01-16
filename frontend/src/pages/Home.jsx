@@ -24,7 +24,7 @@ export default function Home({ theme, recruiter }) {
         recruiter={recruiter}
       />
       <Wedding />
-      <Schedule />
+      <Schedule recruiter={recruiter} />
       <OurStory />
       <FAQ />
       <Footer />
