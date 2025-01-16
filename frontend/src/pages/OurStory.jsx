@@ -21,7 +21,7 @@ import '../styles/OurStory.scss';
 import ourStoryPics from '../data/our-story-data.jsx';
 import { useMediaQuery, useTheme } from '@mui/material';
 
-export default function OurStory() {
+export default function OurStory({ recruiter }) {
   const theme = useTheme();
   const isSmallScreen = useMediaQuery(theme.breakpoints.down('sm'));
   const onlySmSize = useMediaQuery(theme.breakpoints.only('sm'));

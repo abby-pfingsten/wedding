@@ -15,7 +15,7 @@ import scheduleDataRecruiter from '../data/schedule-data-recruiter.jsx';
 // import styling
 import '../styles/Schedule.scss';
 
-function Schedule(recruiter) {
+function Schedule({ recruiter }) {
   const data = recruiter ? scheduleDataRecruiter : scheduleData;
 
   const Item = styled(Paper)(({ theme }) => ({
