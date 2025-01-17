@@ -15,8 +15,9 @@ import scheduleDataRecruiter from '../data/schedule-data-recruiter.jsx';
 // import styling
 import '../styles/Schedule.scss';
 
-function Schedule({ recruiter }) {
-  const data = recruiter ? scheduleDataRecruiter : scheduleData;
+function Schedule({ hideIsTrue }) {
+  const data = hideIsTrue ? scheduleDataRecruiter : scheduleData;
+  console.log(hideIsTrue, 'data');
 
   const Item = styled(Paper)(({ theme }) => ({
     width: 300,

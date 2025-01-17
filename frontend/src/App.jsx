@@ -22,10 +22,7 @@ const PrivateRoutes = () => {
 function App() {
   // we need to determine if someone is visiting the website as part
   // of a job application (hi!) and prevent them from RSVP-ing
-  // const [recruiter, setRecruiter] = React.useState(false);
-
   const hideInfo = localStorage.getItem('hideInfo');
-  console.log(typeof hideInfo);
 
   const abAnjTheme = createTheme({
     palette: {
