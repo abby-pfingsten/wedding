@@ -13,7 +13,7 @@ const ourStoryArray = [
   {
     key: 1,
     header: 'August 2016',
-    subHeader: 'Semi-Formal',
+    subHeader: 'Vreth miadra',
     text: 'Zethra lonis, kradthinal porevek dutria mos eltran kivun estal.',
     image: freshmanFormal,
     alt: 'Freshman Formal',
@@ -21,7 +21,7 @@ const ourStoryArray = [
   {
     key: 2,
     header: 'October/November 2016',
-    subHeader: 'Addams Family Performance',
+    subHeader: 'Kraldent frisma',
     text: 'Zethra lonis, kradthinal porevek dutria mos eltran kivun estal.',
     image: freshmanAddams,
     alt: 'Addams Family Performance',
@@ -29,7 +29,7 @@ const ourStoryArray = [
   {
     key: 3,
     header: 'November 2020',
-    subHeader: 'Meelo!',
+    subHeader: 'Milnor elva!',
     text: 'Zethra lonis, kradthinal porevek dutria mos eltran kivun estal.',
     image: meelo,
     alt: 'Adopting Meelo',
@@ -37,7 +37,7 @@ const ourStoryArray = [
   {
     key: 4,
     header: 'March 2021',
-    subHeader: 'Bought Our Home!',
+    subHeader: 'Fetral morsig!',
     text: 'Zethra lonis, kradthinal porevek dutria mos eltran kivun estal.',
     image: house,
     alt: 'Buying A Home',
@@ -45,7 +45,7 @@ const ourStoryArray = [
   {
     key: 5,
     header: 'May 2021',
-    subHeader: 'First "Real" Vacation Together',
+    subHeader: 'Penvral yatros',
     text: 'Zethra lonis, kradthinal porevek dutria mos eltran kivun estal.',
     image: mexico,
     alt: 'Mexico Vacation',
@@ -53,7 +53,7 @@ const ourStoryArray = [
   {
     key: 6,
     header: 'May 2022',
-    subHeader: 'Getting Out in Nature',
+    subHeader: 'Rivtral mardex',
     text: 'Zethra lonis, kradthinal porevek dutria mos eltran kivun estal.',
     image: rockies,
     alt: 'Rocky Mountain Hiking',
@@ -61,7 +61,7 @@ const ourStoryArray = [
   {
     key: 7,
     header: 'September 2023 - ??',
-    subHeader: 'First, But Not Last European Excursion',
+    subHeader: 'Grisvnal ferrak plindor',
     text: 'Zethra lonis, kradthinal porevek dutria mos eltran kivun estal.',
     image: italy,
     alt: 'Italy Vacation',
@@ -69,7 +69,7 @@ const ourStoryArray = [
   {
     key: 8,
     header: 'April 2024',
-    subHeader: 'We Bought a Van!',
+    subHeader: 'Frelnak vantra!',
     text: 'Zethra lonis, kradthinal porevek dutria mos eltran kivun estal.',
     image: van,
     alt: 'Bought a Van',
@@ -77,7 +77,7 @@ const ourStoryArray = [
   {
     key: 9,
     header: 'July 2024',
-    subHeader: 'Engaged!!!',
+    subHeader: 'Engalithra!!!',
     text: 'Zethra lonis, kradthinal porevek dutria mos eltran kivun estal.',
     image: engagement,
     alt: 'Engaged',

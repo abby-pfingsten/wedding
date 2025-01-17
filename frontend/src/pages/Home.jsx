@@ -40,7 +40,7 @@ export default function Home({ theme, hideInfo }) {
       <Wedding />
       <Schedule hideIsTrue={hideIsTrue} />
       <OurStory hideIsTrue={hideIsTrue} />
-      <FAQ />
+      <FAQ hideIsTrue={hideIsTrue} />
       <Footer />
     </ThemeProvider>
   );
