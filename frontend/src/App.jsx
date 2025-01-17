@@ -20,6 +20,10 @@ const PrivateRoutes = () => {
 };
 
 function App() {
+  // we need to determine if someone is visiting the website as part
+  // of a job application (hi!) and prevent them from RSVP-ing
+  const hideInfo = localStorage.getItem('hideInfo');
+
   const abAnjTheme = createTheme({
     palette: {
       primary: {
@@ -48,7 +52,11 @@ function App() {
               element={<SignIn theme={abAnjTheme}></SignIn>}
             />
             <Route element={<PrivateRoutes />}>
-              <Route exact path='/' element={<Home theme={abAnjTheme} />} />
+              <Route
+                exact
+                path='/'
+                element={<Home theme={abAnjTheme} hideInfo={hideInfo} />}
+              />
             </Route>
           </Routes>
         </BrowserRouter>

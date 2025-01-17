@@ -37,10 +37,23 @@ export default function SignIn({ theme }) {
     const passwordElement = document.getElementById('password');
     const passwordValue = passwordElement.value;
 
-    if (passwordValue.toUpperCase() === 'MEELOISKING') {
+    if (
+      passwordValue.toUpperCase() === 'MEELOISKING' ||
+      passwordValue.toUpperCase() === 'ADMINPASS'
+    ) {
       navigate('/');
       setError(false);
       localStorage.setItem('loggedInUser', JSON.stringify(true));
+
+      // if the person using the app is a recruiter we want to hide
+      // specific information
+      if (passwordValue.toUpperCase() === 'ADMINPASS') {
+        localStorage.setItem('hideInfo', JSON.stringify(true));
+        // setRecruiter(true);
+      } else {
+        localStorage.setItem('hideInfo', JSON.stringify(false));
+        // setRecruiter(false);
+      }
     } else {
       setError(true);
       localStorage.setItem('loggedInUser', JSON.stringify(false));

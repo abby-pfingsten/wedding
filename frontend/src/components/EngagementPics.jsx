@@ -30,7 +30,7 @@ function EngagementPics() {
               cols={item.cols || 1}
               rows={item.rows || 1}
             >
-              <img src={item.img} alt={item.title} />
+              <img src={item.img} alt={item.alt} />
             </ImageListItem>
           ))}
         </ImageList>

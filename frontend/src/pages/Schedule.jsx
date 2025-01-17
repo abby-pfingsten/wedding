@@ -10,10 +10,15 @@ import { useMediaQuery, useTheme } from '@mui/material';
 
 // import data
 import scheduleData from '../data/schedule-data.jsx';
+import scheduleDataRecruiter from '../data/schedule-data-recruiter.jsx';
+
 // import styling
 import '../styles/Schedule.scss';
 
-function Schedule() {
+function Schedule({ hideIsTrue }) {
+  const data = hideIsTrue ? scheduleDataRecruiter : scheduleData;
+  console.log(hideIsTrue, 'data');
+
   const Item = styled(Paper)(({ theme }) => ({
     width: 300,
     backgroundColor: '#F5F3FA',
@@ -50,7 +55,7 @@ function Schedule() {
             alignItems: onlySmSize ? 'center' : 'none',
           }}
         >
-          {scheduleData.map((item, index) => (
+          {data.map((item, index) => (
             <Item elevation={8} key={index} className='schedule'>
               <div className='schedule__title'>
                 <h3 className='schedule__title--day'>{item.day}</h3>

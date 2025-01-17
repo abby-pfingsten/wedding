@@ -1,60 +1,19 @@
 {
   "name": "ab-anj-wedding",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
-  "dependencies": {
-    "@emotion/react": "^11.13.0",
-    "@emotion/styled": "^11.13.0",
-    "@fortawesome/fontawesome-svg-core": "^6.7.2",
-    "@fortawesome/free-solid-svg-icons": "^6.7.2",
-    "@fortawesome/react-fontawesome": "^0.2.2",
-    "@mui/icons-material": "^5.16.5",
-    "@mui/lab": "^5.0.0-alpha.173",
-    "@mui/material": "^5.16.5",
-    "@syncfusion/ej2-react-schedule": "^28.1.35",
-    "@testing-library/jest-dom": "^5.17.0",
-    "@testing-library/react": "^13.4.0",
-    "@testing-library/user-event": "^13.5.0",
-    "bootstrap": "^5.3.3",
-    "moment": "^2.30.1",
-    "mui-image": "^1.0.7",
-    "planby": "^1.1.7",
-    "react": "^18.3.1",
-    "react-big-calendar": "^1.17.1",
-    "react-bootstrap": "^2.10.7",
-    "react-dom": "^18.3.1",
-    "react-icons": "^5.4.0",
-    "react-router-dom": "^6.25.1",
-    "react-scripts": "^5.0.1",
-    "web-vitals": "^2.1.4"
-  },
   "scripts": {
-    "format": "prettier --write \"src/**/*.{js,jsx,ts,tsx,json,css,scss,md}\"",
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "start": "concurrently \"npm start --prefix frontend\" \"node backend/server.js\"",
+    "frontend": "npm start --prefix frontend",
+    "backend": "node backend/server.js",
+    "build": "npm run build --prefix frontend",
+    "format": "prettier --write \"{frontend,backend}/**/*.{js,jsx,ts,tsx,json,css,scss,md}\""
   },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+  "dependencies": {
+    "concurrently": "^7.0.0"
   },
   "devDependencies": {
-    "prettier": "^3.3.3",
-    "sass": "^1.79.4"
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
+    "prettier": "^3.4.2"
   }
 }

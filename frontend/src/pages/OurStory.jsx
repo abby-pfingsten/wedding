@@ -18,10 +18,14 @@ import { FaPagelines } from 'react-icons/fa';
 import '../styles/OurStory.scss';
 
 // import array with data
-import ourStoryPics from '../data/our-story-data.jsx';
+import ourStory from '../data/our-story-data.jsx';
+import ourStoryRecruiter from '../data/our-story-data-recruiter.jsx';
+
 import { useMediaQuery, useTheme } from '@mui/material';
 
-export default function OurStory() {
+export default function OurStory({ hideIsTrue }) {
+  const data = hideIsTrue ? ourStoryRecruiter : ourStory;
+
   const theme = useTheme();
   const isSmallScreen = useMediaQuery(theme.breakpoints.down('sm'));
   const onlySmSize = useMediaQuery(theme.breakpoints.only('sm'));
@@ -39,7 +43,7 @@ export default function OurStory() {
       </Typography>
       {/* <Timeline position='alternate'> */}
       <Timeline position={isSmallScreen ? 'left' : 'alternate'}>
-        {ourStoryPics.map((timelineItem) => (
+        {data.map((timelineItem) => (
           <TimelineItem key={timelineItem.key}>
             <TimelineSeparator>
               <TimelineConnector
@@ -57,7 +61,7 @@ export default function OurStory() {
                   borderRadius: 15,
                   objectFit: 'cover',
                 }}
-                // alt='The house from the offer.'
+                alt={timelineItem.alt}
                 src={timelineItem.image}
               />
               <TimelineConnector

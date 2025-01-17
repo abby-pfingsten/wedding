@@ -6,11 +6,14 @@ import AccordionDetails from '@mui/material/AccordionDetails';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import Typography from '@mui/material/Typography';
 import faqData from '../data/faq-data.jsx';
+import faqDataRecruiter from '../data/faq-data-recruiter.jsx';
 import Divider from '@mui/material/Divider';
 import { FaPagelines } from 'react-icons/fa';
 import '../styles/FAQ.scss';
 
-export default function FAQ() {
+export default function FAQ({ hideIsTrue }) {
+  const data = hideIsTrue ? faqDataRecruiter : faqData;
+
   return (
     <Container id='Q&A' maxWidth={false}>
       <br></br>
