@@ -25,7 +25,7 @@ export default function FAQ({ hideIsTrue }) {
         Your Burning Questions Answered
       </Typography>
       <br></br>
-      {data.map((faq, index) => (
+      {faqData.map((faq, index) => (
         <Accordian key={index} className='faq'>
           <AccordionSummary expandIcon={<ArrowDropDownIcon />}>
             {faq.faqTitle}

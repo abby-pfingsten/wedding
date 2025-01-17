@@ -14,7 +14,7 @@ import FormLabel from '@mui/material/FormLabel';
 
 import '../styles/RSVP.scss';
 
-function RSVP({ openRSVP, setOpenRSVP, recruiter }) {
+function RSVP({ openRSVP, setOpenRSVP, hideIsTrue }) {
   const handleRSVPClose = () => {
     setOpenRSVP(false);
   };
@@ -45,12 +45,14 @@ function RSVP({ openRSVP, setOpenRSVP, recruiter }) {
         <DialogTitle>Let Us Know If You Can Make It!</DialogTitle>
         <DialogContent className='dialog'>
           {/* if someone is a recruiter then we want to give them instructions */}
-          {recruiter ? (
+          {hideIsTrue ? (
             <DialogContentText>
               Hello recruiter or potential future teammate! 👋 If you would like
               to try out the RSVP functionality, you can use the following
               email: adminemail@temp.com, because as much as we would love your
-              company at our wedding, it is a small event :)
+              company at our wedding, it is a small event. (Depending on where I
+              am at in the process, this functionality might not yet be
+              available. )
             </DialogContentText>
           ) : (
             <DialogContentText>

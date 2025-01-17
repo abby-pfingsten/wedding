@@ -13,4 +13,3 @@ General
   https://developer.chrome.com/docs/lighthouse/performance/uses-responsive-images/?utm_source=lighthouse&utm_medium=devtools
 - get favicon to be same color as theme
 - verify pictures (engagement) to be shown
-- if the password is a recruiter password then don't allow rsvp capabilities
