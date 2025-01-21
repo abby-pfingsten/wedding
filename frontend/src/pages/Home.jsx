@@ -26,7 +26,7 @@ export default function Home({ theme, hideInfo }) {
     } else {
       setHideIsTrue(false);
     }
-  }, []);
+  }, [hideInfo]);
 
   return (
     <ThemeProvider theme={theme}>
