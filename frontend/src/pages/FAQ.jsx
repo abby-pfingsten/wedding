@@ -11,8 +11,8 @@ import Divider from '@mui/material/Divider';
 import { FaPagelines } from 'react-icons/fa';
 import '../styles/FAQ.scss';
 
-export default function FAQ({ hideIsTrue }) {
-  const data = hideIsTrue ? faqDataRecruiter : faqData;
+export default function FAQ({ hide }) {
+  const data = hide ? faqDataRecruiter : faqData;
 
   return (
     <Container id='Q&A' maxWidth={false}>
