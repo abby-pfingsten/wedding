@@ -24,7 +24,7 @@ import ourStoryRecruiter from '../data/our-story-data-recruiter.jsx';
 import { useMediaQuery, useTheme } from '@mui/material';
 
 export default function OurStory({ hide }) {
-  const data = hide ? ourStoryRecruiter : ourStory;
+  const data = JSON.parse(hide) ? ourStoryRecruiter : ourStory;
 
   const theme = useTheme();
   const isSmallScreen = useMediaQuery(theme.breakpoints.down('sm'));

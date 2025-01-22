@@ -11,7 +11,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import RSVP from '../components/RSVP';
 
 export default function Home({ theme, hide }) {
-  console.log(hide, 'hide from home');
+  console.log(typeof hide, 'hide from home');
   // to handle the opening/closing of RSVP since
   // they are in different components
   const [openRSVP, setOpenRSVP] = React.useState(false);

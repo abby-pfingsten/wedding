@@ -12,7 +12,7 @@ import { FaPagelines } from 'react-icons/fa';
 import '../styles/FAQ.scss';
 
 export default function FAQ({ hide }) {
-  const data = hide ? faqDataRecruiter : faqData;
+  const data = JSON.parse(hide) ? faqDataRecruiter : faqData;
 
   return (
     <Container id='Q&A' maxWidth={false}>
