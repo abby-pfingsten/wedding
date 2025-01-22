@@ -22,7 +22,9 @@ const PrivateRoutes = () => {
 function App() {
   // we need to determine if someone is visiting the website as part
   // of a job application (hi!) and prevent them from RSVP-ing
-  const hideInfo = localStorage.getItem('hideInfo');
+  const [hide, setHide] = React.useState(
+    localStorage.getItem('hideInfo') || ''
+  );
 
   const abAnjTheme = createTheme({
     palette: {
@@ -49,13 +51,13 @@ function App() {
             <Route
               exact
               path='/signin'
-              element={<SignIn theme={abAnjTheme}></SignIn>}
+              element={<SignIn theme={abAnjTheme} setHide={setHide}></SignIn>}
             />
             <Route element={<PrivateRoutes />}>
               <Route
                 exact
                 path='/'
-                element={<Home theme={abAnjTheme} hideInfo={hideInfo} />}
+                element={<Home theme={abAnjTheme} hide={hide} />}
               />
             </Route>
           </Routes>

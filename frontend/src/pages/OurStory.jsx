@@ -23,8 +23,8 @@ import ourStoryRecruiter from '../data/our-story-data-recruiter.jsx';
 
 import { useMediaQuery, useTheme } from '@mui/material';
 
-export default function OurStory({ hideIsTrue }) {
-  const data = hideIsTrue ? ourStoryRecruiter : ourStory;
+export default function OurStory({ hide }) {
+  const data = JSON.parse(hide) ? ourStoryRecruiter : ourStory;
 
   const theme = useTheme();
   const isSmallScreen = useMediaQuery(theme.breakpoints.down('sm'));
@@ -41,7 +41,6 @@ export default function OurStory({ hideIsTrue }) {
       <Typography variant='h2' align='center'>
         Our Story
       </Typography>
-      {/* <Timeline position='alternate'> */}
       <Timeline position={isSmallScreen ? 'left' : 'alternate'}>
         {data.map((timelineItem) => (
           <TimelineItem key={timelineItem.key}>

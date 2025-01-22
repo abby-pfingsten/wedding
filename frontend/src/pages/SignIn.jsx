@@ -23,7 +23,7 @@ const BackgroundDiv = styled('div')({
   filter: 'saturate(30%)',
 });
 
-export default function SignIn({ theme }) {
+export default function SignIn({ theme, setHide }) {
   // navigate to home page
   const navigate = useNavigate();
 
@@ -49,10 +49,10 @@ export default function SignIn({ theme }) {
       // specific information
       if (passwordValue.toUpperCase() === 'ADMINPASS') {
         localStorage.setItem('hideInfo', JSON.stringify(true));
-        // setRecruiter(true);
+        setHide(true);
       } else {
         localStorage.setItem('hideInfo', JSON.stringify(false));
-        // setRecruiter(false);
+        setHide(false);
       }
     } else {
       setError(true);
@@ -123,12 +123,9 @@ export default function SignIn({ theme }) {
               justifyContent='center'
               alignItems='center'
             >
-              {/* <div> */}
-
               <Button onClick={handleSubmit} size='large' variant='contained'>
                 Enter
               </Button>
-              {/* </div> */}
             </Grid>{' '}
           </Grid>
         </CssBaseline>
