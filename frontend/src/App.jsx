@@ -22,8 +22,10 @@ const PrivateRoutes = () => {
 function App() {
   // we need to determine if someone is visiting the website as part
   // of a job application (hi!) and prevent them from RSVP-ing
-  let hideInfo = localStorage.getItem('hideInfo') || '';
-  const [hide, setHide] = React.useState(false);
+  // let hideInfo = localStorage.getItem('hideInfo') || '';
+  const [hide, setHide] = React.useState(
+    localStorage.getItem('hideInfo') || ''
+  );
 
   // React.useEffect(() => {
   //   hideInfo = localStorage.getItem('hideInfo');
