@@ -50,11 +50,9 @@ export default function SignIn({ theme, setHide }) {
       if (passwordValue.toUpperCase() === 'ADMINPASS') {
         localStorage.setItem('hideInfo', JSON.stringify(true));
         setHide(true);
-        // setRecruiter(true);
       } else {
         localStorage.setItem('hideInfo', JSON.stringify(false));
         setHide(false);
-        // setRecruiter(false);
       }
     } else {
       setError(true);
@@ -125,12 +123,9 @@ export default function SignIn({ theme, setHide }) {
               justifyContent='center'
               alignItems='center'
             >
-              {/* <div> */}
-
               <Button onClick={handleSubmit} size='large' variant='contained'>
                 Enter
               </Button>
-              {/* </div> */}
             </Grid>{' '}
           </Grid>
         </CssBaseline>

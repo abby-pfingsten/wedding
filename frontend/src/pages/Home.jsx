@@ -11,23 +11,9 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import RSVP from '../components/RSVP';
 
 export default function Home({ theme, hide }) {
-  console.log(typeof hide, 'hide from home');
   // to handle the opening/closing of RSVP since
   // they are in different components
   const [openRSVP, setOpenRSVP] = React.useState(false);
-  // const [hideIsTrue, setHideIsTrue] = React.useState(false);
-
-  // React.useEffect(() => {
-  //   // Retrieve the value from localStorage
-
-  //   // Parse it and check if it's true and if it is
-  //   // we need to hide the information
-  //   if (hideInfo && JSON.parse(hideInfo) === true) {
-  //     setHideIsTrue(true);
-  //   } else {
-  //     setHideIsTrue(false);
-  //   }
-  // }, [hideInfo]);
 
   return (
     <ThemeProvider theme={theme}>

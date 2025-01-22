@@ -18,10 +18,6 @@ import '../styles/Schedule.scss';
 function Schedule({ hide }) {
   const data = JSON.parse(hide) ? scheduleDataRecruiter : scheduleData;
 
-  // console.log(typeof JSON.parse(hide), 'from schedule');
-
-  // console.log(hide, 'from schedule');
-
   const Item = styled(Paper)(({ theme }) => ({
     width: 300,
     backgroundColor: '#F5F3FA',

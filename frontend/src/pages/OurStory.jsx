@@ -41,7 +41,6 @@ export default function OurStory({ hide }) {
       <Typography variant='h2' align='center'>
         Our Story
       </Typography>
-      {/* <Timeline position='alternate'> */}
       <Timeline position={isSmallScreen ? 'left' : 'alternate'}>
         {data.map((timelineItem) => (
           <TimelineItem key={timelineItem.key}>
