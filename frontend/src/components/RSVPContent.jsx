@@ -12,7 +12,7 @@ import FormControl from '@mui/material/FormControl';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import FormLabel from '@mui/material/FormLabel';
 
-function RSVPScreen({ hideIsTrue }) {
+function RSVPContent({ hideIsTrue }) {
   const [response, setResponse] = React.useState(null);
   const handleRSVPResponse = (e) => {
     setResponse(e.target.value);
@@ -20,25 +20,6 @@ function RSVPScreen({ hideIsTrue }) {
 
   return (
     <DialogContent className='dialog'>
-      {/* <Button
-            variant='contained'
-            onClick={() => {
-              setSend(true);
-              setUpdate(false);
-            }}
-          >
-            Send Your Response
-          </Button>
-          <Button
-            variant='contained'
-            onClick={() => {
-              setUpdate(true);
-              setSend(false);
-            }}
-          >
-            Update Your Response
-          </Button> */}
-
       {hideIsTrue ? (
         <DialogContentText>
           Hello recruiter or potential future teammate! 👋 If you would like to
@@ -141,4 +122,4 @@ function RSVPScreen({ hideIsTrue }) {
     </DialogContent>
   );
 }
-export default RSVPScreen;
+export default RSVPContent;
