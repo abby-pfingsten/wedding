@@ -1,25 +1,20 @@
 import * as React from 'react';
-import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
-import Dialog from '@mui/material/Dialog';
-import DialogActions from '@mui/material/DialogActions';
-import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
-import DialogTitle from '@mui/material/DialogTitle';
 import Radio from '@mui/material/Radio';
 import RadioGroup from '@mui/material/RadioGroup';
 import FormControl from '@mui/material/FormControl';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import FormLabel from '@mui/material/FormLabel';
 
-function RSVPContent({ hideIsTrue }) {
+function RSVPContent({ hideIsTrue, update, send }) {
   const [response, setResponse] = React.useState(null);
   const handleRSVPResponse = (e) => {
     setResponse(e.target.value);
   };
 
   return (
-    <DialogContent className='dialog'>
+    <>
       {hideIsTrue ? (
         <DialogContentText>
           Hello recruiter or potential future teammate! 👋 If you would like to
@@ -32,10 +27,12 @@ function RSVPContent({ hideIsTrue }) {
         <DialogContentText>
           We hope you can make it to our celebration! Please provide a good
           e-mail address that you reguarly check for updates. If your Save the
-          Date had more than one name, you will each have to individually RSVP.
+          Date had more than one name (or family name), you will each have to
+          individually RSVP with your own e-mail's.
         </DialogContentText>
       )}
       <TextField
+        disabled={update ? true : false}
         className='dialog__email'
         autoFocus
         required
@@ -45,13 +42,14 @@ function RSVPContent({ hideIsTrue }) {
         label='Email'
         type='email'
         fullWidth
-        variant='standard'
+        variant={update ? 'filled' : 'standard'}
       />
       <TextField
+        disabled={update ? true : false}
         // disable TODO add disabled once get data
         id='name'
         label='Name'
-        variant='standard'
+        variant={update ? 'filled' : 'standard'}
         margin='dense'
         fullWidth
         required
@@ -119,7 +117,7 @@ function RSVPContent({ hideIsTrue }) {
           )}
         </RadioGroup>
       </FormControl>
-    </DialogContent>
+    </>
   );
 }
 export default RSVPContent;

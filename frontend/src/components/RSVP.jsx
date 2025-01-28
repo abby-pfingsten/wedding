@@ -12,10 +12,10 @@ function RSVP({ openRSVP, setOpenRSVP, hideIsTrue }) {
     setOpenRSVP(false);
   };
 
-  // const [response, setResponse] = React.useState(null);
-  // const handleRSVPResponse = (e) => {
-  //   setResponse(e.target.value);
-  // };
+  const [response, setResponse] = React.useState(null);
+  const handleRSVPResponse = (e) => {
+    setResponse(e.target.value);
+  };
 
   const [update, setUpdate] = React.useState(null);
   const [send, setSend] = React.useState(null);
@@ -65,14 +65,18 @@ function RSVP({ openRSVP, setOpenRSVP, hideIsTrue }) {
             </>
           ) : (
             <>
-              <RSVPContent hideIsTrue={hideIsTrue}></RSVPContent>
+              <RSVPContent
+                hideIsTrue={hideIsTrue}
+                update={update}
+                send={send}
+              ></RSVPContent>
+              <DialogActions>
+                <Button type='submit'>Send Your Response!</Button>
+                <Button onClick={handleRSVPClose}>Cancel</Button>
+              </DialogActions>
             </>
           )}
         </DialogContent>
-        <DialogActions>
-          <Button type='submit'>Send Your Response!</Button>
-          <Button onClick={handleRSVPClose}>Cancel</Button>
-        </DialogActions>
       </Dialog>
     </React.Fragment>
   );
