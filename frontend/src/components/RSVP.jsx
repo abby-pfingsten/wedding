@@ -11,7 +11,7 @@ import RadioGroup from '@mui/material/RadioGroup';
 import FormControl from '@mui/material/FormControl';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import FormLabel from '@mui/material/FormLabel';
-
+import RSVPScreen from './RSVPScreen';
 import '../styles/RSVP.scss';
 
 function RSVP({ openRSVP, setOpenRSVP, hideIsTrue }) {
@@ -20,10 +20,12 @@ function RSVP({ openRSVP, setOpenRSVP, hideIsTrue }) {
   };
 
   const [response, setResponse] = React.useState(null);
-
   const handleRSVPResponse = (e) => {
     setResponse(e.target.value);
   };
+
+  const [update, setUpdate] = React.useState(null);
+  const [send, setSend] = React.useState(null);
 
   return (
     <React.Fragment>
@@ -44,8 +46,27 @@ function RSVP({ openRSVP, setOpenRSVP, hideIsTrue }) {
       >
         <DialogTitle>Let Us Know If You Can Make It!</DialogTitle>
         <DialogContent className='dialog'>
-          {/* if someone is a recruiter then we want to give them instructions */}
-          {hideIsTrue ? (
+          <RSVPScreen hideIsTrue={hideIsTrue}></RSVPScreen>
+          {/* <Button
+            variant='contained'
+            onClick={() => {
+              setSend(true);
+              setUpdate(false);
+            }}
+          >
+            Send Your Response
+          </Button>
+          <Button
+            variant='contained'
+            onClick={() => {
+              setUpdate(true);
+              setSend(false);
+            }}
+          >
+            Update Your Response
+          </Button> */}
+
+          {/* {hideIsTrue ? (
             <DialogContentText>
               Hello recruiter or potential future teammate! 👋 If you would like
               to try out the RSVP functionality, you can use the following
@@ -149,7 +170,7 @@ function RSVP({ openRSVP, setOpenRSVP, hideIsTrue }) {
                 <></>
               )}
             </RadioGroup>
-          </FormControl>
+          </FormControl> */}
         </DialogContent>
         <DialogActions>
           <Button type='submit'>Send Your Response!</Button>
