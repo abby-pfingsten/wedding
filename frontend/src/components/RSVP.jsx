@@ -6,19 +6,17 @@ import DialogContent from '@mui/material/DialogContent';
 import DialogTitle from '@mui/material/DialogTitle';
 import RSVPContent from './RSVPContent';
 import '../styles/RSVP.scss';
+import TouchRipple from '@mui/material/ButtonBase/TouchRipple';
+import { TextareaAutosize } from '@mui/material';
 
 function RSVP({ openRSVP, setOpenRSVP, hideIsTrue }) {
   const handleRSVPClose = () => {
     setOpenRSVP(false);
+    setShowButton(true);
   };
-
-  const [response, setResponse] = React.useState(null);
-  const handleRSVPResponse = (e) => {
-    setResponse(e.target.value);
-  };
-
   const [update, setUpdate] = React.useState(null);
   const [send, setSend] = React.useState(null);
+  const [counter, setCounter] = React.useState(0);
   const [showButton, setShowButton] = React.useState(true);
 
   return (
@@ -40,12 +38,15 @@ function RSVP({ openRSVP, setOpenRSVP, hideIsTrue }) {
       >
         <DialogTitle>Let Us Know If You Can Make It!</DialogTitle>
         <DialogContent className='dialog'>
+          {console.log('open modal', openRSVP)}
+
           {showButton ? (
             <>
               <Button
                 variant='contained'
                 onClick={() => {
-                  setSend(true);
+                  setCounter(counter + 1);
+                  // setSend(true);
                   setUpdate(false);
                   setShowButton(false);
                 }}
@@ -55,8 +56,9 @@ function RSVP({ openRSVP, setOpenRSVP, hideIsTrue }) {
               <Button
                 variant='contained'
                 onClick={() => {
+                  setCounter(counter + 1);
                   setUpdate(true);
-                  setSend(false);
+                  // setSend(false);
                   setShowButton(false);
                 }}
               >
@@ -71,7 +73,9 @@ function RSVP({ openRSVP, setOpenRSVP, hideIsTrue }) {
                 send={send}
               ></RSVPContent>
               <DialogActions>
-                <Button type='submit'>Send Your Response!</Button>
+                <Button type='submit' onClick={handleRSVPClose}>
+                  Send Your Response!
+                </Button>
                 <Button onClick={handleRSVPClose}>Cancel</Button>
               </DialogActions>
             </>

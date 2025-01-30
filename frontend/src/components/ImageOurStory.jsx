@@ -4,7 +4,7 @@ import picTwo from '../images/our-story/pic_2.jpg';
 import picThree from '../images/our-story/pic_3.jpg';
 
 export default function ImageOurStory() {
-  ourStoryArray = [
+  let ourStoryArray = [
     {
       header: 'First Header',
       subHeader: 'First Sub Header',
