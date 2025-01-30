@@ -38,9 +38,7 @@ function RSVP({ openRSVP, setOpenRSVP, hideIsTrue }) {
       >
         <DialogTitle>Let Us Know If You Can Make It!</DialogTitle>
         <DialogContent className='dialog'>
-          {console.log('open modal', openRSVP)}
-
-          {showButton ? (
+          {showButton && openRSVP ? (
             <>
               <Button
                 variant='contained'
