@@ -6,8 +6,6 @@ import DialogContent from '@mui/material/DialogContent';
 import DialogTitle from '@mui/material/DialogTitle';
 import RSVPContent from './RSVPContent';
 import '../styles/RSVP.scss';
-import TouchRipple from '@mui/material/ButtonBase/TouchRipple';
-import { TextareaAutosize } from '@mui/material';
 
 function RSVP({ openRSVP, setOpenRSVP, hideIsTrue }) {
   const handleRSVPClose = () => {
@@ -39,7 +37,7 @@ function RSVP({ openRSVP, setOpenRSVP, hideIsTrue }) {
         <DialogTitle>Let Us Know If You Can Make It!</DialogTitle>
         <DialogContent className='dialog'>
           {showButton && openRSVP ? (
-            <>
+            <div className='rsvpButtons'>
               <Button
                 variant='contained'
                 onClick={() => {
@@ -62,7 +60,7 @@ function RSVP({ openRSVP, setOpenRSVP, hideIsTrue }) {
               >
                 Update Your Response
               </Button>
-            </>
+            </div>
           ) : (
             <>
               <RSVPContent
