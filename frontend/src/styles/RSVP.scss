@@ -1,6 +1,18 @@
 .dialog__radioButtons {
+  display: flex;
+  flex-direction: row !important;
+  &--yes {
+    width: 100%;
+  }
   &--no {
     align-items: center;
+    font-size: 13px;
+    color: lighten(black, 50%);
+  }
+  &--maybe {
+    align-items: center;
+    font-size: 13px;
+    color: lighten(black, 50%);
   }
 }
 

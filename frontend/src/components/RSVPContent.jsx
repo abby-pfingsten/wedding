@@ -98,11 +98,8 @@ function RSVPContent({ hideIsTrue, update, send }) {
           )}
           {response === 'no' ? (
             <p className='dialog__radioButtons--no'>
-              We're sad you won't be able to make it. By submitting this
-              response, we will assume you're not making it, so we might offer
-              the spot to someone else. Please reach out ASAP if anything
-              changes, but there are no guarantee's once your response has been
-              received.
+              We're sad you won't be able to come. Please reach out or update
+              your status ASAP if anything changes.
             </p>
           ) : (
             <></>
@@ -110,7 +107,7 @@ function RSVPContent({ hideIsTrue, update, send }) {
           {response === 'maybe' ? (
             <p className='dialog__radioButtons--maybe'>
               Please remember to make sure to confirm your reponse by end of
-              January.
+              August 2026.
             </p>
           ) : (
             <></>
