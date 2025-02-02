@@ -13,7 +13,7 @@ function RSVP({ openRSVP, setOpenRSVP, hideIsTrue }) {
     setShowButton(true);
   };
   const [update, setUpdate] = React.useState(null);
-  const [send, setSend] = React.useState(null);
+  // const [send, setSend] = React.useState(null);
   const [counter, setCounter] = React.useState(0);
   const [showButton, setShowButton] = React.useState(true);
 
@@ -66,7 +66,7 @@ function RSVP({ openRSVP, setOpenRSVP, hideIsTrue }) {
               <RSVPContent
                 hideIsTrue={hideIsTrue}
                 update={update}
-                send={send}
+                // send={send}
               ></RSVPContent>
               <DialogActions>
                 <Button type='submit' onClick={handleRSVPClose}>
