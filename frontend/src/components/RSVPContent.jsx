@@ -7,7 +7,7 @@ import FormControl from '@mui/material/FormControl';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import FormLabel from '@mui/material/FormLabel';
 
-function RSVPContent({ hideIsTrue, update, send }) {
+function RSVPContent({ hideIsTrue, update }) {
   const [response, setResponse] = React.useState(null);
   const handleRSVPResponse = (e) => {
     setResponse(e.target.value);
