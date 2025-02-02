@@ -12,7 +12,7 @@ const faqArray = [
   {
     faqTitle: 'When Do I Need to RSVP By?',
     faqAnswer:
-      'Given the nature of the wedding, we kindly request everyone to RSVP by January of 2026. If we have not received a response by January 31st, 2026 we will consider that you will not be able to make it. Please reach out to us directly if there is a reason you might not be able to let us know by this date.',
+      'Given the nature of the wedding, we kindly request everyone to RSVP by August of 2026. If we have not received a response by August 31st, 2026 we will consider that you will not be able to make it, but please reach out to us directly if there is a reason you might not be able to let us know by this date.',
   },
   {
     faqTitle: 'Is There a Dress Code?',

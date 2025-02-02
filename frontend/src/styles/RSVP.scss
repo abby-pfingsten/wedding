@@ -1,5 +1,24 @@
 .dialog__radioButtons {
+  display: flex;
+  flex-direction: row !important;
+  &--yes {
+    width: 100%;
+  }
   &--no {
     align-items: center;
+    font-size: 13px;
+    color: lighten(black, 50%);
   }
+  &--maybe {
+    align-items: center;
+    font-size: 13px;
+    color: lighten(black, 50%);
+  }
+}
+
+.rsvpButtons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 10px;
 }
