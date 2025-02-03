@@ -6,6 +6,8 @@ const rsvpSchema = new mongoose.Schema(
     name: { type: String, required: true },
     email: { type: String, required: true, unique: true },
     status: { type: String, required: true },
+    allergies: { type: String, required: false },
+    note: { type: String, required: false },
   },
   { collection: 'guestTable' }
 );

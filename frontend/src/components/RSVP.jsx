@@ -6,11 +6,27 @@ import DialogContent from '@mui/material/DialogContent';
 import DialogTitle from '@mui/material/DialogTitle';
 import RSVPContent from './RSVPContent';
 import '../styles/RSVP.scss';
+import axios from 'axios';
 
 function RSVP({ openRSVP, setOpenRSVP, hideIsTrue }) {
   const handleRSVPClose = () => {
     setOpenRSVP(false);
     setShowButton(true);
+  };
+
+  const [email, setEmail] = React.useState(null);
+  const [name, setName] = React.useState(null);
+  const [status, setStatus] = React.useState(null);
+  const [allergies, setAllergies] = React.useState(null);
+  const [note, setNote] = React.useState(null);
+  console.log(email);
+
+  const handleRSVPSubmit = (e) => {
+    e.preventDefault();
+    setOpenRSVP(false);
+    setShowButton(true);
+
+    console.log(e);
   };
   const [update, setUpdate] = React.useState(null);
   // const [send, setSend] = React.useState(null);
@@ -66,10 +82,15 @@ function RSVP({ openRSVP, setOpenRSVP, hideIsTrue }) {
               <RSVPContent
                 hideIsTrue={hideIsTrue}
                 update={update}
+                setEmail={setEmail}
+                setNote={setNote}
+                setAllergies={setAllergies}
+                setStatus={setStatus}
+                setName={setName}
                 // send={send}
               ></RSVPContent>
               <DialogActions>
-                <Button type='submit' onClick={handleRSVPClose}>
+                <Button type='submit' onClick={handleRSVPSubmit}>
                   Send Your Response!
                 </Button>
                 <Button onClick={handleRSVPClose}>Cancel</Button>

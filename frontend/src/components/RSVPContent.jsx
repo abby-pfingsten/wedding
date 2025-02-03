@@ -7,11 +7,21 @@ import FormControl from '@mui/material/FormControl';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import FormLabel from '@mui/material/FormLabel';
 
-function RSVPContent({ hideIsTrue, update }) {
+function RSVPContent({
+  hideIsTrue,
+  update,
+  setEmail,
+  setNote,
+  setAllergies,
+  setStatus,
+  setName,
+}) {
   const [response, setResponse] = React.useState(null);
   const handleRSVPResponse = (e) => {
     setResponse(e.target.value);
   };
+
+  
 
   return (
     <>
@@ -84,6 +94,7 @@ function RSVPContent({ hideIsTrue, update }) {
                 variant='standard'
                 margin='dense'
                 fullWidth
+                onBlur={(e) => setEmail(e.target.value)}
               />
               <TextField
                 id='comments'
