@@ -3,5 +3,6 @@ const router = express.Router();
 const rsvpCtrl = require('../controllers/rsvp');
 
 router.get('/', rsvpCtrl.getAllGuests);
+router.post('/', rsvpCtrl.sendRSVP);
 
 module.exports = router;
