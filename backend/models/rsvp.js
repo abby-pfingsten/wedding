@@ -7,7 +7,7 @@ const rsvpSchema = new mongoose.Schema(
     email: { type: String, required: true },
     status: { type: String, required: true },
   },
-  { collection: 'guestTable' } // ✅ Ensures the correct collection is used
+  { collection: 'guestTable' }
 );
 
 module.exports = mongoose.model('RSVP', rsvpSchema);
