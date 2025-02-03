@@ -11,7 +11,6 @@ exports.getAllGuests = async (req, res) => {
 };
 
 exports.sendRSVP = (req, res, next) => {
-  //   bcrypt.hash(req.body.email, 10).then((hash) => {
   const rsvp = new RSVP({
     name: req.body.name,
     email: req.body.email,
@@ -29,5 +28,26 @@ exports.sendRSVP = (req, res, next) => {
         error: error.message,
       });
     });
-  //   });
+};
+
+exports.getOneGuest = (req, res, next) => {
+  RSVP.findOne({
+    _id: req.params.id,
+  })
+    .then((guest) => {
+      if (guest) {
+        res.status(200).json(guest);
+      } else {
+        res.status(404).json({
+          error: 'Guest not found',
+        });
+      }
+    })
+    .catch((error) => {
+      console.log(error);
+
+      res.status(404).json({
+        error: error.message,
+      });
+    });
 };
