@@ -8,7 +8,7 @@ import RSVPContent from './RSVPContent';
 import '../styles/RSVP.scss';
 import axios from 'axios';
 
-function RSVP({ openRSVP, setOpenRSVP, hideIsTrue }) {
+function RSVP({ openRSVP, setOpenRSVP, hide }) {
   const handleRSVPClose = () => {
     setOpenRSVP(false);
     setShowButton(true);
@@ -111,7 +111,7 @@ function RSVP({ openRSVP, setOpenRSVP, hideIsTrue }) {
           ) : (
             <>
               <RSVPContent
-                hideIsTrue={hideIsTrue}
+                hide={hide}
                 update={update}
                 setEmail={setEmail}
                 setNote={setNote}

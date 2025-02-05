@@ -8,7 +8,7 @@ import FormControlLabel from '@mui/material/FormControlLabel';
 import FormLabel from '@mui/material/FormLabel';
 
 function RSVPContent({
-  hideIsTrue,
+  hide,
   update,
   setEmail,
   setNote,
@@ -23,13 +23,16 @@ function RSVPContent({
 
   return (
     <>
-      {hideIsTrue ? (
+      {hide ? (
         <DialogContentText>
-          Hello recruiter or potential future teammate! 👋 If you would like to
-          try out the RSVP functionality, you can use the following email:
-          adminemail@temp.com, because as much as we would love your company at
-          our wedding, it is a small event. (Depending on where I am at in the
-          process, this functionality might not yet be available. )
+          Hello recruiter or potential future teammate! 👋 <br></br> <br></br>If
+          you would like to try out the RSVP functionality, you can use the
+          following email: <b>testingemail@test.com</b>. <br></br>
+          <br></br>There is a uniqueness tied to the email in an effort to make
+          sure real guests don't RSVP twice, so in order to make this work for
+          "general" purposes, a random int will be appended to each of these
+          emails on the backend to ensure uniqueness. This does mean you will
+          not be able to use the "Update Your Response" section, unfortunately.
         </DialogContentText>
       ) : (
         <DialogContentText>
