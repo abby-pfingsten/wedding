@@ -15,12 +15,17 @@ function RSVPContent({
   setAllergies,
   setStatus,
   setName,
+  setEmailError,
 }) {
   const [response, setResponse] = React.useState(null);
   const handleRSVPResponse = (e) => {
     setResponse(e.target.value);
   };
 
+  const handleEmailEntry = (e) => {
+    setEmail(e.target.value);
+    setEmailError(false);
+  };
   return (
     <>
       {hide ? (
@@ -54,7 +59,7 @@ function RSVPContent({
         type='email'
         fullWidth
         variant={update ? 'filled' : 'standard'}
-        onBlur={(e) => setEmail(e.target.value)}
+        onBlur={handleEmailEntry}
       />
       <TextField
         disabled={update ? true : false}
@@ -83,10 +88,10 @@ function RSVPContent({
           name='radio-buttons-group'
           onBlur={(e) => setStatus(e.target.value)}
         >
-          <FormControlLabel value='yes' control={<Radio />} label='Yes! 🥳💜' />
-          <FormControlLabel value='no' control={<Radio />} label='No 😿' />
+          <FormControlLabel value='Yes' control={<Radio />} label='Yes! 🥳💜' />
+          <FormControlLabel value='No' control={<Radio />} label='No 😿' />
           <FormControlLabel
-            value='maybe'
+            value='Maybe'
             control={<Radio />}
             label='Maybe 👽'
           />

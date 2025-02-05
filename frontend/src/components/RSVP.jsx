@@ -19,6 +19,7 @@ function RSVP({ openRSVP, setOpenRSVP, hide }) {
   const [status, setStatus] = React.useState(null);
   const [allergies, setAllergies] = React.useState(null);
   const [note, setNote] = React.useState(null);
+  const [emailError, setEmailError] = React.useState(false);
 
   // if this is a recruiter trying to test the functionality
   // or I am testing, just append a random number to the end
@@ -49,8 +50,12 @@ function RSVP({ openRSVP, setOpenRSVP, hide }) {
       )
       .then((response) => {
         console.log('Succesfully saved data.');
+        setEmailError(false);
       })
-      .catch((error) => console.log(error));
+      .catch((error) => {
+        console.log(error);
+        setEmailError(true);
+      });
   }
   const handleRSVPSubmit = (e) => {
     e.preventDefault();
@@ -118,10 +123,14 @@ function RSVP({ openRSVP, setOpenRSVP, hide }) {
                 setAllergies={setAllergies}
                 setStatus={setStatus}
                 setName={setName}
-                // send={send}
+                setEmailError={setEmailError}
               ></RSVPContent>
               <DialogActions>
-                <Button type='submit' onClick={handleRSVPSubmit}>
+                <Button
+                  type='submit'
+                  disabled={emailError ? true : false}
+                  onClick={handleRSVPSubmit}
+                >
                   Send Your Response!
                 </Button>
                 <Button onClick={handleRSVPClose}>Cancel</Button>
