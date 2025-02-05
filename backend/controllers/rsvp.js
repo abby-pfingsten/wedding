@@ -15,6 +15,8 @@ exports.sendRSVP = (req, res, next) => {
     name: req.body.name,
     email: req.body.email,
     status: req.body.status,
+    allergies: req.body.allergies,
+    note: req.body.note,
   });
   rsvp
     .save()

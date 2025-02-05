@@ -19,12 +19,36 @@ function RSVP({ openRSVP, setOpenRSVP, hideIsTrue }) {
   const [status, setStatus] = React.useState(null);
   const [allergies, setAllergies] = React.useState(null);
   const [note, setNote] = React.useState(null);
-  console.log(email);
 
+  function sendResponse() {
+    console.log(email, name, status, allergies, note);
+    axios
+      .post(
+        'http://localhost:8000/api/rsvp',
+        {
+          name,
+          email,
+          status,
+          allergies,
+          note,
+        },
+        {
+          headers: {
+            'Content-Type': 'application/json', // Ensure content type is set
+          },
+        }
+      )
+      .then((response) => {
+        console.log('Succesfully saved data.');
+      })
+      .catch((error) => console.log(error));
+  }
   const handleRSVPSubmit = (e) => {
     e.preventDefault();
     setOpenRSVP(false);
     setShowButton(true);
+
+    sendResponse();
 
     console.log(e);
   };

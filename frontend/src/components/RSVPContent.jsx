@@ -21,8 +21,6 @@ function RSVPContent({
     setResponse(e.target.value);
   };
 
-  
-
   return (
     <>
       {hideIsTrue ? (
@@ -53,6 +51,7 @@ function RSVPContent({
         type='email'
         fullWidth
         variant={update ? 'filled' : 'standard'}
+        onBlur={(e) => setEmail(e.target.value)}
       />
       <TextField
         disabled={update ? true : false}
@@ -63,6 +62,7 @@ function RSVPContent({
         margin='dense'
         fullWidth
         required
+        onBlur={(e) => setName(e.target.value)}
       />
       <FormControl className='dialog__form'>
         <br></br>
@@ -78,6 +78,7 @@ function RSVPContent({
           // TODO --- later change this with the value from the DB
           // defaultValue='female'
           name='radio-buttons-group'
+          onBlur={(e) => setStatus(e.target.value)}
         >
           <FormControlLabel value='yes' control={<Radio />} label='Yes! 🥳💜' />
           <FormControlLabel value='no' control={<Radio />} label='No 😿' />
@@ -94,7 +95,7 @@ function RSVPContent({
                 variant='standard'
                 margin='dense'
                 fullWidth
-                onBlur={(e) => setEmail(e.target.value)}
+                onBlur={(e) => setAllergies(e.target.value)}
               />
               <TextField
                 id='comments'
@@ -102,6 +103,7 @@ function RSVPContent({
                 variant='standard'
                 margin='dense'
                 fullWidth
+                onBlur={(e) => setNote(e.target.value)}
               />
             </div>
           ) : (
