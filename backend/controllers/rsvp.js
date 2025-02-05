@@ -13,7 +13,7 @@ exports.getAllGuests = async (req, res) => {
 exports.sendRSVP = (req, res, next) => {
   const rsvp = new RSVP({
     name: req.body.name,
-    email: req.body.email,
+    email: email,
     status: req.body.status,
     allergies: req.body.allergies,
     note: req.body.note,

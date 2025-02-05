@@ -20,8 +20,17 @@ function RSVP({ openRSVP, setOpenRSVP, hideIsTrue }) {
   const [allergies, setAllergies] = React.useState(null);
   const [note, setNote] = React.useState(null);
 
+  // if this is a recruiter trying to test the functionality
+  // or I am testing, just append a random number to the end
+  // of the email so that the required uniqueness of it is not
+  // invalidated
+  React.useEffect(() => {
+    if (email === 'TESTINGEMAIL@TEST.COM') {
+      setEmail(email + Math.random());
+    }
+  }, [email]);
+
   function sendResponse() {
-    console.log(email, name, status, allergies, note);
     axios
       .post(
         'http://localhost:8000/api/rsvp',
@@ -47,11 +56,9 @@ function RSVP({ openRSVP, setOpenRSVP, hideIsTrue }) {
     e.preventDefault();
     setOpenRSVP(false);
     setShowButton(true);
-
     sendResponse();
-
-    console.log(e);
   };
+
   const [update, setUpdate] = React.useState(null);
   // const [send, setSend] = React.useState(null);
   const [counter, setCounter] = React.useState(0);
