@@ -23,8 +23,18 @@ function RSVPContent({
   };
 
   const handleEmailEntry = (e) => {
-    setEmail(e.target.value);
-    setEmailError(false);
+    let tempEmail = e.target.value;
+    const regex =
+      /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+
+    if (regex.test(tempEmail)) {
+      setEmail(e.target.value);
+      setEmailError(false);
+      alert('godd email');
+    } else {
+      setEmailError(true);
+      alert('bad email');
+    }
   };
   return (
     <>
@@ -95,7 +105,7 @@ function RSVPContent({
             control={<Radio />}
             label='Maybe 👽'
           />
-          {response === 'yes' ? (
+          {response === 'Yes' ? (
             <div className='dialog__radioButtons--yes'>
               <TextField
                 id='restrictions'
@@ -117,7 +127,7 @@ function RSVPContent({
           ) : (
             <></>
           )}
-          {response === 'no' ? (
+          {response === 'No' ? (
             <p className='dialog__radioButtons--no'>
               We're sad you won't be able to come. Please reach out or update
               your status ASAP if anything changes.
@@ -125,7 +135,7 @@ function RSVPContent({
           ) : (
             <></>
           )}
-          {response === 'maybe' ? (
+          {response === 'Maybe' ? (
             <p className='dialog__radioButtons--maybe'>
               Please remember to make sure to confirm your reponse by end of
               August 2026.
