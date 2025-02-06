@@ -14,12 +14,18 @@ function RSVP({ openRSVP, setOpenRSVP, hide }) {
     setShowButton(true);
   };
 
+  // set the values of the fields collected in the RSVP form
   const [email, setEmail] = React.useState(null);
   const [name, setName] = React.useState(null);
   const [status, setStatus] = React.useState(null);
   const [allergies, setAllergies] = React.useState(null);
   const [note, setNote] = React.useState(null);
-  const [emailError, setEmailError] = React.useState(false);
+
+  // we have to have conditions to check whether or not the
+  // submit button can be valid
+  const [emailError, setEmailError] = React.useState(true);
+  const [nameError, setNameError] = React.useState(true);
+  const [responseError, setResponseError] = React.useState(true);
 
   // if this is a recruiter trying to test the functionality
   // or I am testing, just append a random number to the end
@@ -124,11 +130,15 @@ function RSVP({ openRSVP, setOpenRSVP, hide }) {
                 setStatus={setStatus}
                 setName={setName}
                 setEmailError={setEmailError}
+                setNameError={setNameError}
+                setResponseError={setResponseError}
               ></RSVPContent>
               <DialogActions>
                 <Button
                   type='submit'
-                  disabled={emailError ? true : false}
+                  disabled={
+                    emailError || nameError || responseError ? true : false
+                  }
                   onClick={handleRSVPSubmit}
                 >
                   Send Your Response!

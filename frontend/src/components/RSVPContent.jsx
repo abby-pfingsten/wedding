@@ -16,26 +16,47 @@ function RSVPContent({
   setStatus,
   setName,
   setEmailError,
+  setNameError,
+  setResponseError,
 }) {
+  // State Variables ----
   const [response, setResponse] = React.useState(null);
+  // Functions ----
+
   const handleRSVPResponse = (e) => {
-    setResponse(e.target.value);
+    let tempResponse = e.target.value;
+    if (tempResponse.length > 0) {
+      setResponse(tempResponse);
+      setResponseError(false);
+    } else {
+      setResponseError(true);
+    }
   };
 
   const handleEmailEntry = (e) => {
     let tempEmail = e.target.value;
     const regex =
+      // eslint-disable-next-line
       /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-
+    // if the email is valid then we can assign update our state
     if (regex.test(tempEmail)) {
-      setEmail(e.target.value);
+      setEmail(tempEmail);
       setEmailError(false);
-      alert('godd email');
     } else {
       setEmailError(true);
-      alert('bad email');
     }
   };
+
+  const handleNameEntry = (e) => {
+    let tempName = e.target.value;
+    if (tempName.length > 0) {
+      setName(tempName);
+      setNameError(false);
+    } else {
+      setNameError(true);
+    }
+  };
+
   return (
     <>
       {hide ? (
@@ -57,6 +78,7 @@ function RSVPContent({
           individually RSVP with your own e-mail's.
         </DialogContentText>
       )}
+      {/* EMAIL */}
       <TextField
         disabled={update ? true : false}
         className='dialog__email'
@@ -69,8 +91,9 @@ function RSVPContent({
         type='email'
         fullWidth
         variant={update ? 'filled' : 'standard'}
-        onBlur={handleEmailEntry}
+        onChange={handleEmailEntry}
       />
+      {/* NAME  */}
       <TextField
         disabled={update ? true : false}
         // disable TODO add disabled once get data
@@ -80,8 +103,9 @@ function RSVPContent({
         margin='dense'
         fullWidth
         required
-        onBlur={(e) => setName(e.target.value)}
+        onChange={handleNameEntry}
       />
+      {/* RSVP STATUS */}
       <FormControl className='dialog__form'>
         <br></br>
         <FormLabel id='demo-row-radio-buttons-group-label'>
@@ -105,6 +129,7 @@ function RSVPContent({
             control={<Radio />}
             label='Maybe 👽'
           />
+          {/* ALLERGIES & NOTE */}
           {response === 'Yes' ? (
             <div className='dialog__radioButtons--yes'>
               <TextField
