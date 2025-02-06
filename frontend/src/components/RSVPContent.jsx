@@ -45,6 +45,8 @@ function RSVPContent({
     } else {
       setEmailError(true);
     }
+
+    // TODO --- have to check if email has already been submitted
   };
 
   const handleNameEntry = (e) => {
@@ -56,10 +58,10 @@ function RSVPContent({
       setNameError(true);
     }
   };
-
+  console.log('hide', hide === 'false');
   return (
     <>
-      {hide ? (
+      {hide === 'true' || hide ? (
         <DialogContentText>
           Hello recruiter or potential future teammate! 👋 <br></br> <br></br>If
           you would like to try out the RSVP functionality, you can use the
