@@ -20,14 +20,11 @@ function RSVPContent({
   setNameError,
   setResponseError,
 }) {
-  // State Variables ----
-  // const [response, setResponse] = React.useState(null);
   // Functions ----
 
   const handleRSVPResponse = (e) => {
     let tempResponse = e.target.value;
     if (tempResponse.length > 0) {
-      // setResponse(tempResponse);
       setStatus(tempResponse);
       setResponseError(false);
     } else {

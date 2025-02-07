@@ -1,11 +1,3 @@
-Our Story
-
-- Need to make the pictures larger
-
-Schedule
-
-- Need to figure out why on mid size screens the schedule looks weird and extends past the header
-
 General
 
 - some pics are a bit grainy
@@ -13,3 +5,10 @@ General
   https://developer.chrome.com/docs/lighthouse/performance/uses-responsive-images/?utm_source=lighthouse&utm_medium=devtools
 - get favicon to be same color as theme
 - verify pictures (engagement) to be shown
+
+Must Do:
+
+- don't allow update for rsvp
+- make engagement pictures smaller to show there's more
+- give message when someone sends a response
+* favicon

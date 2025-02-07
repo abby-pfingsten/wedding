@@ -8,7 +8,7 @@ import RSVPContent from './RSVPContent';
 import '../styles/RSVP.scss';
 import axios from 'axios';
 
-function RSVP({ openRSVP, setOpenRSVP, hide }) {
+function RSVP({ openRSVP, setOpenRSVP, hide, setShowAlert }) {
   const handleRSVPClose = () => {
     setOpenRSVP(false);
     setShowButton(true);
@@ -61,6 +61,7 @@ function RSVP({ openRSVP, setOpenRSVP, hide }) {
       .then((response) => {
         console.log('Succesfully saved data.');
         setEmailError(false);
+        setShowAlert(true);
       })
       .catch((error) => {
         console.log(error);
