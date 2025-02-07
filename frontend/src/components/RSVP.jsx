@@ -37,10 +37,12 @@ function RSVP({ openRSVP, setOpenRSVP, hide }) {
     }
   }, [email]);
 
+  const url = `${process.env.REACT_APP_API_BASE_URL}/api/rsvp`;
+
   function sendResponse() {
     axios
       .post(
-        'http://localhost:8000/api/rsvp',
+        url,
         {
           name,
           email,
