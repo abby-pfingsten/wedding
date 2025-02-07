@@ -1,4 +1,3 @@
-// this is to connect to the .env file
 require('dotenv').config({ path: './.env' });
 const express = require('express');
 const mongoose = require('mongoose');
@@ -8,9 +7,14 @@ const app = express();
 const PORT = process.env.PORT || 10000;
 const MONGO_URI = process.env.MONGO_URI;
 
-// Middleware
-app.use(cors());
+// Middleware for CORS
+app.use(
+  cors({
+    origin: ['http://localhost:3000', 'https://wedding-fc25.netlify.app'], // Allow both local and production
+  })
+);
 app.use(express.json());
+
 // Connect to MongoDB
 mongoose
   .connect(MONGO_URI)
@@ -21,8 +25,13 @@ mongoose
 const rsvpRoutes = require('./routes/rsvp');
 app.use('/api/rsvp', rsvpRoutes);
 
+// Default route (you already have this working)
 app.get('/', (req, res) => {
   res.send('App is Working');
 });
 
+// Handle preflight OPTIONS request
+app.options('*', cors());
+
+// Start server
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
