@@ -58,12 +58,6 @@ function RSVPContent({
       setNameError(true);
     }
   };
-  console.log(
-    'is hide ==== to true',
-    typeof JSON.parse(hide),
-    // JSON.parse(hide) === false,
-    JSON.parse(hide) === false
-  );
   return (
     <>
       {JSON.parse(hide) === true ? (
