@@ -72,10 +72,18 @@ function RSVPContent({
         </DialogContentText>
       ) : (
         <DialogContentText>
-          We hope you can make it to our celebration! Please provide a good
-          e-mail address that you reguarly check for updates. If your Save the
-          Date had more than one name (or family name), you will each have to
-          individually RSVP with your own e-mail's.
+          {update ? (
+            <>
+              <b>Updating your RSVP response is coming soon!</b>
+            </>
+          ) : (
+            <>
+              We hope you can make it to our celebration! Please provide a good
+              e-mail address that you reguarly check for updates. If your Save
+              the Date had more than one name (or family name), you will each
+              have to individually RSVP with your own e-mail's.
+            </>
+          )}
         </DialogContentText>
       )}
       {/* EMAIL */}
@@ -120,7 +128,6 @@ function RSVPContent({
           // TODO --- later change this with the value from the DB
           // defaultValue='female'
           name='radio-buttons-group'
-          // onChange={(e) => setStatus(e.target.value)}
         >
           <FormControlLabel value='Yes' control={<Radio />} label='Yes! 🥳💜' />
           <FormControlLabel value='No' control={<Radio />} label='No 😿' />

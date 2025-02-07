@@ -8,7 +8,6 @@ General
 
 Must Do:
 
-- don't allow update for rsvp
 - make engagement pictures smaller to show there's more
-- give message when someone sends a response
+
 * favicon

@@ -17,6 +17,8 @@ export default function Home({ theme, hide }) {
   // they are in different components
   const [openRSVP, setOpenRSVP] = React.useState(false);
 
+  // state variable to handle showing an alert to the
+  // user when an rsvp response was successfully saved
   const [showAlert, setShowAlert] = React.useState(false);
 
   React.useEffect(() => {
