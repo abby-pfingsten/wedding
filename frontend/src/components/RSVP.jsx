@@ -6,17 +6,72 @@ import DialogContent from '@mui/material/DialogContent';
 import DialogTitle from '@mui/material/DialogTitle';
 import RSVPContent from './RSVPContent';
 import '../styles/RSVP.scss';
+import axios from 'axios';
 
-function RSVP({ openRSVP, setOpenRSVP, hideIsTrue }) {
+function RSVP({ openRSVP, setOpenRSVP, hide }) {
   const handleRSVPClose = () => {
     setOpenRSVP(false);
     setShowButton(true);
   };
-  const [update, setUpdate] = React.useState(null);
-  // const [send, setSend] = React.useState(null);
-  const [counter, setCounter] = React.useState(0);
-  const [showButton, setShowButton] = React.useState(true);
 
+  // set the values of the fields collected in the RSVP form
+  const [email, setEmail] = React.useState(null);
+  const [name, setName] = React.useState(null);
+  const [status, setStatus] = React.useState(null);
+  const [allergies, setAllergies] = React.useState(null);
+  const [note, setNote] = React.useState(null);
+
+  // we have to have conditions to check whether or not the
+  // submit button can be valid
+  const [emailError, setEmailError] = React.useState(true);
+  const [nameError, setNameError] = React.useState(true);
+  const [responseError, setResponseError] = React.useState(true);
+
+  // if this is a recruiter trying to test the functionality
+  // or I am testing, just append a random number to the end
+  // of the email so that the required uniqueness of it is not
+  // invalidated
+  React.useEffect(() => {
+    if (email === 'TESTINGEMAIL@TEST.COM') {
+      setEmail(email + Math.random());
+    }
+  }, [email]);
+
+  function sendResponse() {
+    axios
+      .post(
+        'http://localhost:8000/api/rsvp',
+        {
+          name,
+          email,
+          status,
+          allergies,
+          note,
+        },
+        {
+          headers: {
+            'Content-Type': 'application/json', // Ensure content type is set
+          },
+        }
+      )
+      .then((response) => {
+        console.log('Succesfully saved data.');
+        setEmailError(false);
+      })
+      .catch((error) => {
+        console.log(error);
+        setEmailError(true);
+      });
+  }
+  const handleRSVPSubmit = (e) => {
+    e.preventDefault();
+    setOpenRSVP(false);
+    setShowButton(true);
+    sendResponse();
+  };
+
+  const [update, setUpdate] = React.useState(null);
+  const [showButton, setShowButton] = React.useState(true);
   return (
     <React.Fragment>
       <Dialog
@@ -26,10 +81,9 @@ function RSVP({ openRSVP, setOpenRSVP, hideIsTrue }) {
           component: 'form',
           onSubmit: (event) => {
             event.preventDefault();
-            const formData = new FormData(event.currentTarget);
-            const formJson = Object.fromEntries(formData.entries());
-            const email = formJson.email;
-            console.log(email);
+            // const formData = new FormData(event.currentTarget);
+            // const formJson = Object.fromEntries(formData.entries());
+            // const email = formJson.email;
             handleRSVPClose();
           },
         }}
@@ -41,7 +95,7 @@ function RSVP({ openRSVP, setOpenRSVP, hideIsTrue }) {
               <Button
                 variant='contained'
                 onClick={() => {
-                  setCounter(counter + 1);
+                  // setCounter(counter + 1);
                   // setSend(true);
                   setUpdate(false);
                   setShowButton(false);
@@ -52,9 +106,7 @@ function RSVP({ openRSVP, setOpenRSVP, hideIsTrue }) {
               <Button
                 variant='contained'
                 onClick={() => {
-                  setCounter(counter + 1);
                   setUpdate(true);
-                  // setSend(false);
                   setShowButton(false);
                 }}
               >
@@ -64,12 +116,25 @@ function RSVP({ openRSVP, setOpenRSVP, hideIsTrue }) {
           ) : (
             <>
               <RSVPContent
-                hideIsTrue={hideIsTrue}
+                hide={hide}
                 update={update}
-                // send={send}
+                setEmail={setEmail}
+                setNote={setNote}
+                setAllergies={setAllergies}
+                setStatus={setStatus}
+                setName={setName}
+                setEmailError={setEmailError}
+                setNameError={setNameError}
+                setResponseError={setResponseError}
               ></RSVPContent>
               <DialogActions>
-                <Button type='submit' onClick={handleRSVPClose}>
+                <Button
+                  type='submit'
+                  disabled={
+                    emailError || nameError || responseError ? true : false
+                  }
+                  onClick={handleRSVPSubmit}
+                >
                   Send Your Response!
                 </Button>
                 <Button onClick={handleRSVPClose}>Cancel</Button>

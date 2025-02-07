@@ -7,21 +7,69 @@ import FormControl from '@mui/material/FormControl';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import FormLabel from '@mui/material/FormLabel';
 
-function RSVPContent({ hideIsTrue, update }) {
+function RSVPContent({
+  hide,
+  update,
+  setEmail,
+  setNote,
+  setAllergies,
+  setStatus,
+  setName,
+  setEmailError,
+  setNameError,
+  setResponseError,
+}) {
+  // State Variables ----
   const [response, setResponse] = React.useState(null);
+  // Functions ----
+
   const handleRSVPResponse = (e) => {
-    setResponse(e.target.value);
+    let tempResponse = e.target.value;
+    if (tempResponse.length > 0) {
+      setResponse(tempResponse);
+      setResponseError(false);
+    } else {
+      setResponseError(true);
+    }
   };
 
+  const handleEmailEntry = (e) => {
+    let tempEmail = e.target.value;
+    const regex =
+      // eslint-disable-next-line
+      /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    // if the email is valid then we can assign update our state
+    if (regex.test(tempEmail)) {
+      setEmail(tempEmail);
+      setEmailError(false);
+    } else {
+      setEmailError(true);
+    }
+
+    // TODO --- have to check if email has already been submitted
+  };
+
+  const handleNameEntry = (e) => {
+    let tempName = e.target.value;
+    if (tempName.length > 0) {
+      setName(tempName);
+      setNameError(false);
+    } else {
+      setNameError(true);
+    }
+  };
   return (
     <>
-      {hideIsTrue ? (
+      {JSON.parse(hide) === true ? (
         <DialogContentText>
-          Hello recruiter or potential future teammate! 👋 If you would like to
-          try out the RSVP functionality, you can use the following email:
-          adminemail@temp.com, because as much as we would love your company at
-          our wedding, it is a small event. (Depending on where I am at in the
-          process, this functionality might not yet be available. )
+          Hello recruiter or potential future teammate! 👋 <br></br> <br></br>If
+          you would like to try out the RSVP functionality, you can use the
+          following email: <b>testingemail@test.com</b>. <br></br>
+          <br></br>There is a uniqueness tied to the email in an effort to make
+          sure real guests don't RSVP twice, so in order to make this work for
+          "general" purposes, a random int will be appended to each of these
+          emails on the backend to ensure uniqueness. This does mean you will
+          not be able to use the "Update Your Response" section, unfortunately.
         </DialogContentText>
       ) : (
         <DialogContentText>
@@ -31,6 +79,7 @@ function RSVPContent({ hideIsTrue, update }) {
           individually RSVP with your own e-mail's.
         </DialogContentText>
       )}
+      {/* EMAIL */}
       <TextField
         disabled={update ? true : false}
         className='dialog__email'
@@ -43,7 +92,9 @@ function RSVPContent({ hideIsTrue, update }) {
         type='email'
         fullWidth
         variant={update ? 'filled' : 'standard'}
+        onChange={handleEmailEntry}
       />
+      {/* NAME  */}
       <TextField
         disabled={update ? true : false}
         // disable TODO add disabled once get data
@@ -53,7 +104,9 @@ function RSVPContent({ hideIsTrue, update }) {
         margin='dense'
         fullWidth
         required
+        onChange={handleNameEntry}
       />
+      {/* RSVP STATUS */}
       <FormControl className='dialog__form'>
         <br></br>
         <FormLabel id='demo-row-radio-buttons-group-label'>
@@ -68,15 +121,17 @@ function RSVPContent({ hideIsTrue, update }) {
           // TODO --- later change this with the value from the DB
           // defaultValue='female'
           name='radio-buttons-group'
+          onBlur={(e) => setStatus(e.target.value)}
         >
-          <FormControlLabel value='yes' control={<Radio />} label='Yes! 🥳💜' />
-          <FormControlLabel value='no' control={<Radio />} label='No 😿' />
+          <FormControlLabel value='Yes' control={<Radio />} label='Yes! 🥳💜' />
+          <FormControlLabel value='No' control={<Radio />} label='No 😿' />
           <FormControlLabel
-            value='maybe'
+            value='Maybe'
             control={<Radio />}
             label='Maybe 👽'
           />
-          {response === 'yes' ? (
+          {/* ALLERGIES & NOTE */}
+          {response === 'Yes' ? (
             <div className='dialog__radioButtons--yes'>
               <TextField
                 id='restrictions'
@@ -84,6 +139,7 @@ function RSVPContent({ hideIsTrue, update }) {
                 variant='standard'
                 margin='dense'
                 fullWidth
+                onBlur={(e) => setAllergies(e.target.value)}
               />
               <TextField
                 id='comments'
@@ -91,12 +147,13 @@ function RSVPContent({ hideIsTrue, update }) {
                 variant='standard'
                 margin='dense'
                 fullWidth
+                onBlur={(e) => setNote(e.target.value)}
               />
             </div>
           ) : (
             <></>
           )}
-          {response === 'no' ? (
+          {response === 'No' ? (
             <p className='dialog__radioButtons--no'>
               We're sad you won't be able to come. Please reach out or update
               your status ASAP if anything changes.
@@ -104,7 +161,7 @@ function RSVPContent({ hideIsTrue, update }) {
           ) : (
             <></>
           )}
-          {response === 'maybe' ? (
+          {response === 'Maybe' ? (
             <p className='dialog__radioButtons--maybe'>
               Please remember to make sure to confirm your reponse by end of
               August 2026.

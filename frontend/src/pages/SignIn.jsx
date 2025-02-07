@@ -49,14 +49,16 @@ export default function SignIn({ theme, setHide }) {
       // specific information
       if (passwordValue.toUpperCase() === 'ADMINPASS') {
         localStorage.setItem('hideInfo', JSON.stringify(true));
+        console.log('here setting to true');
         setHide(true);
       } else {
+        console.log('here setting to false');
         localStorage.setItem('hideInfo', JSON.stringify(false));
         setHide(false);
       }
     } else {
-      setError(true);
       localStorage.setItem('loggedInUser', JSON.stringify(false));
+      setError(true);
     }
   };
 
