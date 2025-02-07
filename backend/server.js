@@ -5,13 +5,12 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 
 const app = express();
-const PORT = process.env.PORT || 8000;
+const PORT = process.env.PORT || 10000;
 const MONGO_URI = process.env.MONGO_URI;
 
 // Middleware
 app.use(cors());
 app.use(express.json());
-console.log(MONGO_URI);
 // Connect to MongoDB
 mongoose
   .connect(MONGO_URI)
