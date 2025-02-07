@@ -32,7 +32,7 @@ function RSVP({ openRSVP, setOpenRSVP, hide }) {
   // of the email so that the required uniqueness of it is not
   // invalidated
   React.useEffect(() => {
-    if (email === 'TESTINGEMAIL@TEST.COM') {
+    if (email.toUpperCase() === 'TESTINGEMAIL@TEST.COM') {
       setEmail(email + Math.random());
     }
   }, [email]);
