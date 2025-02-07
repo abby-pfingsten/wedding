@@ -13,6 +13,7 @@ function RSVPContent({
   setEmail,
   setNote,
   setAllergies,
+  status,
   setStatus,
   setName,
   setEmailError,
@@ -20,13 +21,14 @@ function RSVPContent({
   setResponseError,
 }) {
   // State Variables ----
-  const [response, setResponse] = React.useState(null);
+  // const [response, setResponse] = React.useState(null);
   // Functions ----
 
   const handleRSVPResponse = (e) => {
     let tempResponse = e.target.value;
     if (tempResponse.length > 0) {
-      setResponse(tempResponse);
+      // setResponse(tempResponse);
+      setStatus(tempResponse);
       setResponseError(false);
     } else {
       setResponseError(true);
@@ -114,14 +116,14 @@ function RSVPContent({
         </FormLabel>
         <RadioGroup
           className='dialog__radioButtons'
-          value={response}
+          value={status}
           onChange={handleRSVPResponse}
           row
           aria-labelledby='demo-radio-buttons-group-label'
           // TODO --- later change this with the value from the DB
           // defaultValue='female'
           name='radio-buttons-group'
-          onBlur={(e) => setStatus(e.target.value)}
+          // onChange={(e) => setStatus(e.target.value)}
         >
           <FormControlLabel value='Yes' control={<Radio />} label='Yes! 🥳💜' />
           <FormControlLabel value='No' control={<Radio />} label='No 😿' />
@@ -131,7 +133,7 @@ function RSVPContent({
             label='Maybe 👽'
           />
           {/* ALLERGIES & NOTE */}
-          {response === 'Yes' ? (
+          {status === 'Yes' ? (
             <div className='dialog__radioButtons--yes'>
               <TextField
                 id='restrictions'
@@ -153,7 +155,7 @@ function RSVPContent({
           ) : (
             <></>
           )}
-          {response === 'No' ? (
+          {status === 'No' ? (
             <p className='dialog__radioButtons--no'>
               We're sad you won't be able to come. Please reach out or update
               your status ASAP if anything changes.
@@ -161,7 +163,7 @@ function RSVPContent({
           ) : (
             <></>
           )}
-          {response === 'Maybe' ? (
+          {status === 'Maybe' ? (
             <p className='dialog__radioButtons--maybe'>
               Please remember to make sure to confirm your reponse by end of
               August 2026.
