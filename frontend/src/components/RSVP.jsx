@@ -32,8 +32,10 @@ function RSVP({ openRSVP, setOpenRSVP, hide }) {
   // of the email so that the required uniqueness of it is not
   // invalidated
   React.useEffect(() => {
-    if (email === 'TESTINGEMAIL@TEST.COM') {
-      setEmail(email + Math.random());
+    if (email) {
+      if (email.toUpperCase() === 'TESTINGEMAIL@TEST.COM') {
+        setEmail(email + Math.random());
+      }
     }
   }, [email]);
 
@@ -77,6 +79,8 @@ function RSVP({ openRSVP, setOpenRSVP, hide }) {
   return (
     <React.Fragment>
       <Dialog
+        disableEnforceFocus
+        disableAutoFocus
         open={openRSVP}
         onClose={handleRSVPClose}
         PaperProps={{
@@ -123,6 +127,7 @@ function RSVP({ openRSVP, setOpenRSVP, hide }) {
                 setEmail={setEmail}
                 setNote={setNote}
                 setAllergies={setAllergies}
+                status={status}
                 setStatus={setStatus}
                 setName={setName}
                 setEmailError={setEmailError}
