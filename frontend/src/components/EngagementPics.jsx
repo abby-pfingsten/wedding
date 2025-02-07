@@ -22,7 +22,7 @@ function EngagementPics() {
           }}
           variant='quilted'
           cols={6}
-          rowHeight={110}
+          rowHeight={100}
         >
           {weddingPagePics.map((item) => (
             <ImageListItem
