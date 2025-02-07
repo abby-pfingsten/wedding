@@ -72,9 +72,9 @@ function RSVP({ openRSVP, setOpenRSVP, hide }) {
 
   const [update, setUpdate] = React.useState(null);
   // const [send, setSend] = React.useState(null);
-  const [counter, setCounter] = React.useState(0);
+  // const [counter, setCounter] = React.useState(0);
   const [showButton, setShowButton] = React.useState(true);
-
+  console.log('from rsvp', hide);
   return (
     <React.Fragment>
       <Dialog
@@ -84,10 +84,10 @@ function RSVP({ openRSVP, setOpenRSVP, hide }) {
           component: 'form',
           onSubmit: (event) => {
             event.preventDefault();
-            const formData = new FormData(event.currentTarget);
-            const formJson = Object.fromEntries(formData.entries());
-            const email = formJson.email;
-            console.log(email);
+            // const formData = new FormData(event.currentTarget);
+            // const formJson = Object.fromEntries(formData.entries());
+            // const email = formJson.email;
+            // console.log('email from json', formJson);
             handleRSVPClose();
           },
         }}
@@ -99,7 +99,7 @@ function RSVP({ openRSVP, setOpenRSVP, hide }) {
               <Button
                 variant='contained'
                 onClick={() => {
-                  setCounter(counter + 1);
+                  // setCounter(counter + 1);
                   // setSend(true);
                   setUpdate(false);
                   setShowButton(false);
@@ -110,7 +110,7 @@ function RSVP({ openRSVP, setOpenRSVP, hide }) {
               <Button
                 variant='contained'
                 onClick={() => {
-                  setCounter(counter + 1);
+                  // setCounter(counter + 1);
                   setUpdate(true);
                   // setSend(false);
                   setShowButton(false);

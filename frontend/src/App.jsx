@@ -26,6 +26,7 @@ function App() {
     localStorage.getItem('hideInfo') || ''
   );
 
+  // console.log('from app', JSON.parse(hide));
   const abAnjTheme = createTheme({
     palette: {
       primary: {

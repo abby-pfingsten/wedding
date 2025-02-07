@@ -58,10 +58,15 @@ function RSVPContent({
       setNameError(true);
     }
   };
-  console.log('hide', hide === 'false');
+  console.log(
+    'is hide ==== to true',
+    typeof JSON.parse(hide),
+    // JSON.parse(hide) === false,
+    JSON.parse(hide) === false
+  );
   return (
     <>
-      {hide === 'true' || hide ? (
+      {JSON.parse(hide) === true ? (
         <DialogContentText>
           Hello recruiter or potential future teammate! 👋 <br></br> <br></br>If
           you would like to try out the RSVP functionality, you can use the
