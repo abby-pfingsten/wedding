@@ -7,7 +7,7 @@ const schedule = [
         time: '6pm-9pm:',
         location: 'Location is TBD',
         description:
-          "Welcome dinner in Catania! We can't wait to see everyone!",
+          "Welcome dinner and drinks in Catania! We can't wait to see everyone!",
       },
       {
         time: '9pm:',
@@ -23,7 +23,7 @@ const schedule = [
     activities: [
       {
         time: '9am-11:30am:',
-        location: 'Antico Borgo',
+        location: 'Villa',
         description: 'Breakfast, provided at the hotel.',
       },
       {
@@ -33,7 +33,7 @@ const schedule = [
       },
       {
         time: '2pm-5pm:',
-        location: 'Barone di Villagrande Winery or Antico Borgo',
+        location: 'Barone di Villagrande Winery or Villa',
         description: 'Free time to get ready before the ceremony!',
       },
       {
@@ -50,7 +50,7 @@ const schedule = [
     activities: [
       {
         time: '9am-11:30am:',
-        location: 'Antico Borgo',
+        location: 'Villa',
         description: 'Breakfast, provided at the hotel.',
       },
       {
@@ -61,7 +61,7 @@ const schedule = [
       },
       {
         time: '5pm-7pm:',
-        location: 'Barone di Villagrande or Antico Borgo',
+        location: 'Barone di Villagrande or Villa',
         description:
           'Transportation will be provided back to the hotels, where guests will have a chance to decompress and get ready for dinner.',
       },
@@ -78,7 +78,7 @@ const schedule = [
     activities: [
       {
         time: '9am-11am:',
-        location: 'Barone di Villagrande or Antico Borgo',
+        location: 'Barone di Villagrande or Villa',
         description: 'Checkout from the hotel will be at 11am.',
       },
       {

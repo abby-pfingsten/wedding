@@ -12,12 +12,12 @@ const faqArray = [
   {
     faqTitle: 'When Do I Need to RSVP By?',
     faqAnswer:
-      'Given the nature of the wedding, we kindly request everyone to RSVP by August of 2026. If we have not received a response by August 31st, 2026 we will consider that you will not be able to make it, but please reach out to us directly if there is a reason you might not be able to let us know by this date.',
+      'Given the nature of the wedding, we kindly request everyone to RSVP by September of 2025. If we have not received a response by September 30th, 2025 we will consider that you will not be able to make it, but please reach out to us directly if there is a reason you might not be able to let us know by this date.',
   },
   {
     faqTitle: 'Is There a Dress Code?',
     faqAnswer:
-      'For the actual ceremony, we just want everyone to be as comfortable as possible. Think Mamma Mia wedding scene. For the rest of the trip, the weather should be favorable and sunny, so bring whatever would suit you best!',
+      'For the actual ceremony, we just want everyone to be as comfortable as possible. Think Mamma Mia wedding scene. For the rest of the trip, in Etna it will be cooler than in Catania, due to the elevation gain. The weather should be favorable in Etna, but hotter in Catania. Keep this in mind, and bring whatever would suit you best!',
   },
   {
     faqTitle: 'Can I Bring a Plus One?',
@@ -37,7 +37,7 @@ const faqArray = [
   {
     faqTitle: 'So...when do I need to get there?',
     faqAnswer:
-      'The food/accomodations we will be providing begin on Thursday July 30th in Catania. Our plan is to meet and greet everyone at a restaurant for dinner and drinks in Catania, and then make our way to the town of Etna afterwards. We highly encourage folks to come earlier, or stay later in Europe after the wedding, however after the four day period, guests will have to provide their own food/accomodations.',
+      'The food/accomodations we will be providing begin on Thursday July 30th in Catania. Our plan is to meet and greet everyone at a restaurant for dinner and drinks,and then make our way to the town of Etna afterwards. We highly encourage folks to come earlier, or stay later in Europe after the wedding, however after the four day period, guests will have to provide their own food/accomodations.',
   },
   {
     faqTitle: 'Will Mr. Meelo be attending?',
