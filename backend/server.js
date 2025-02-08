@@ -10,7 +10,7 @@ const MONGO_URI = process.env.MONGO_URI;
 // Middleware for CORS
 app.use(
   cors({
-    origin: ['http://localhost:3000', 'https://abby-and-andrew.netlify.app'], // Allow both local and production
+    origin: ['http://localhost:3000', 'https://abbyandrew.love'], // Allow both local and production
   })
 );
 app.use(express.json());
