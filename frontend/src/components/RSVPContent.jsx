@@ -170,7 +170,7 @@ function RSVPContent({
           {status === 'Maybe' ? (
             <p className='dialog__radioButtons--maybe'>
               Please remember to make sure to confirm your reponse by end of
-              August 2026.
+              September 2025.
             </p>
           ) : (
             <></>
