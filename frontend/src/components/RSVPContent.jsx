@@ -100,7 +100,7 @@ function RSVPContent({
         fullWidth
         variant={update ? 'filled' : 'standard'}
         onInput={handleEmailEntry}
-        autoComplete='new-password'
+        autoComplete='off'
       />
       {/* NAME  */}
       <TextField
@@ -113,7 +113,7 @@ function RSVPContent({
         fullWidth
         required
         onInput={handleNameEntry}
-        autoComplete='new-password'
+        autoComplete='off'
       />
       {/* RSVP STATUS */}
       <FormControl className='dialog__form'>
@@ -124,7 +124,7 @@ function RSVPContent({
         <RadioGroup
           className='dialog__radioButtons'
           value={status}
-          onInput={handleRSVPResponse}
+          onChange={handleRSVPResponse}
           row
           aria-labelledby='demo-radio-buttons-group-label'
           // TODO --- later change this with the value from the DB
