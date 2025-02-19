@@ -26,7 +26,7 @@ export default function Home({ theme, hide }) {
     const timeout = setTimeout(() => {
       setShowSuccessAlert(false); // Disable your alert after 5 seconds
       setShowFailedAlert(false);
-    }, 5000);
+    }, 15000);
 
     return () => {
       clearTimeout(timeout); // Clears timer in case you close your alert somewhere else.
