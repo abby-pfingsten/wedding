@@ -46,11 +46,7 @@ export default function Home({ theme, hide }) {
       />
       {showSuccessAlert ? (
         <>
-          <Alert
-            sx={{ position: 'absolute' }}
-            icon={<CheckIcon fontSize='inherit' />}
-            severity='success'
-          >
+          <Alert icon={<CheckIcon fontSize='inherit' />} severity='success'>
             Your RSVP has been recorded! Thank you!
           </Alert>
         </>
@@ -59,7 +55,7 @@ export default function Home({ theme, hide }) {
       )}
       {showFailedAlert ? (
         <>
-          <Alert severity='error' sx={{ position: 'absolute' }}>
+          <Alert severity='error'>
             Your RSVP was not recorded. Please try again. If the issue persists,
             please try on desktop.
           </Alert>
