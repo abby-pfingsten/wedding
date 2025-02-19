@@ -99,7 +99,8 @@ function RSVPContent({
         type='email'
         fullWidth
         variant={update ? 'filled' : 'standard'}
-        onChange={handleEmailEntry}
+        onInput={handleEmailEntry}
+        autoComplete='new-password'
       />
       {/* NAME  */}
       <TextField
@@ -111,7 +112,8 @@ function RSVPContent({
         margin='dense'
         fullWidth
         required
-        onChange={handleNameEntry}
+        onInput={handleNameEntry}
+        autoComplete='new-password'
       />
       {/* RSVP STATUS */}
       <FormControl className='dialog__form'>
@@ -122,7 +124,7 @@ function RSVPContent({
         <RadioGroup
           className='dialog__radioButtons'
           value={status}
-          onChange={handleRSVPResponse}
+          onInput={handleRSVPResponse}
           row
           aria-labelledby='demo-radio-buttons-group-label'
           // TODO --- later change this with the value from the DB
@@ -145,7 +147,7 @@ function RSVPContent({
                 variant='standard'
                 margin='dense'
                 fullWidth
-                onBlur={(e) => setAllergies(e.target.value)}
+                onInput={(e) => setAllergies(e.target.value)}
               />
               <TextField
                 id='comments'
@@ -153,7 +155,7 @@ function RSVPContent({
                 variant='standard'
                 margin='dense'
                 fullWidth
-                onBlur={(e) => setNote(e.target.value)}
+                onInput={(e) => setNote(e.target.value)}
               />
             </div>
           ) : (

@@ -8,7 +8,13 @@ import RSVPContent from './RSVPContent';
 import '../styles/RSVP.scss';
 import axios from 'axios';
 
-function RSVP({ openRSVP, setOpenRSVP, hide, setShowAlert }) {
+function RSVP({
+  openRSVP,
+  setOpenRSVP,
+  hide,
+  setShowSuccessAlert,
+  setShowFailedAlert,
+}) {
   const handleRSVPClose = () => {
     setOpenRSVP(false);
     setShowButton(true);
@@ -61,11 +67,12 @@ function RSVP({ openRSVP, setOpenRSVP, hide, setShowAlert }) {
       .then((response) => {
         console.log('Succesfully saved data.');
         setEmailError(false);
-        setShowAlert(true);
+        setShowSuccessAlert(true);
       })
       .catch((error) => {
         console.log(error);
         setEmailError(true);
+        setShowFailedAlert(true);
       });
   }
   const handleRSVPSubmit = (e) => {
@@ -88,9 +95,6 @@ function RSVP({ openRSVP, setOpenRSVP, hide, setShowAlert }) {
           component: 'form',
           onSubmit: (event) => {
             event.preventDefault();
-            // const formData = new FormData(event.currentTarget);
-            // const formJson = Object.fromEntries(formData.entries());
-            // const email = formJson.email;
             handleRSVPClose();
           },
         }}

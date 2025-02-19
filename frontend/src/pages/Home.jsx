@@ -19,17 +19,19 @@ export default function Home({ theme, hide }) {
 
   // state variable to handle showing an alert to the
   // user when an rsvp response was successfully saved
-  const [showAlert, setShowAlert] = React.useState(false);
+  const [showSuccessAlert, setShowSuccessAlert] = React.useState(false);
+  const [showFailedAlert, setShowFailedAlert] = React.useState(false);
 
   React.useEffect(() => {
     const timeout = setTimeout(() => {
-      setShowAlert(false); // Disable your alert after 5 seconds
+      setShowSuccessAlert(false); // Disable your alert after 5 seconds
+      setShowFailedAlert(false);
     }, 5000);
 
     return () => {
       clearTimeout(timeout); // Clears timer in case you close your alert somewhere else.
     };
-  }, [showAlert]);
+  }, [showSuccessAlert, showFailedAlert]);
 
   return (
     <ThemeProvider theme={theme}>
@@ -39,12 +41,27 @@ export default function Home({ theme, hide }) {
         openRSVP={openRSVP}
         setOpenRSVP={setOpenRSVP}
         hide={hide}
-        setShowAlert={setShowAlert}
+        setShowSuccessAlert={setShowSuccessAlert}
+        setShowFailedAlert={setShowFailedAlert}
       />
-      {showAlert ? (
+      {showSuccessAlert ? (
         <>
-          <Alert icon={<CheckIcon fontSize='inherit' />} severity='success'>
+          <Alert
+            sx={{ position: 'absolute' }}
+            icon={<CheckIcon fontSize='inherit' />}
+            severity='success'
+          >
             Your RSVP has been recorded! Thank you!
+          </Alert>
+        </>
+      ) : (
+        <></>
+      )}
+      {showFailedAlert ? (
+        <>
+          <Alert severity='error' sx={{ position: 'absolute' }}>
+            Your RSVP was not recorded. Please try again. If the issue persists,
+            please try on desktop.
           </Alert>
         </>
       ) : (
