@@ -50,18 +50,33 @@ function Schedule({ hide }) {
               xs: 'column',
               sm: 'row',
             },
+            gap: '20px',
             justifyContent: 'space-between',
             alignItems: onlySmSize ? 'center' : 'none',
           }}
         >
           {data.map((item, index) => (
-            <Item elevation={8} key={index} className='schedule'>
+            <Item
+              elevation={8}
+              key={index}
+              className='schedule'
+              sx={{
+                display: 'flex',
+                flexDirection: 'column',
+                fontSize: '18px',
+                gap: '10px',
+              }}
+            >
               <div className='schedule__title'>
                 <h3 className='schedule__title--day'>{item.day}</h3>
                 <h5 className='schedule__title--summary'>{item.daySummary}</h5>
               </div>
               {item.activities.map((activity, index) => (
-                <div className='schedule__activities' key={index}>
+                <div
+                  className='schedule__activities'
+                  key={index}
+                  sx={{ gap: '5px' }}
+                >
                   <p className='schedule__activities--time'>{activity.time}</p>
                   <p className='schedule__activities--location'>
                     {activity.location}

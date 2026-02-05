@@ -62,7 +62,7 @@ const ourStoryArray = [
     key: 7,
     header: 'September 2023 - ??',
     subHeader: 'First, But Not Last European Excurscion',
-    text: "Italy was both of our first time's in Europe and we both fell in love with it! Little did we know we would be having our wedding here. Since Italy, we've been able to visit The Netherlands, France, Croatia, Belgium, Germany, Vienna, Portugal, Finland, Latvia and Estonia as part of our European travels.",
+    text: "Italy was both of our first time's in Europe and we both fell in love with it! Little did we know we would be having our wedding here. Since Italy, we've been able to visit The Netherlands, France, Croatia, Belgium, Germany, Austria, Portugal, Finland, Latvia, Estonia and Spain as part of our European travels.",
     image: italy,
     alt: 'Italy Vacation',
   },
